@@ -1,6 +1,6 @@
 $BTPATH=$args[0]
 $BTNAME=[System.IO.Path]::GetFileName($BTPATH)
-$IPLIST=(Invoke-WebRequest https://gitee.com/oniicyan/bt_ban/raw/master/IPLIST.txt -UseBasicParsing).Content
+$IPLIST=(Invoke-WebRequest -UseBasicParsing https://gitee.com/oniicyan/bt_ban/raw/master/IPLIST.txt).Content
 $DYKWID="{3817fa89-3f21-49ca-a4a4-80541ddf7465}"
 
 $RULES=(Get-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -ErrorAction Ignore)
@@ -25,5 +25,5 @@ if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 	Update-NetFirewallDynamicKeywordAddress -Id $DYKWID -Addresses $IPLIST | Out-Null
 }
 else {
-	New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_$BTNAME" -Addresses $IPLIST | Out-Null
+	New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST | Out-Null
 }
