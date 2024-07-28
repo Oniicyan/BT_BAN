@@ -39,7 +39,7 @@ Unregister-ScheduledTask BT_BAN_$BTNAME -Confirm:$false -ErrorAction Ignore
 
 $PRINCIPAL = New-ScheduledTaskPrincipal -UserId SYSTEM -RunLevel Highest
 $SETTINGS = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries
-$TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval  (New-TimeSpan -Hours 1)
+$TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval  (New-TimeSpan -Hours 8)
 $ACTION = New-ScheduledTaskAction -Execute powershell -Argument "`"iex `"`"&{`$(irm https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN.ps1)} '$BTPATH'`"`"`""
 $TASK = New-ScheduledTask -Principal $PRINCIPAL -Settings $SETTINGS -Trigger $TRIGGER -Action $ACTION
 
