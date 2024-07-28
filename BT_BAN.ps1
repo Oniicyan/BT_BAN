@@ -2,7 +2,7 @@ $BTPATH = $args[0]
 $BTNAME = [System.IO.Path]::GetFileName($BTPATH)
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
 
-$BASE64 = (Invoke-WebRequest -UseBasicParsing https://gitee.com/oniicyan/bt_ban/raw/master/IPLIST.txt).Content
+$BASE64 = (Invoke-WebRequest https://gitee.com/oniicyan/bt_ban/raw/master/IPLIST.txt).Content
 $IPNYTE = [Convert]::FromBase64String($BASE64)
 $IPLIST =  [System.Text.Encoding]::UTF8.GetString($IPNYTE)
 
