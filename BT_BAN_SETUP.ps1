@@ -49,7 +49,7 @@ Register-ScheduledTask BT_BAN_$BTNAME -InputObject $TASK | Out-Null
 Start-ScheduledTask BT_BAN_$BTNAME
 
 cls
-echo "已添加任务计划并执行，每小时更新"
+echo "已添加任务计划并执行，每 8 小时更新"
 echo ""
 echo "如需复原，请执行以下操作"
 echo ""
