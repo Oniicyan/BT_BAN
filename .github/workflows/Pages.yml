@@ -14,7 +14,7 @@ jobs:
          ${{ secrets.ACTION }}
          EOF
          git config --global user.name "${GITHUB_ACTOR}"
-         git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+         git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
 
      - uses: actions/checkout@v4
 
@@ -22,6 +22,5 @@ jobs:
        run: |
          git remote add target https://github.com/Oniicyan/Pages
          git add IPLIST.zip
-         git add .
-         git commit -m "Update IPLIST Archive"
+         git commit -m "Update IPLIST Archive" || true
          git push target
