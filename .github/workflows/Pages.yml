@@ -11,4 +11,4 @@ jobs:
          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
        run: |
          git remote add IPLIST.zip https://github.com/Oniicyan/Pages.git
-         git push
+         # git push
