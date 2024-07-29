@@ -9,29 +9,12 @@ jobs:
    steps:
      - uses: actions/checkout@v4
 
-     - name: Set Key
-       run: |
-         mkdir -p ~/.ssh
-         cat > ~/.ssh/id_rsa <<EOF
-         ${{ secrets.ACTION }}
-         EOF
-         ssh-keyscan github.com >> ~/.ssh/known_hosts # Not need for GitHub
-         git config --global user.name "${GITHUB_ACTOR}"
-         git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
-         chmod 700 ~/.ssh/id_rsa
-         ssh -T git@github.com || true
-         echo $GITHUB_ACTION_PATH
-         echo "PWD=$(pwd)" >> $GITHUB_ENV
-         
-     - name: Push to another repository
-       run: |
-         # git remote add Pages https://github.com/Oniicyan/Pages
-         # git remote set-url Pages git@github.com:Oniicyan/Pages
-         # git add IPLIST.zip
-         # git commit -m "Update IPLIST Archive" || true
-         # git push Pages main
-         cd ~
-         git clone git@github.com:Oniicyan/Pages
-         cd Pages
-         cp $PWD/IPLIST.zip ./Pages
-         git remote -v
+     - name: Pushes to another repository
+       uses: cpina/github-action-push-to-another-repository@main
+       env:
+         SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+       with:
+         source-directory: '.'
+         target-directory: 'BT_BAN'
+         destination-github-username: 'Oniicyan'
+         destination-repository-name: 'Pages'
