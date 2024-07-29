@@ -4,7 +4,7 @@ on:
      - main
 
 jobs:
- build:
+ Pages:
    runs-on: ubuntu-latest
    steps:
      - env:
