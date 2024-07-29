@@ -2,9 +2,9 @@ $BTPATH = $args[0]
 $BTNAME = [System.IO.Path]::GetFileName($BTPATH)
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
 
-Invoke-WebRequest -OutFile "$env:temp\IPLIST\IPLIST.zip" https://gitee.com/oniicyan/bt_ban/raw/master/IPLIST.zip
-Expand-Archive -Force -Path $env:temp\IPLIST\IPLIST.zip -DestinationPath $env:temp\IPLIST
-$IPLIST = Get-Content $env:temp\IPLIST\IPLIST.txt
+Invoke-WebRequest -OutFile "$env:temp\BT_BAN_IPLIST.zip" https://gitee.com/oniicyan/bt_ban/raw/master/IPLIST.zip
+Expand-Archive -Force -Path $env:temp\BT_BAN_IPLIST.zip -DestinationPath $env:temp\BT_BAN
+$IPLIST = Get-Content $env:temp\BT_BAN\IPLIST.txt
 
 $RULES = (Get-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -ErrorAction Ignore)
 
