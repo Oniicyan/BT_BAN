@@ -8,7 +8,9 @@ jobs:
    runs-on: ubuntu-latest
    steps:
      - run : |
-         echo ${{ secrets.ACTION }} > ~/.ssh/id_rsa
+         cat > ~/.ssh/id_rsa <<EOF
+         ${{ secrets.ACTION }}
+         EOF
          chmod 400 ~/.ssh/id_rsa
          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
      - uses: actions/checkout@v4
