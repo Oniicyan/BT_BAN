@@ -7,8 +7,6 @@ jobs:
  Pages:
    runs-on: ubuntu-latest
    steps:
-     - uses: actions/checkout@v4
-
      - name: Pushes to another repository
        uses: cpina/github-action-push-to-another-repository@main
        env:
