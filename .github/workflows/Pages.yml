@@ -7,10 +7,11 @@ jobs:
  Pages:
    runs-on: ubuntu-latest
    steps:
+     - uses: actions/checkout@v4
      - env:
          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
        run: |
-         git clone https://github.com/Oniicyan/Pages
+         #git clone https://github.com/Oniicyan/Pages
          git add IPLIST.zip
          #git commit -m "Update IPLIST.txt"
          #git remote add target https://github.com/Oniicyan/Pages
