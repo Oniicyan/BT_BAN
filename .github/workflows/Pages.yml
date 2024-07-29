@@ -22,5 +22,6 @@ jobs:
        run: |
          git remote add target https://github.com/Oniicyan/Pages
          git add IPLIST.zip
+         git add .
          git commit -m "Update IPLIST Archive"
          git push target
