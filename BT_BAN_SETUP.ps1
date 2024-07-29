@@ -43,7 +43,7 @@ if (Get-ScheduledTask BT_BAN_$BTNAME -ErrorAction Ignore) {
 	echo ""
 	echo "  BT_BAN_$BTNAME 任务计划已存在"
 	echo ""
-	echo "  同名客户端多开，即使目录不同，也需修改文件名以区分"
+	echo "  如需要同名客户端多开，请修改文件名以区分"
 	echo ""
 	echo "  覆盖请按 Enter 键，退出请按 Ctrl + C 键"
 	echo ""
