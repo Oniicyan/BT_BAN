@@ -13,8 +13,8 @@ jobs:
          cat > ~/.ssh/id_rsa <<EOF
          ${{ secrets.ACTION }}
          EOF
-         chmod 400 ~/.ssh/id_rsa
-         ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+         #chmod 400 ~/.ssh/id_rsa
+         #ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
          git config --global user.name "${GITHUB_ACTOR}"
          git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
 
@@ -22,7 +22,8 @@ jobs:
 
      - name: Push to another repository
        run: |
-         git remote add git@github.com:Oniicyan/Pages
-         git add IPLIST.zip
-         git commit -m "Update IPLIST Archive" || true
-         git push target
+         git clone git@github.com:Oniicyan/Pages
+         #git remote add git@github.com:Oniicyan/Pages
+         #git add IPLIST.zip
+         #git commit -m "Update IPLIST Archive" || true
+         #git push target
