@@ -19,7 +19,7 @@ jobs:
          git config --global user.name "${GITHUB_ACTOR}"
          git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
          chmod 700 ~/.ssh/id_rsa
-         ssh -T git@github.com || true
+         # ssh -T git@github.com || true
 
          git clone https://github.com/Oniicyan/Pages
          git remote add Pages ssh://[git@github.com:443]:Oniicyan/Pages
