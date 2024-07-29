@@ -14,11 +14,13 @@ jobs:
          ${{ secrets.ACTION }}
          EOF
          chmod 400 ~/.ssh/id_rsa
-         ssh-keyscan github.com >> ~/.ssh/known_hosts # Not need for GitHub
+         # ssh-keyscan github.com >> ~/.ssh/known_hosts # Not need for GitHub
          git config --global user.name "${GITHUB_ACTOR}"
          git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
-         ssh-agent && ssh-add ~/.ssh/id_rsa
-         ssh -T git@ssh.github.com
+         eval $(ssh-agent -s)
+         ssh-add ~/.ssh/id_rsa
+         ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+         ssh -T git@ssh.github.com && exit 0
 
      - uses: actions/checkout@v4
 
