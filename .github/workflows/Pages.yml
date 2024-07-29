@@ -22,7 +22,7 @@ jobs:
 
      - name: Push to another repository
        run: |
-         git remote add Pages ssh://git@github.com:Oniicyan/Pages
+         git remote add Pages [git@github.com:443]:Oniicyan/Pages
          curl -LOs https://raw.githubusercontent.com/PBH-BTN/BTN-Collected-Rules/main/combine/all.txt
          pwd
          git add all.txt
