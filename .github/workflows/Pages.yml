@@ -7,15 +7,15 @@ jobs:
  Pages:
    runs-on: ubuntu-latest
    steps:
-     - run : |
+     - uses: actions/checkout@v4
+     - run: |
          mkdir ~/.ssh
          cat > ~/.ssh/id_rsa <<EOF
          ${{ secrets.ACTION }}
          EOF
          chmod 400 ~/.ssh/id_rsa
          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-     - uses: actions/checkout@v4
-     - run: |
+         
          git add IPLIST.zip
          git commit -m "Update IPLIST Archive"
          git remote add target https://github.com/Oniicyan/Pages
