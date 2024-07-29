@@ -15,7 +15,7 @@ jobs:
          cat > ~/.ssh/id_rsa <<EOF
          ${{ secrets.ACTION }}
          EOF
-         ssh-keyscan github.com >> ~/.ssh/known_hosts # Not need for GitHub
+         ssh-keyscan -p 443 github.com >> ~/.ssh/known_hosts # Not need for GitHub
          git config --global user.name "${GITHUB_ACTOR}"
          git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
          chmod 700 ~/.ssh/id_rsa
