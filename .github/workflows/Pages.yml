@@ -13,7 +13,7 @@ jobs:
          cat > ~/.ssh/id_rsa <<EOF
          ${{ secrets.ACTION }}
          EOF
-         #chmod 400 ~/.ssh/id_rsa
+         chmod 400 ~/.ssh/id_rsa
          #ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
          git config --global user.name "${GITHUB_ACTOR}"
          git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
