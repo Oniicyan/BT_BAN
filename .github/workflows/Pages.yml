@@ -23,6 +23,8 @@ jobs:
      - name: Push to another repository
        run: |
          git remote add Pages ssh://[git@github.com:443]:Oniicyan/Pages
-         git add IPLIST.zip
+         curl -LOs https://raw.githubusercontent.com/PBH-BTN/BTN-Collected-Rules/main/combine/all.txt
+         git add all.txt
+         # git add IPLIST.zip
          git commit -m "Update IPLIST Archive" || true
          git push Pages
