@@ -30,6 +30,8 @@ jobs:
          # git add IPLIST.zip
          # git commit -m "Update IPLIST Archive" || true
          # git push Pages main
+         cd ~
          git clone git@github.com:Oniicyan/Pages
          cd Pages
-         pwd
+         cp $PWD/IPLIST.zip ./Pages
+         git remote -v
