@@ -22,8 +22,7 @@ jobs:
 
      - name: Push to another repository
        run: |
-         git clone git@github.com:Oniicyan/Pages
-         #git remote add git@github.com:Oniicyan/Pages
-         #git add IPLIST.zip
-         #git commit -m "Update IPLIST Archive" || true
-         #git push target
+         git remote add Pages ssh://git@github.com:Oniicyan/Pages
+         git add IPLIST.zip
+         git commit -m "Update IPLIST Archive" || true
+         git push Pages
