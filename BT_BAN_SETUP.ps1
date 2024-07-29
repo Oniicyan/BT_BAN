@@ -7,7 +7,7 @@ If ((Fltmc).Count -eq 3) {
 
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 2
 
-echo "请指定启用过滤规则的 BT 应用程序"
+echo "请指定启用过滤规则的 BT 应用程序文件"
 echo "可选择快捷方式"
 echo "可选择多款客户端（需要再次执行脚本）"
 echo "同款客户端多开，需要修改文件名以区分"
