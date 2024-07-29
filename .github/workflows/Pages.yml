@@ -22,7 +22,7 @@ jobs:
          eval $(ssh-agent -s)
          ssh-add ~/.ssh/id_rsa
          ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-         ssh -T git@ssh.github.com && exit 0
+         ssh -T git@github.com && exit 0
 
      - uses: actions/checkout@v4
 
