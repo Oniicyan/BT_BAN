@@ -1,4 +1,6 @@
-此项目用于从 [BTN-Collected-Rules](https://github.com/PBH-BTN/BTN-Collected-Rules) 同步黑名单
+此项目从 [BTN-Collected-Rules](https://github.com/PBH-BTN/BTN-Collected-Rules) 同步黑名单，并以脚本自动配置 Windows 防火墙动态关键字
+
+不限客户端类型，少数客户端的启动文件和通信文件可能不同
 
 以管理员权限在 PowerShell 下运行
 
