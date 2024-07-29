@@ -19,12 +19,10 @@ jobs:
          git config --global user.name "${GITHUB_ACTOR}"
          git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
          chmod 700 ~/.ssh/id_rsa
-         # ssh -T git@github.com || true
+         ssh -T git@github.com || true
 
-         git clone https://github.com/Oniicyan/Pages
-         git remote add Pages ssh://[git@github.com:443]:Oniicyan/Pages
-         curl -LOs https://raw.githubusercontent.com/PBH-BTN/BTN-Collected-Rules/main/combine/all.txt
-         git add all.txt
-         # git add IPLIST.zip
+         git remote add Pages https://github.com/Oniicyan/Pages
+         git remote set-url Pages git@github.com:Oniicyan/Pages
+         git add IPLIST.zip
          git commit -m "Update IPLIST Archive" || true
          git push Pages
