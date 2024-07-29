@@ -1,0 +1,14 @@
+on:
+ push:
+   branches:
+     - main
+
+jobs:
+ build:
+   runs-on: ubuntu-latest
+   steps:
+     - env:
+         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+       run: |
+         git remote add IPLIST.zip https://github.com/Oniicyan/Pages
+         git push
