@@ -1,4 +1,5 @@
 If ((Fltmc).Count -eq 3) {
+	echo ""
 	echo "  请以管理员权限重新执行"
 	echo ""
 	pause
@@ -7,6 +8,7 @@ If ((Fltmc).Count -eq 3) {
 
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 2
 
+echo ""
 echo "  请指定启用过滤规则的 BT 应用程序文件"
 echo ""
 echo "  本方案仅对选中的程序生效，不影响其他程序的通信"
@@ -23,6 +25,7 @@ $BTINFO.ShowDialog() | Out-Null
 
 if (!$BTINFO.FileName) {
 	cls
+	echo ""
 	echo "  请重新执行，并正确选择 BT 应用程序"
 	echo ""
 	pause
@@ -34,7 +37,9 @@ $BTNAME = [System.IO.Path]::GetFileName($BTPATH)
 
 if (Get-ScheduledTask BT_BAN_$BTNAME -ErrorAction Ignore) {
 	cls
+	echo ""
 	echo "  BT_BAN_$BTNAME 任务计划已存在"
+	echo ""
 	echo "  覆盖请按 Enter 键，退出请按 Ctrl + C 键"
 	echo ""
 	pause
@@ -52,6 +57,7 @@ Register-ScheduledTask BT_BAN_$BTNAME -InputObject $TASK | Out-Null
 Start-ScheduledTask BT_BAN_$BTNAME
 
 cls
+echo ""
 echo "  已添加任务计划并执行，每 8 小时更新"
 echo ""
 echo "  如需复原，请执行以下操作"
