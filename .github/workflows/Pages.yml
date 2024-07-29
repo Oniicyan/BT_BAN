@@ -10,6 +10,6 @@ jobs:
      - env:
          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
        run: |
-         #git clone https://github.com/Oniicyan/Pages
+         git add IPLIST.zip
          git remote add target https://github.com/Oniicyan/Pages
-         # git push
+         git push
