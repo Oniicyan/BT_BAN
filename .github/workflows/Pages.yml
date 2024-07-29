@@ -15,12 +15,14 @@ jobs:
          cat > ~/.ssh/id_rsa <<EOF
          ${{ secrets.ACTION }}
          EOF
-         ssh-keyscan -p 443 github.com >> ~/.ssh/known_hosts # Not need for GitHub
+         ssh-keyscan github.com >> ~/.ssh/known_hosts # Not need for GitHub
          git config --global user.name "${GITHUB_ACTOR}"
          git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
          chmod 700 ~/.ssh/id_rsa
          ssh -T git@github.com || true
-
+         
+     - name: Push to another repository
+       run: |
          git remote add Pages https://github.com/Oniicyan/Pages
          git remote set-url Pages git@github.com:Oniicyan/Pages
          git add IPLIST.zip
