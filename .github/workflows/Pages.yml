@@ -8,15 +8,18 @@ jobs:
    runs-on: ubuntu-latest
    steps:
      - name: Set Key
-     - run: |
+       run: |
          mkdir ~/.ssh
          cat > ~/.ssh/id_rsa <<EOF
          ${{ secrets.ACTION }}
          EOF
          git config --global user.name "${GITHUB_ACTOR}"
          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
      - uses: actions/checkout@v4
-     - run: |
+
+     - name: Push to another repository
+       run: |
          git remote add target https://github.com/Oniicyan/Pages
          git add IPLIST.zip
          git commit -m "Update IPLIST Archive"
