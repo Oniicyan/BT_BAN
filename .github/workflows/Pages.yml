@@ -7,6 +7,8 @@ jobs:
  Pages:
    runs-on: ubuntu-latest
    steps:
+     - uses: actions/checkout@v4
+
      - name: Set Key
        run: |
          mkdir -p ~/.ssh
@@ -18,8 +20,6 @@ jobs:
          git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
          chmod 700 ~/.ssh/id_rsa
          ssh -T git@github.com || true
-
-     - uses: actions/checkout@v4
 
      - name: Push to another repository
        run: |
