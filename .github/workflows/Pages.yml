@@ -17,7 +17,7 @@ jobs:
          # git config --global user.name "${GITHUB_ACTOR}"
          # git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
          chmod 700 ~/.ssh/id_rsa
-         ssh -T git@github.com
+         # ssh -T git@github.com && exit 0
 
      - uses: actions/checkout@v4
 
