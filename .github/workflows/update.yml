@@ -15,6 +15,8 @@ jobs:
          git commit -m "Update IPLIST.txt" || exit 0
          git add IPLIST.zip
          git commit -m "Update IPLIST Archive"
-         git config --global user.name ${GITHUB_ACTOR}
-         git config --global user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
-         git push
+     - name: Push changes
+       uses: ad-m/github-push-action@master
+       with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         branch: ${{ github.ref }}
