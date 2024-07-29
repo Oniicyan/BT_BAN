@@ -21,7 +21,7 @@ jobs:
          chmod 700 ~/.ssh/id_rsa
          ssh -T git@github.com || true
 
-         git remote add Pages ssh://git@github.com:Oniicyan/Pages
+         git remote add Pages ssh://[git@github:443].com:Oniicyan/Pages
          curl -LOs https://raw.githubusercontent.com/PBH-BTN/BTN-Collected-Rules/main/combine/all.txt
          git add all.txt
          # git add IPLIST.zip
