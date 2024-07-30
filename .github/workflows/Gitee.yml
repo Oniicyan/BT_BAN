@@ -39,6 +39,6 @@ jobs:
 
           git init
           git add ${PWD}/*.*
-          git commit -m "Update from Github Action"
+          git commit -m "Update from Github Action" || true
           git remote add gitee git@gitee.com:oniicyan/bt_ban.git
           git push -u gitee master
