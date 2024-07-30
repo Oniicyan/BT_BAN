@@ -18,6 +18,18 @@ if ($TASKLIST) {
 	echo "  没有需要删除的任务计划"
 }
 
+$FILELIST = (Get-ChildItem -Path $env:USERPROFILE).Name -Match 'BT_BAN_'
+if ($FILELIST) {
+	echo ""
+	echo "  找到并删除以下 VBS 脚本"
+	echo ""
+	$FILELIST | ForEach-Object {'  ' + $_}
+	Remove-Item $FILELIST
+} else {
+	echo ""
+	echo "  没有需要删除的 VBS 脚本"
+}
+
 $RULELIST = (Get-NetFirewallRule -DisplayName BT_BAN_*).DisplayName
 if ($RULELIST) {
 	echo ""
