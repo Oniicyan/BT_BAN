@@ -32,11 +32,11 @@ jobs:
           # git clone git@gitee.com:oniicyan/bt_ban.git
           # cd bt_ban
 
-          DIR1=${{github.action_path}}
           DIR2=$GITHUB_ACTION_PATH
           DIR3=${GITHUB_ACTION_PATH}
           # cp ${REPODIR}/*.* ./
-          ls $DIR1/*.*
+          ls $PWD
+          ls $pwd
           ls $DIR2/*.*
           ls $DIR3/*.*
 
