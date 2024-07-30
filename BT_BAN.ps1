@@ -18,17 +18,14 @@ $SET_RULES = {
 
 if (($RULES | Out-String -Stream | Select-String -SimpleMatch $DYKWID).Count -ne 2) {
 	&$SET_RULES
-}
-elseif (($RULES | Get-NetFirewallApplicationFilter | Out-String -Stream | Select-String -SimpleMatch $BTPATH).Count -ne 2) {
+} elseif (($RULES | Get-NetFirewallApplicationFilter | Out-String -Stream | Select-String -SimpleMatch $BTPATH).Count -ne 2) {
 	&$SET_RULES
-}
-elseif (($RULES | Out-String -Stream | Select-String -SimpleMatch Inbound).Count -ne 1) {
+} elseif (($RULES | Out-String -Stream | Select-String -SimpleMatch Inbound).Count -ne 1) {
 	&$SET_RULES
 }
 
 if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 	Update-NetFirewallDynamicKeywordAddress -Id $DYKWID -Addresses $IPLIST | Out-Null
-}
-else {
+} else {
 	New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST | Out-Null
 }
