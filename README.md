@@ -10,7 +10,7 @@
 
 以管理员权限在 PowerShell 下运行
 
-`iex (irm https://oniicyan.pages.dev/BT_BAN/BT_BAN_SETUP.ps1)`
+`iex (irm bt-ban.pages.dev)`
 
 并选择 BT 应用程序文件即可完成部署
 
