@@ -28,24 +28,15 @@ jobs:
           git config --local user.name ${GITHUB_ACTOR}
           git config --local user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
 
-          DIR=$PWD
-
+          REPODIR=$PWD
           cd ~
-          # git clone git@gitee.com:oniicyan/bt_ban.git
-          # cd bt_ban
+          git clone git@gitee.com:oniicyan/bt_ban.git
+          cd bt_ban
+          cp $REPODIR/*.* ./
 
-          DIR2=$GITHUB_ACTION_PATH
-          DIR3=${GITHUB_ACTION_PATH}
-          # cp ${REPODIR}/*.* ./
-          ls $PWD
-          ls $pwd
-          ls $DIR
-          ls $DIR/*.*
-          ls $DIR3/*.*
-
-          # git add .
-          # git commit -m "Update from Github Action"
-          # git push
+          git add .
+          git commit -m "Update from Github Action"
+          git push
 
           # git remote add gitee git@gitee.com:oniicyan/bt_ban.git
           # git pull --rabase gitee master
