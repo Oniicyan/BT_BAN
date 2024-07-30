@@ -33,11 +33,13 @@ jobs:
           git clone git@gitee.com:oniicyan/bt_ban.git
     
           # 路径请从链接中确认，可能与仓库名称不同
-          cd "bt_ban"
+          # cd "bt_ban"
     
           # 修改文件
-          cp -r $PWD/BT_BAN/* $(pwd)
+          pwd
+          ls
+          # cp -r $PWD/BT_BAN/* $(pwd)
     
-          git add .
-          git commit -m "Update from Github Action" || exit 0
-          git push
+          # git add .
+          # git commit -m "Update from Github Action" || exit 0
+          # git push
