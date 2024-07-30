@@ -27,8 +27,8 @@ jobs:
           # 请确认页面 https://gitee.com/profile/emails
           # 如勾选了 “禁止命令推送暴露个人邮箱”，请使用 @user.noreply.gitee.com 的提交邮箱
           # 如要公开邮箱，请取消勾选
-          git config --global user.name 泥浆
-          git config --global user.email 8310999+oniicyan@user.noreply.gitee.com
+          git config --global user.name '泥浆'
+          git config --global user.email '8310999+oniicyan@user.noreply.gitee.com'
           git config pull.rebase true
 
           cd ~
