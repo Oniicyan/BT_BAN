@@ -36,7 +36,7 @@ jobs:
           # cd "bt_ban"
     
           # 修改文件
-          cp $PWD/. ~/bt_ban
+          cp -r $PWD/. ~/bt_ban
     
           git add .
           git commit -m "Update from Github Action" || exit 0
