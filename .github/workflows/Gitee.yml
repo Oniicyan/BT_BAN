@@ -34,7 +34,7 @@ jobs:
 
           PWD=${GITHUB_ACTION_PATH}
           ls $PWD
-          ls $PWD/*.*
+          ls ${PWD}/*.*
     
           # 修改文件
           # cp ${GITHUB_ACTION_PATH}/* ./bt_ban
