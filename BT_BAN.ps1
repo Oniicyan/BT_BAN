@@ -6,7 +6,7 @@ Invoke-WebRequest -OutFile "$env:temp\BT_BAN_IPLIST.zip" https://bt-ban.pages.de
 Expand-Archive -Force -Path $env:temp\BT_BAN_IPLIST.zip -DestinationPath $env:temp\BT_BAN
 $IPLIST = Get-Content $env:temp\BT_BAN\IPLIST.txt
 
-$RULES = (Get-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -ErrorAction Ignore)
+$RULES = Get-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -ErrorAction Ignore
 
 $SET_RULES = {
 	Remove-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -ErrorAction Ignore
