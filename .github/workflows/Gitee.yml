@@ -17,6 +17,8 @@ jobs:
           ${{secrets.GITEE}}
           EOF
           chmod 700 ~/.ssh/id_rsa
+          eval $(ssh-agent -s)
+          ssh-add ~/.ssh/id_rsa
           ssh-keyscan gitee.com >> ~/.ssh/known_hosts
 
           # 测试密钥
