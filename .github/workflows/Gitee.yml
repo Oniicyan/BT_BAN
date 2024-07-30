@@ -27,12 +27,14 @@ jobs:
           git config --local user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
 
           cd ~
-          git clone git@gitee.com:oniicyan/bt_ban.git
-          cd bt_ban
+          # git clone git@gitee.com:oniicyan/bt_ban.git
+          # cd bt_ban
 
-          DIR=${{github.action_path}}
+          DIR1=${{github.action_path}}
+          DIR2=$GITHUB_ACTION_PATH
           # cp ${REPODIR}/*.* ./
-          ls $DIR/*.*
+          ls $DIR1/*.*
+          ls $DIR2/*.*
 
           # git add .
           # git commit -m "Update from Github Action"
