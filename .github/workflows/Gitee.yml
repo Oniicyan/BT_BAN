@@ -36,7 +36,6 @@ jobs:
           DIR2=$GITHUB_ACTION_PATH
           DIR3=${GITHUB_ACTION_PATH}
           # cp ${REPODIR}/*.* ./
-          ls $DIR/*.*
           ls $DIR1/*.*
           ls $DIR2/*.*
           ls $DIR3/*.*
