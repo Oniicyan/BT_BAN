@@ -38,7 +38,7 @@ if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 }
 
 [XML]$TASKINFO = Export-ScheduledTask BT_BAN_$BTNAME
-if (-Not $TASKINFO.Task.Actions.Exec.Command -Match "BT_BAN_$BTNAME.vbs") {
+if (-Not ($TASKINFO.Task.Actions.Exec.Command -Match "BT_BAN_$BTNAME.vbs")) {
 	$VBS = 'createobject("wscript.shell").run "CMD",0'
 	$CMD = "powershell `"`"iex `"`"`"`"&{`$(irm $IRMURL -TimeoutSec 30)} '$BTPATH'`"`"`"`"`"`""
 	$VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN_$BTNAME.vbs
