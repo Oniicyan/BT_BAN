@@ -20,8 +20,8 @@ jobs:
           # 请确认页面 https://gitee.com/profile/emails
           # 如勾选了 “禁止命令推送暴露个人邮箱”，请使用 @user.noreply.gitee.com 的提交邮箱
           # 如要公开邮箱，请取消勾选
-          git config --global user.name "泥浆"
-          git config --global user.email "8310999+oniicyan@user.noreply.gitee.com"
+          git config --global user.name 泥浆
+          git config --global user.email 8310999+oniicyan@user.noreply.gitee.com
 
           # 测试密钥
           ssh -T git@gitee.com
@@ -30,13 +30,13 @@ jobs:
           cd ~
     
           # SSH 链接可以 Gitee 项目 “克隆/下载” 按钮中确认
-          git clone "git@gitee.com:oniicyan/bt_ban.git"
+          git clone git@gitee.com:oniicyan/bt_ban.git
     
           # 路径请从链接中确认，可能与仓库名称不同
-          # cd "bt_ban"
+          cd "bt_ban"
     
           # 修改文件
-          cp -r $PWD/. ~/bt_ban
+          cp -r $PWD/* $(pwd)
     
           git add .
           git commit -m "Update from Github Action" || exit 0
