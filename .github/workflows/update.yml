@@ -1,6 +1,7 @@
 on:
  schedule:
  - cron: 55 * * * *
+ workflow_dispatch:
 jobs:
  IPLIST:
    runs-on: ubuntu-latest
