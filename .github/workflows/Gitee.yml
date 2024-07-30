@@ -9,9 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - env:
-          DIR: ${GITHUB_ACTION_PATH}
-        run: |
+      - run: |
           mkdir ~/.ssh
           cat > ~/.ssh/id_rsa <<EOF
           ${{secrets.GITEE}}
@@ -22,9 +20,6 @@ jobs:
           ssh-keyscan gitee.com >> ~/.ssh/known_hosts
           ssh -T git@gitee.com
 
-          # 请确认页面 https://gitee.com/profile/emails
-          # 如勾选了 “禁止命令推送暴露个人邮箱”，请使用 @user.noreply.gitee.com 的提交邮箱
-          # 如要公开邮箱，请取消勾选
           git config --global user.name ${GITHUB_ACTOR}
           git config --global user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
 
@@ -37,9 +32,3 @@ jobs:
           git add .
           git commit -m "Update from Github Action"
           git push
-
-          # git remote add gitee git@gitee.com:oniicyan/bt_ban.git
-          # git pull --rabase gitee master
-          # git add ./bt_ban
-          # git commit -m "Update from Github Action" || true
-          # git push -f gitee master
