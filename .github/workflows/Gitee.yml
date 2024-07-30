@@ -33,8 +33,8 @@ jobs:
           cd "bt_ban"
     
           # 修改文件
-          # cp ${GITHUB_ACTION_PATH}/* $(pwd)
+          cp ${GITHUB_ACTION_PATH}/* $(pwd)
     
-          # git add .
-          # git commit -m "Update from Github Action" || exit 0
+          git add .
+          git commit -m "Update from Github Action" || exit 0
           # git push
