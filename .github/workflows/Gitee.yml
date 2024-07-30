@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        run: |
+      - run: |
           mkdir ~/.ssh
           cat > ~/.ssh/id_rsa <<EOF
           ${{secrets.GITEE}}
@@ -25,7 +25,6 @@ jobs:
           # 如要公开邮箱，请取消勾选
           git config --local user.name ${GITHUB_ACTOR}
           git config --local user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
-          git config pull.rebase true
 
           cd ~
           git clone git@gitee.com:oniicyan/bt_ban.git
