@@ -14,7 +14,7 @@ jobs:
         run: |
           mkdir ~/.ssh
           cat > ~/.ssh/id_rsa <<EOF
-          ${secrets.GITEE}
+          ${{secrets.GITEE}}
           EOF
           chmod 700 ~/.ssh/id_rsa
           eval $(ssh-agent -s)
@@ -31,9 +31,10 @@ jobs:
 
           cd ~
           git clone git@gitee.com:oniicyan/bt_ban.git
+          cd bt_ban
           git remote -v
 
-          # cp $REPODIR/*.* ./bt_ban
+          cp $REPODIR/*.* ./
 
           # git remote add gitee git@gitee.com:oniicyan/bt_ban.git
           # git pull --rabase gitee master
