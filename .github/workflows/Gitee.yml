@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - env:
-          PWD: ${GITHUB_ACTION_PATH}
+          REPO: ${GITHUB_ACTION_PATH}
         run: |
           mkdir ~/.ssh
           cat > ~/.ssh/id_rsa <<EOF
@@ -20,8 +20,6 @@ jobs:
           eval $(ssh-agent -s)
           ssh-add ~/.ssh/id_rsa
           ssh-keyscan gitee.com >> ~/.ssh/known_hosts
-
-          # 测试密钥
           ssh -T git@gitee.com
 
           # 请确认页面 https://gitee.com/profile/emails
@@ -35,10 +33,10 @@ jobs:
           git clone git@gitee.com:oniicyan/bt_ban.git
           git remote -v
 
-          # cp ${PWD}/*.* ./bt_ban
+          # cp $REPO/*.* ./bt_ban
 
           # git remote add gitee git@gitee.com:oniicyan/bt_ban.git
           # git pull --rabase gitee master
-          # git add ${PWD}/*.*
+          # git add ./bt_ban
           # git commit -m "Update from Github Action" || true
           # git push -f gitee master
