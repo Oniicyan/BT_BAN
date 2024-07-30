@@ -31,9 +31,10 @@ jobs:
     
           # 路径请从链接中确认，可能与仓库名称不同
           # cd "bt_ban"
-          
-          ls ${GITHUB_ACTION_PATH}
-          ls "${GITHUB_ACTION_PATH}"/*.*
+
+          PWD=${GITHUB_ACTION_PATH}
+          ls $PWD
+          ls $PWD/*.*
     
           # 修改文件
           # cp ${GITHUB_ACTION_PATH}/* ./bt_ban
