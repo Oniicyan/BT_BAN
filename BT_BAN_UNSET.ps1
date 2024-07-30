@@ -24,7 +24,7 @@ if ($RULELIST) {
 }
 
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
-$DYKWNAME = (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID).Keyword
+$DYKWNAME = (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore).Keyword
 if ($DYKWNAME) {
 	echo ""
 	echo "  找到并删除以下动态关键字"
