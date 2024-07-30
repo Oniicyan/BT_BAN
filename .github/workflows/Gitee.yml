@@ -24,6 +24,7 @@ jobs:
           # 如要公开邮箱，请取消勾选
           git config --global user.name 泥浆
           git config --global user.email 8310999+oniicyan@user.noreply.gitee.com
+          git config pull.ff only
 
           # 测试密钥
           ssh -T git@gitee.com
