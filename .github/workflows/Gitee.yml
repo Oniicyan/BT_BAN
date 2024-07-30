@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: |
+      - env:
+          PWD: ${GITHUB_ACTION_PATH}
+        run: |
           mkdir ~/.ssh
           cat > ~/.ssh/id_rsa <<EOF
           ${{secrets.GITEE}}
@@ -34,7 +36,7 @@ jobs:
 
           PWD=${GITHUB_ACTION_PATH}
           ls $PWD
-          ls ${PWD}/*.*
+          ls $PWD/*.* || ls ${PWD}*.*
     
           # 修改文件
           # cp ${GITHUB_ACTION_PATH}/* ./bt_ban
