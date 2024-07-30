@@ -26,6 +26,18 @@ if (($RULES | Out-String -Stream | Select-String -SimpleMatch $DYKWID).Count -ne
 
 if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 	Update-NetFirewallDynamicKeywordAddress -Id $DYKWID -Addresses $IPLIST | Out-Null
+	$DDTIME = 'short'
+	$DDTEXT = 'BT_BAN_IPLIST 已更新'
+	$SILENT = 'true'
 } else {
 	New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST | Out-Null
+	$DDTIME = 'long'
+	$DDTEXT = 'BT_BAN_IPLIST 已启用'
+	$SILENT = 'false'
 }
+
+$XML = '<toast duration="DDTIME"><visual><binding template="ToastText01"><text id="1">DDTEXT</text></binding></visual><audio silent="BOOL"/></toast>'
+$XmlDocument = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]::New()
+$XmlDocument.loadXml($XML.Replace("DDTIME","$DDTIME").Replace("DDTEXT","$DDTEXT").Replace("BOOL","$SILENT"))
+$AppId = '{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe'
+[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
