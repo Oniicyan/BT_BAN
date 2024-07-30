@@ -1,6 +1,18 @@
 $IRMURL = 'https://bt-ban.pages.dev/BT_BAN.ps1'
 
-If ((Fltmc).Count -eq 3) {
+$TESTGUID = '{62809d89-9d3b-486b-808f-8c893c1c3378}'
+Remove-NetFirewallDynamicKeywordAddress -Id $TESTGUID -ErrorAction Ignore
+if (New-NetFirewallDynamicKeywordAddress -Id $TESTGUID -Keyword "BT_BAN_TEST" -Address 1.2.3.4 -ErrorAction Ignore) {
+	Remove-NetFirewallDynamicKeywordAddress -Id $TESTGUID
+} else {
+	echo ""
+	echo "  Windows 版本不支持动态关键字，请升级操作系统"
+	echo ""
+	pause
+	exit
+}
+
+if ((Fltmc).Count -eq 3) {
 	echo ""
 	echo "  请以管理员权限重新执行"
 	echo ""
@@ -57,7 +69,7 @@ Unregister-ScheduledTask BT_BAN_$BTNAME -Confirm:$false -ErrorAction Ignore
 $PRINCIPAL = New-ScheduledTaskPrincipal -UserId SYSTEM -RunLevel Highest
 $SETTINGS = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries
 $TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval  (New-TimeSpan -Hours 8)
-$ACTION = New-ScheduledTaskAction -Execute powershell -Argument "`"iex `"`"&{`$(irm $IRMURL -TimeoutSec 30)} '$BTPATH'`"`"`""
+$ACTION = New-ScheduledTaskAction -Execute powershell -Argument "`"iex `"`"&{`$(irm $IRMURL -TimeoutSec 15)} '$BTPATH'`"`"`""
 $TASK = New-ScheduledTask -Principal $PRINCIPAL -Settings $SETTINGS -Trigger $TRIGGER -Action $ACTION
 
 Register-ScheduledTask BT_BAN_$BTNAME -InputObject $TASK | Out-Null
