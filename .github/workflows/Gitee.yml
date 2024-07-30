@@ -37,6 +37,7 @@ jobs:
     
           # 修改文件
           pwd
+          echo $PWD
           ls
           # cp -r $PWD/BT_BAN/* $(pwd)
     
