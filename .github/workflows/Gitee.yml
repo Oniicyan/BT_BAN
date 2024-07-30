@@ -39,4 +39,5 @@ jobs:
     
           git add ./bt_ban
           git commit -m "Update from Github Action" || exit 0
+          git remote -v
           # git push
