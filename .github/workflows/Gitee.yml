@@ -10,11 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - env:
-          REPO: ${GITHUB_ACTION_PATH}
+          REPODIR: ${GITHUB_ACTION_PATH}
         run: |
           mkdir ~/.ssh
           cat > ~/.ssh/id_rsa <<EOF
-          ${{secrets.GITEE}}
+          ${secrets.GITEE}
           EOF
           chmod 700 ~/.ssh/id_rsa
           eval $(ssh-agent -s)
@@ -33,7 +33,7 @@ jobs:
           git clone git@gitee.com:oniicyan/bt_ban.git
           git remote -v
 
-          # cp $REPO/*.* ./bt_ban
+          # cp $REPODIR/*.* ./bt_ban
 
           # git remote add gitee git@gitee.com:oniicyan/bt_ban.git
           # git pull --rabase gitee master
