@@ -69,7 +69,7 @@ Unregister-ScheduledTask BT_BAN_$BTNAME -Confirm:$false -ErrorAction Ignore
 $PRINCIPAL = New-ScheduledTaskPrincipal -UserId SYSTEM -RunLevel Highest
 $SETTINGS = New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -AllowStartIfOnBatteries
 $TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval  (New-TimeSpan -Hours 8)
-$ACTION = New-ScheduledTaskAction -Execute powershell -Argument "`"iex `"`"&{`$(irm $IRMURL -TimeoutSec 15)} '$BTPATH'`"`"`""
+$ACTION = New-ScheduledTaskAction -Execute powershell -Argument "`"iex `"`"&{`$(irm $IRMURL -TimeoutSec 30)} '$BTPATH'`"`"`""
 $TASK = New-ScheduledTask -Principal $PRINCIPAL -Settings $SETTINGS -Trigger $TRIGGER -Action $ACTION
 
 Register-ScheduledTask BT_BAN_$BTNAME -InputObject $TASK | Out-Null
