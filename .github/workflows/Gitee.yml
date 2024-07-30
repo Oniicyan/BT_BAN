@@ -18,29 +18,28 @@ jobs:
           EOF
           chmod 700 ~/.ssh/id_rsa
           ssh-keyscan gitee.com >> ~/.ssh/known_hosts
-    
-          # 请确认页面 https://gitee.com/profile/emails
-          # 如勾选了 “禁止命令推送暴露个人邮箱”，请使用 @user.noreply.gitee.com 的提交邮箱
-          # 如要公开邮箱，请取消勾选
-          git config --global user.name 泥浆
-          git config --global user.email 8310999+oniicyan@user.noreply.gitee.com
-          git config pull.rebase true
 
           # 测试密钥
           ssh -T git@gitee.com
-    
+
+          # 请确认页面 https://gitee.com/profile/emails
+          # 如勾选了 “禁止命令推送暴露个人邮箱”，请使用 @user.noreply.gitee.com 的提交邮箱
+          # 如要公开邮箱，请取消勾选
+          git config --local user.name ${GITHUB_ACTOR}
+          git config --local user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
+          git config pull.rebase true
+
           # SSH 链接可以 Gitee 项目 “克隆/下载” 按钮中确认
           # git clone git@gitee.com:oniicyan/bt_ban.git
-    
+
           # 路径请从链接中确认，可能与仓库名称不同
           # cd "bt_ban"
-    
+
           # 修改文件
           # cp ${PWD}/*.* ./bt_ban
 
           git remote add gitee git@gitee.com:oniicyan/bt_ban.git
-          git rebase
-          git pull gitee master
+          git pull --rebase gitee master
           git add ${PWD}/*.*
           git commit -m "Update from Github Action" || true
           git push gitee master
