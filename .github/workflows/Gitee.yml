@@ -12,7 +12,7 @@ jobs:
       - run: |
           mkdir ~/.ssh
           cat > ~/.ssh/id_rsa <<EOF
-          ${{ secrets.GITEE }}
+          ${{secrets.GITEE}}
           EOF
           chmod 700 ~/.ssh/id_rsa
           ssh-keyscan gitee.com >> ~/.ssh/known_hosts
@@ -26,8 +26,11 @@ jobs:
           # 测试密钥
           ssh -T git@gitee.com
 
-          PWD=$(pwd)
+          pwd
+          ls
           cd ~
+          ls
+          ls ${{GITHUB_ACTION_PATH}}
     
           # SSH 链接可以 Gitee 项目 “克隆/下载” 按钮中确认
           git clone git@gitee.com:oniicyan/bt_ban.git
@@ -36,9 +39,6 @@ jobs:
           # cd "bt_ban"
     
           # 修改文件
-          pwd
-          echo $PWD
-          ls
           # cp -r $PWD/BT_BAN/* $(pwd)
     
           # git add .
