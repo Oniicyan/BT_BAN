@@ -28,6 +28,7 @@ jobs:
           git config --local user.name ${GITHUB_ACTOR}
           git config --local user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
           git config pull.rebase true
+          git config advice.mergeConflict false
 
           # SSH 链接可以 Gitee 项目 “克隆/下载” 按钮中确认
           # git clone git@gitee.com:oniicyan/bt_ban.git
