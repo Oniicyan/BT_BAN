@@ -28,6 +28,8 @@ jobs:
           git config --local user.name ${GITHUB_ACTOR}
           git config --local user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
 
+          DIR=$PWD
+
           cd ~
           # git clone git@gitee.com:oniicyan/bt_ban.git
           # cd bt_ban
@@ -37,7 +39,8 @@ jobs:
           # cp ${REPODIR}/*.* ./
           ls $PWD
           ls $pwd
-          ls $DIR2/*.*
+          ls $DIR
+          ls $DIR/*.*
           ls $DIR3/*.*
 
           # git add .
