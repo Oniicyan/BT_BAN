@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - env:
-          REPODIR: ${{github.action_path}}
         run: |
           mkdir ~/.ssh
           cat > ~/.ssh/id_rsa <<EOF
@@ -34,7 +32,7 @@ jobs:
           cd bt_ban
 
           # cp ${REPODIR}/*.* ./
-          ls $REPODIR/*.*
+          ls ${{github.action_path}}/*.*
 
           # git add .
           # git commit -m "Update from Github Action"
