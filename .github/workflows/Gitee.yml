@@ -8,6 +8,7 @@ jobs:
   Gitee:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - env:
           PWD: ${GITHUB_ACTION_PATH}
         run: |
