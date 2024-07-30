@@ -4,7 +4,7 @@ $BTPATH = $args[0]
 $BTNAME = [System.IO.Path]::GetFileName($BTPATH)
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
 
-Invoke-WebRequest -OutFile "$env:temp\BT_BAN_IPLIST.zip" $IRMURL -TimeoutSec 15
+Invoke-WebRequest -OutFile "$env:temp\BT_BAN_IPLIST.zip" $IRMURL -TimeoutSec 30
 Expand-Archive -Force -Path $env:temp\BT_BAN_IPLIST.zip -DestinationPath $env:temp\BT_BAN
 $IPLIST = Get-Content $env:temp\BT_BAN\IPLIST.txt
 
