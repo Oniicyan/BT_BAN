@@ -1,3 +1,11 @@
+if ((Fltmc).Count -eq 3) {
+	echo ""
+	echo "  请以管理员权限重新执行"
+	echo ""
+	pause
+	exit
+}
+
 $TASKLIST = (Get-ScheduledTask BT_BAN_*).TaskName
 if ($TASKLIST) {
 	echo ""
