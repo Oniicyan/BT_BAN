@@ -32,9 +32,11 @@ jobs:
           cd ~
           git clone git@gitee.com:oniicyan/bt_ban.git
           cd bt_ban
-          git remote -v
 
-          cp $REPODIR/*.* ./
+          cp ${REPODIR}/*.* ./
+
+          git add .
+          git push
 
           # git remote add gitee git@gitee.com:oniicyan/bt_ban.git
           # git pull --rabase gitee master
