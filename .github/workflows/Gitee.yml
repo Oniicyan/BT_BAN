@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - env:
-          REPODIR: ${GITHUB_ACTION_PATH}
+          REPODIR: ${{github.action_path}}
         run: |
           mkdir ~/.ssh
           cat > ~/.ssh/id_rsa <<EOF
@@ -33,11 +33,12 @@ jobs:
           git clone git@gitee.com:oniicyan/bt_ban.git
           cd bt_ban
 
-          cp ${REPODIR}/*.* ./
+          # cp ${REPODIR}/*.* ./
+          ls $REPODIR/*.*
 
-          git add .
-          git commit -m "Update from Github Action"
-          git push
+          # git add .
+          # git commit -m "Update from Github Action"
+          # git push
 
           # git remote add gitee git@gitee.com:oniicyan/bt_ban.git
           # git pull --rabase gitee master
