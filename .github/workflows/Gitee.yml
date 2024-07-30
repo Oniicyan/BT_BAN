@@ -16,7 +16,7 @@ jobs:
           ${{ secrets.GITEE }}
           -----END OPENSSH PRIVATE KEY-----
           EOF
-          chmod 700 ~/.ssh/id_rsa
+          chmod 400 ~/.ssh/id_rsa
           ssh-keyscan gitee.com >> ~/.ssh/known_hosts
     
           # 请确认页面 https://gitee.com/profile/emails
