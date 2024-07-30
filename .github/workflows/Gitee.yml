@@ -33,12 +33,10 @@ jobs:
     
           # 路径请从链接中确认，可能与仓库名称不同
           # cd "bt_ban"
-
-          ls ${PWD}/*.*
     
           # 修改文件
-          # cp ${GITHUB_ACTION_PATH}/* ./bt_ban
+          cp ${PWD}/*.* ./bt_ban
     
-          # git add .
-          # git commit -m "Update from Github Action" || exit 0
+          git add ./bt_ban
+          git commit -m "Update from Github Action" || exit 0
           # git push
