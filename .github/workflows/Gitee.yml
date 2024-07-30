@@ -24,7 +24,6 @@ jobs:
           # 如要公开邮箱，请取消勾选
           git config --global user.name 泥浆
           git config --global user.email 8310999+oniicyan@user.noreply.gitee.com
-          git config pull.ff only
 
           # 测试密钥
           ssh -T git@gitee.com
@@ -39,7 +38,8 @@ jobs:
           # cp ${PWD}/*.* ./bt_ban
 
           git remote add gitee git@gitee.com:oniicyan/bt_ban.git
-          git pull gitee master
+          git rebase
+          # git pull gitee master
           git add ${PWD}/*.*
           git commit -m "Update from Github Action" || true
           git push gitee master
