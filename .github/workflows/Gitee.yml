@@ -25,19 +25,15 @@ jobs:
 
           # 测试密钥
           ssh -T git@gitee.com
-
-          PWD=${GITHUB_ACTION_PATH}
     
           # SSH 链接可以 Gitee 项目 “克隆/下载” 按钮中确认
           git clone git@gitee.com:oniicyan/bt_ban.git
     
           # 路径请从链接中确认，可能与仓库名称不同
           # cd "bt_ban"
-
-          echo $PWD 1>&2
-          echo ${GITHUB_ACTION_PATH} 1>&2
-          ls $PWD
+          
           ls ${GITHUB_ACTION_PATH}
+          ls ${GITHUB_ACTION_PATH}/*.*
     
           # 修改文件
           cp ${GITHUB_ACTION_PATH}/* ./bt_ban
