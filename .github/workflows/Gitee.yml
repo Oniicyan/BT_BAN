@@ -30,7 +30,7 @@ jobs:
           ls
           cd ~
           ls
-          ls ${{GITHUB_ACTION_PATH}}
+          ls ${GITHUB_ACTION_PATH}
     
           # SSH 链接可以 Gitee 项目 “克隆/下载” 按钮中确认
           git clone git@gitee.com:oniicyan/bt_ban.git
