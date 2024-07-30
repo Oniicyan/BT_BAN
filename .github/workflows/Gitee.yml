@@ -36,6 +36,7 @@ jobs:
           cd "bt_ban"
     
           # 修改文件
+          rm -rf $(pwd)
           cp -rf $PWD/BT_BAN* $(pwd)
     
           git add .
