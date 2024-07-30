@@ -1,3 +1,4 @@
+name: Update IPLIST
 on:
  schedule:
  - cron: 55 * * * *
