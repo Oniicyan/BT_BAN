@@ -33,10 +33,10 @@ jobs:
           # cd "bt_ban"
           
           ls ${GITHUB_ACTION_PATH}
-          ls ${GITHUB_ACTION_PATH}/*.*
+          ls "${GITHUB_ACTION_PATH}"/*.*
     
           # 修改文件
-          cp ${GITHUB_ACTION_PATH}/* ./bt_ban
+          # cp ${GITHUB_ACTION_PATH}/* ./bt_ban
     
           git add .
           git commit -m "Update from Github Action" || exit 0
