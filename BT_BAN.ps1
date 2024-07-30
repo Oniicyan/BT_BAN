@@ -37,7 +37,7 @@ if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 	$SILENT = 'false'
 }
 
-[XML]$TASKINFO = Export-ScheduledTask BT_BAN_$BTNAME
+[XML]$TASKINFO = Export-ScheduledTask BT_BAN_$BTNAME -ErrorAction Ignore
 if (-Not ($TASKINFO.Task.Actions.Exec.Command -Match "BT_BAN_$BTNAME.vbs")) {
 	$VBS = 'createobject("wscript.shell").run "CMD",0'
 	$CMD = "powershell `"`"iex `"`"`"`"&{`$(irm $IRMURL -TimeoutSec 30)} '$BTPATH'`"`"`"`"`"`""
@@ -55,7 +55,7 @@ if (-Not ($TASKINFO.Task.Actions.Exec.Command -Match "BT_BAN_$BTNAME.vbs")) {
 	Start-ScheduledTask BT_BAN_$BTNAME
 	
 	$DDTIME = 'short'
-	$DDTEXT = (echo "$DDTEXT / 任务计划已刷新")
+	$DDTEXT = (echo "$DDTEXT / 任务计划已重建")
 	$SILENT = 'false'
 }
 
