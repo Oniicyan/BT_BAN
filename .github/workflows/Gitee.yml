@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: |
+      - env:
+          DIR: $GITHUB_ACTION_PATH
+        run: |
           mkdir ~/.ssh
           cat > ~/.ssh/id_rsa <<EOF
           ${{secrets.GITEE}}
@@ -32,9 +34,12 @@ jobs:
 
           DIR1=${{github.action_path}}
           DIR2=$GITHUB_ACTION_PATH
+          DIR3=${GITHUB_ACTION_PATH}
           # cp ${REPODIR}/*.* ./
+          ls $DIR/*.*
           ls $DIR1/*.*
           ls $DIR2/*.*
+          ls $DIR3/*.*
 
           # git add .
           # git commit -m "Update from Github Action"
