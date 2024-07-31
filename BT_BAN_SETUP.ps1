@@ -64,16 +64,12 @@ if (Get-ScheduledTask BT_BAN_$BTNAME -ErrorAction Ignore) {
 	pause
 }
 
-$VBS = 'createobject("wscript.shell").run "CMD",0'
-$CMD = "powershell `"`"iex `"`"`"`"&{`$(irm $IRMURL -TimeoutSec 30)} '$BTPATH'`"`"`"`"`"`""
-$VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN_$BTNAME.vbs
-
 Unregister-ScheduledTask BT_BAN_$BTNAME -Confirm:$false -ErrorAction Ignore
 
-$PRINCIPAL = New-ScheduledTaskPrincipal -UserId (whoami) -RunLevel Highest
-$SETTINGS = New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -StartWhenAvailable -AllowStartIfOnBatteries
+$PRINCIPAL = New-ScheduledTaskPrincipal -UserId SYSTEM -RunLevel Highest
+$SETTINGS = New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -AllowStartIfOnBatteries
 $TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval  (New-TimeSpan -Hours 8)
-$ACTION = New-ScheduledTaskAction -Execute $env:USERPROFILE\BT_BAN_$BTNAME.vbs
+$ACTION = New-ScheduledTaskAction -Execute powershell -Argument "`"iex `"`"&{`$(irm $IRMURL -TimeoutSec 30)} '$BTPATH'`"`"`""
 $TASK = New-ScheduledTask -Principal $PRINCIPAL -Settings $SETTINGS -Trigger $TRIGGER -Action $ACTION
 
 Register-ScheduledTask BT_BAN_$BTNAME -InputObject $TASK | Out-Null
