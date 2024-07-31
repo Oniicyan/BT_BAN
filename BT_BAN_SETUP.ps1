@@ -84,13 +84,11 @@ if (($RULELS.RemoteDynamicKeywordAddresses -Match $DYKWID).Count -ne 2) {
 
 cls
 echo ""
-echo "  正在下载脚本，请最多等待 30 秒"
+echo "  正在下载并运行脚本，可能需要等待 1 分钟"
 echo ""
 
-New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
-
 Try {
-	Invoke-WebRequest -OutFile $env:USERPROFILE\BT_BAN\BT_BAN.ps1 $PS1URL -TimeoutSec 30
+	iex (irm $PS1URL -TimeoutSec 30)
 } Catch {
 	echo "  脚本下载失败，请重新执行启用命令"
 	echo ""
@@ -98,11 +96,6 @@ Try {
 	echo ""
 	return
 }
-
-echo "  脚本下载成功，正在执行 ..."
-echo ""
-
-iex $env:USERPROFILE\BT_BAN\BT_BAN.ps1
 
 echo "  已添加任务计划并执行，每 8 小时更新"
 echo ""
