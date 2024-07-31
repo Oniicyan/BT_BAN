@@ -2,17 +2,18 @@ $PS1URL = 'https://bt-ban.pages.dev/BT_BAN.ps1'
 $ZIPURL = 'https://bt-ban.pages.dev/IPLIST.zip'
 
 $TOAST ={
-	$XML = '<toast DDPARM><visual><binding template="ToastText01"><text id="1">DDTEXT</text></binding></visual><audio silent="BOOL"/></toast>'
+	$XML = '<toast DDPARM><visual><binding template="ToastText02"><text id="1">BT_BAN_IPLIST</text><text id="2">DDTEXT</text></binding></visual><audio silent="BOOL"/><actions>MYLINK</actions></toast>'
 	$XmlDocument = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]::New()
-	$XmlDocument.loadXml($XML.Replace("DDPARM","$DDPARM").Replace("DDTEXT","$DDTEXT").Replace("BOOL","$SILENT"))
+	$XmlDocument.loadXml($XML.Replace("DDPARM","$DDPARM").Replace("DDTEXT","$DDTEXT").Replace("BOOL","$SILENT").Replace("MYLINK","$MYLINK"))
 	$AppId = '{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe'
 	[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
 }
 
 if (! (Get-NetFirewallRule -DisplayName "BT_BAN_*")) {
 	$DDPARM = 'scenario="incomingCall"'
-	$DDTEXT = "过滤规则丢失，请重新执行`niex (irm bt-ban.pages.dev)"
+	$DDTEXT = "过滤规则丢失，请重新执行配置命令`n> iex (irm bt-ban.pages.dev)"
 	$SILENT = 'false'
+	$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN" />'
 
 	&$TOAST
 	exit 1
@@ -36,12 +37,12 @@ $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
 if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 	Update-NetFirewallDynamicKeywordAddress -Id $DYKWID -Addresses $IPLIST | Out-Null
 	$DDPARM = ''
-	$DDTEXT = 'BT_BAN_IPLIST 已更新'
+	$DDTEXT = '动态关键字已更新'
 	$SILENT = 'true'
 } else {
 	New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST | Out-Null
 	$DDPARM = 'duration="long"'
-	$DDTEXT = 'BT_BAN_IPLIST 已启用'
+	$DDTEXT = '动态关键字已启用'
 	$SILENT = 'false'
 }
 
@@ -61,7 +62,7 @@ $SET_UPDATE ={
 	Register-ScheduledTask BT_BAN_UPDATE -InputObject $TASK | Out-Null
 
 	$DDPARM = 'duration="long"'
-	$DDTEXT = (echo "$DDTEXT / 任务计划已重建")
+	$DDTEXT = "$DDTEXT`n任务计划已重建"
 	$SILENT = 'false'
 
 	# 删除旧版本文件，此部分保留一段时间
