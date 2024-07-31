@@ -52,7 +52,7 @@ if ($TASKINFO) {
 
 if ((Fltmc).Count -eq 3) {
 	$SILENT = 'false'
-	$DDTEXT = "权限不足（请勿直接打开 VBS 文件）"
+	$DDTEXT = "权限不足`n请勿直接打开 VBS 文件"
 	$DDPARM = ''
 	$MYLINK = ''
 	&$TOAST
@@ -82,7 +82,14 @@ while ($ZIP -lt 5) {
 	} catch {
 		sleep 60
 		$ZIP++
-		if ($ZIP -ge 5) {exit 1}
+		if ($ZIP -ge 5) {
+			$SILENT = 'true'
+			$DDTEXT = "IP 列表下载失败`n通常是服务器问题"
+			$DDPARM = ''
+			$MYLINK = ''
+			&$TOAST
+			exit 1
+		}
 	}
 }
 Expand-Archive -Force -Path $env:USERPROFILE\BT_BAN\IPLIST.zip -DestinationPath $env:USERPROFILE\BT_BAN
