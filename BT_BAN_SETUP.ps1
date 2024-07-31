@@ -87,7 +87,7 @@ echo ""
 try {
 	iex (irm $PS1URL -TimeoutSec 30)
 } catch {
-	echo "  脚本下载失败，请重新执行启用命令"
+	echo "  脚本下载或执行失败，请重新执行启用命令"
 	echo ""
 	echo "  iex (irm bt-ban.pages.dev)"
 	echo ""
