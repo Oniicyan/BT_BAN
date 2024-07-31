@@ -60,7 +60,7 @@ if ((Fltmc).Count -eq 3) {
 	exit 1
 }
 
-if (!(Get-NetFirewallRule -DisplayName "BT_BAN_*")) {
+if ((Get-NetFirewallRule -DisplayName "BT_BAN_*").Count -lt 2) {
 	$SILENT = 'false'
 	$DDTEXT = "过滤规则丢失，请重新执行启用命令`n> iex (irm bt-ban.pages.dev)"
 	$DDPARM = 'scenario="incomingCall"'
