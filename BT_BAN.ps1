@@ -13,7 +13,7 @@ if (! (Get-NetFirewallRule -DisplayName "BT_BAN_*")) {
 	$DDPARM = 'scenario="incomingCall"'
 	$DDTEXT = "过滤规则丢失，请重新执行配置命令`n> iex (irm bt-ban.pages.dev)"
 	$SILENT = 'false'
-	$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN" />'
+	$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN"/>'
 
 	&$TOAST
 	exit 1
@@ -38,12 +38,12 @@ if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 	Update-NetFirewallDynamicKeywordAddress -Id $DYKWID -Addresses $IPLIST | Out-Null
 	$DDPARM = ''
 	$DDTEXT = '动态关键字已更新'
-	$SILENT = 'true'
+	$SILENT = "true"
 } else {
 	New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST | Out-Null
 	$DDPARM = 'duration="long"'
 	$DDTEXT = '动态关键字已启用'
-	$SILENT = 'false'
+	$SILENT = "false"
 }
 
 $SET_UPDATE ={
