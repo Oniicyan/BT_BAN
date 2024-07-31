@@ -53,7 +53,7 @@ if ($TASKINFO) {
 
 if ((Fltmc).Count -eq 3) {
 	$SILENT = 'false'
-	$DDTEXT = "权限不足`n请勿直接打开 VBS 文件"
+	$DDTEXT = "权限不足`n请以正确方式执行脚本"
 	$DDPARM = ''
 	$MYLINK = ''
 	&$TOAST
