@@ -43,7 +43,7 @@ $TASKINFO = Get-ScheduledTask BT_BAN_UPDATE -ErrorAction Ignore
 if ($TASKINFO) {
 	if ($TASKINFO.Principal.RunLevel -Notmatch 'Highest') {
 		$SILENT = 'false'
-		$DDTEXT = "任务计划未配置最高权限`n若提示权限不足，请重新执行配置命令`n> iex (irm bt-ban.pages.dev)"
+		$DDTEXT = "当前任务计划未配置最高权限`n若提示权限不足，请重新执行启用命令`n> iex (irm bt-ban.pages.dev)"
 		$DDPARM = 'scenario="incomingCall"'
 		$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN"/>'
 		&$TOAST
