@@ -1,7 +1,7 @@
 name: Update IPLIST
 on:
  schedule:
- - cron: 55 * * * *
+ - cron: 50 * * * *
  workflow_dispatch:
 jobs:
  IPLIST:
