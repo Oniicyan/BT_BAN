@@ -41,7 +41,7 @@ $SET_UPDATE = {
 $TASKINFO = Get-ScheduledTask BT_BAN_UPDATE
 
 if ($TASKINFO) {
-	if ($TASKINFO.Principal.RunLevel -Notmatch 'Highest')) {
+	if ($TASKINFO.Principal.RunLevel -Notmatch 'Highest') {
 		$SILENT = 'false'
 		$DDTEXT = "任务计划未配置最高权限`n若提示权限不足，请重新执行配置命令`n> iex (irm bt-ban.pages.dev)"
 		$DDPARM = 'scenario="incomingCall"'
