@@ -30,18 +30,17 @@ if ($RULELIST) {
 	echo "  没有需要删除的过滤规则"
 }
 
-$SYSTMP = [System.Environment]::GetEnvironmentVariable('TEMP','Machine')
-$FILELIST = (Get-ChildItem -Recurse $SYSTMP\BT_BAN).FullName
+$FILELIST = (Get-Childitem $env:USERPROFILE\BT_BAN -Recurse).FullName
 if ($FILELIST) {
 	echo ""
-	echo "  找到并删除以下临时文件"
+	echo "  找到并删除以下脚本文件"
 	echo ""
-	echo "  $SYSTMP\BT_BAN"
+	echo "  $env:USERPROFILE\BT_BAN"
 	$FILELIST | ForEach-Object {'  ' + $_}
-	Remove-Item $SYSTMP\BT_BAN -Force -Recurse -ErrorAction Ignore
+	Remove-Item $env:USERPROFILE\BT_BAN -Force -Recurse -ErrorAction Ignore
 } else {
 	echo ""
-	echo "  没有需要删除的临时文件"
+	echo "  没有需要删除的脚本文件"
 }
 
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
@@ -55,6 +54,7 @@ if ($DYKWNAME) {
 } else {
 	echo ""
 	echo "  没有需要删除的动态关键字"
+	echo ""
 	echo "  若首次启用，请等待右下角弹出通知后再清除"
 }
 
