@@ -9,11 +9,19 @@ $TOAST ={
 	[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
 }
 
-if ((Fltmc).Count -eq 3) {
+[XML]$TASKINFO = Export-ScheduledTask BT_BAN_UPDATE -ErrorAction Ignore
+if (! ($TASKINFO.Task.Principals.Principal.RunLevel -Match 'HighestAvailable')) {
 	$DDPARM = 'scenario="incomingCall"'
-	$DDTEXT = "未以管理员权限启动，请重新执行配置命令`n> iex (irm bt-ban.pages.dev)"
+	$DDTEXT = "任务计划未配置最高权限`n若提示权限不足，请重新执行配置命令`n> iex (irm bt-ban.pages.dev)"
 	$SILENT = 'false'
 	$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN"/>'
+	&$TOAST
+}
+
+if ((Fltmc).Count -eq 3) {
+	$DDPARM = ''
+	$DDTEXT = "权限不足（请勿直接运行 VBS 文件）"
+	$SILENT = 'false'
 	&$TOAST
 	exit 1
 }
@@ -80,7 +88,6 @@ $SET_UPDATE ={
 	Remove-Item $SYSUSR -Include BT_BAN* -Recurse -Force -ErrorAction Ignore
 }
 
-[XML]$TASKINFO = Export-ScheduledTask BT_BAN_UPDATE -ErrorAction Ignore
 if (! ($TASKINFO.Task.RegistrationInfo.URI -Match 'BT_BAN_UPDATE')) {&$SET_UPDATE}
 
 &$TOAST
