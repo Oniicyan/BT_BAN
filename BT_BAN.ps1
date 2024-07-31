@@ -38,12 +38,12 @@ if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 	Update-NetFirewallDynamicKeywordAddress -Id $DYKWID -Addresses $IPLIST | Out-Null
 	$DDPARM = ''
 	$DDTEXT = '动态关键字已更新'
-	$SILENT = "true"
+	$SILENT = 'true'
 } else {
 	New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST | Out-Null
 	$DDPARM = 'duration="long"'
 	$DDTEXT = '动态关键字已启用'
-	$SILENT = "false"
+	$SILENT = 'false'
 }
 
 $SET_UPDATE ={
