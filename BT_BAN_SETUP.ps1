@@ -2,7 +2,7 @@ $PS1URL = 'https://bt-ban.pages.dev/BT_BAN.ps1'
 
 if ((Fltmc).Count -eq 3) {
 	echo ""
-	echo "  请以管理员权限重新执行"
+	echo "  请以管理员权限执行"
 	echo ""
 	return
 }
@@ -81,7 +81,7 @@ if (($RULELS.RemoteDynamicKeywordAddresses -Match $DYKWID).Count -ne 2) {
 
 cls
 echo ""
-echo "  正在下载并运行脚本，可能需要等待 30 秒"
+echo "  正在下载并执行脚本，可能需要等待 30 秒左右"
 echo ""
 
 try {
@@ -94,7 +94,9 @@ try {
 	return
 }
 
-echo "  已添加任务计划并执行，每 8 小时更新"
+echo "  成功执行并添加任务计划"
+echo ""
+echo "  每天 0~1 8~9 16~17 时之间更新"
 echo ""
 echo "  启用及更新结果，请留意右下角通知"
 echo ""
