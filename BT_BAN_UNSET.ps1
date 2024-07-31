@@ -54,8 +54,6 @@ if ($DYKWNAME) {
 } else {
 	echo ""
 	echo "  没有需要删除的动态关键字"
-	echo ""
-	echo "  若首次启用，请等待右下角弹出通知后再清除"
 }
 
 echo ""
