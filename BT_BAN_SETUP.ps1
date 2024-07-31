@@ -4,8 +4,7 @@ if ((Fltmc).Count -eq 3) {
 	echo ""
 	echo "  请以管理员权限重新执行"
 	echo ""
-	pause
-	exit
+	return
 }
 
 $TESTGUID = '{62809d89-9d3b-486b-808f-8c893c1c3378}'
@@ -16,8 +15,7 @@ if (New-NetFirewallDynamicKeywordAddress -Id $TESTGUID -Keyword "BT_BAN_TEST" -A
 	echo ""
 	echo "  Windows 版本不支持动态关键字，请升级操作系统"
 	echo ""
-	pause
-	exit
+	return
 }
 
 # 禁用 IE 引擎的初始化检测，否则可能会影响 Invoke-WebRequest
@@ -46,8 +44,7 @@ if (!$BTINFO.FileName) {
 	echo "  未选择文件"
 	echo "  请重新执行脚本，并正确选择 BT 应用程序"
 	echo ""
-	pause
-	exit
+	return
 }
 
 $BTPATH = $BTINFO.FileName
@@ -84,12 +81,12 @@ if (($RULELS.RemoteDynamicKeywordAddresses -Match $DYKWID).Count -ne 2) {
 
 cls
 echo ""
-echo "  正在下载并运行脚本，可能需要等待 1 分钟"
+echo "  正在下载并运行脚本，可能需要等待 30 秒"
 echo ""
 
-Try {
+try {
 	iex (irm $PS1URL -TimeoutSec 30)
-} Catch {
+} catch {
 	echo "  脚本下载失败，请重新执行启用命令"
 	echo ""
 	echo "  iex (irm bt-ban.pages.dev)"
