@@ -1,4 +1,12 @@
-$IRMURL = 'https://bt-ban.pages.dev/BT_BAN.ps1'
+$PS1URL = 'https://bt-ban.pages.dev/BT_BAN.ps1'
+
+if ((Fltmc).Count -eq 3) {
+	echo ""
+	echo "  请以管理员权限重新执行"
+	echo ""
+	pause
+	exit
+}
 
 $TESTGUID = '{62809d89-9d3b-486b-808f-8c893c1c3378}'
 Remove-NetFirewallDynamicKeywordAddress -Id $TESTGUID -ErrorAction Ignore
@@ -12,14 +20,7 @@ if (New-NetFirewallDynamicKeywordAddress -Id $TESTGUID -Keyword "BT_BAN_TEST" -A
 	exit
 }
 
-if ((Fltmc).Count -eq 3) {
-	echo ""
-	echo "  请以管理员权限重新执行"
-	echo ""
-	pause
-	exit
-}
-
+# 禁用 IE 引擎的初始化检测，否则可能会影响 Invoke-WebRequest
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 2
 
 echo ""
@@ -43,7 +44,7 @@ if (!$BTINFO.FileName) {
 	cls
 	echo ""
 	echo "  未选择文件"
-	echo "  请重新执行，并正确选择 BT 应用程序"
+	echo "  请重新执行脚本，并正确选择 BT 应用程序"
 	echo ""
 	pause
 	exit
@@ -52,10 +53,10 @@ if (!$BTINFO.FileName) {
 $BTPATH = $BTINFO.FileName
 $BTNAME = [System.IO.Path]::GetFileName($BTPATH)
 
-if (Get-ScheduledTask BT_BAN_$BTNAME -ErrorAction Ignore) {
+if (Get-NetFirewallRule -DisplayName BT_BAN_$BTNAME -ErrorAction Ignore) {
 	cls
 	echo ""
-	echo "  BT_BAN_$BTNAME 任务计划已存在"
+	echo "  BT_BAN_$BTNAME 过滤规则已存在"
 	echo ""
 	echo "  如需要同名客户端多开，请修改文件名以区分"
 	echo ""
@@ -64,26 +65,46 @@ if (Get-ScheduledTask BT_BAN_$BTNAME -ErrorAction Ignore) {
 	pause
 }
 
-$VBS = 'createobject("wscript.shell").run "CMD",0'
-$CMD = "powershell `"`"iex `"`"`"`"&{`$(irm $IRMURL -TimeoutSec 30)} '$BTPATH'`"`"`"`"`"`""
-$VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN_$BTNAME.vbs
+$DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
+$RULELS = Get-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -ErrorAction Ignore
 
-Unregister-ScheduledTask BT_BAN_$BTNAME -Confirm:$false -ErrorAction Ignore
+$SET_RULES = {
+	Remove-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -ErrorAction Ignore
+	New-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -Direction Inbound -Action Block -Program $BTPATH -RemoteDynamicKeywordAddresses $DYKWID | Out-Null
+	New-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -Direction Outbound -Action Block -Program $BTPATH -RemoteDynamicKeywordAddresses $DYKWID | Out-Null
+}
 
-$PRINCIPAL = New-ScheduledTaskPrincipal -UserId (whoami) -RunLevel Highest
-$SETTINGS = New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -StartWhenAvailable -AllowStartIfOnBatteries
-$TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval  (New-TimeSpan -Hours 8)
-$ACTION = New-ScheduledTaskAction -Execute $env:USERPROFILE\BT_BAN_$BTNAME.vbs
-$TASK = New-ScheduledTask -Principal $PRINCIPAL -Settings $SETTINGS -Trigger $TRIGGER -Action $ACTION
-
-Register-ScheduledTask BT_BAN_$BTNAME -InputObject $TASK | Out-Null
-Start-ScheduledTask BT_BAN_$BTNAME
+if (($RULELS.RemoteDynamicKeywordAddresses -Match $DYKWID).Count -ne 2) {
+	&$SET_RULES
+} elseif ((($RULELS | Get-NetFirewallApplicationFilter).Program -Match [regex]::Escape($BTPATH)).Count -ne 2) {
+	&$SET_RULES
+} elseif (($RULELS.Direction -Match 'Inbound').Count -ne 1) {
+	&$SET_RULES
+}
 
 cls
 echo ""
-echo "  已添加任务计划并执行，每 8 小时更新"
+echo "  正在下载脚本，请最多等待 30 秒"
 echo ""
-echo "  首次执行脚本，可能需要等待 30 秒左右生效"
+
+New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
+
+Try {
+	Invoke-WebRequest -OutFile $env:USERPROFILE\BT_BAN\BT_BAN.ps1 $PS1URL -TimeoutSec 30
+} Catch {
+	echo "  脚本下载失败，请重新执行启用命令"
+	echo ""
+	echo "  iex (irm bt-ban.pages.dev)"
+	echo ""
+	return
+}
+
+echo "  脚本下载成功，正在执行 ..."
+echo ""
+
+iex $env:USERPROFILE\BT_BAN\BT_BAN.ps1
+
+echo "  已添加任务计划并执行，每 8 小时更新"
 echo ""
 echo "  启用及更新结果，请留意右下角通知"
 echo ""
