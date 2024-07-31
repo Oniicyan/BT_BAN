@@ -48,7 +48,7 @@ if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 
 $SET_UPDATE ={
 	$VBS = 'createobject("wscript.shell").run "CMD",0'
-	$CMD = "powershell `"`"iex `"`"`"`"&{`$(irm $PS1URL -TimeoutSec 30)}`"`"`"`"`"`""
+	$CMD = "powershell `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
 	$VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
 	
 	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId (whoami) -RunLevel Highest
