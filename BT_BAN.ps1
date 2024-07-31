@@ -26,7 +26,7 @@ $SET_UPDATE = {
 
 	$SILENT = 'false'
 	$DDTEXT = "任务计划已创建"
-	$DDPARM = 'duration="long"'
+	$DDPARM = ''
 	$MYLINK = ''
 	if ($TASKINFO) {$DDTEXT = "任务计划已重建"}
 	&$TOAST
@@ -38,7 +38,7 @@ $SET_UPDATE = {
 	Remove-Item $SYSUSR -Include BT_BAN* -Recurse -Force -ErrorAction Ignore
 }
 
-$TASKINFO = Get-ScheduledTask BT_BAN_UPDATE
+$TASKINFO = Get-ScheduledTask BT_BAN_UPDATE -ErrorAction Ignore
 
 if ($TASKINFO) {
 	if ($TASKINFO.Principal.RunLevel -Notmatch 'Highest') {
