@@ -1,7 +1,7 @@
 $PS1URL = 'https://bt-ban.pages.dev/BT_BAN.ps1'
 $ZIPURL = 'https://bt-ban.pages.dev/IPLIST.zip'
 
-$TOAST ={
+$TOAST = {
 	$XML = '<toast DDPARM><visual><binding template="ToastText02"><text id="1">BT_BAN_IPLIST</text><text id="2">DDTEXT</text></binding></visual><audio silent="BOOL"/><actions>MYLINK</actions></toast>'
 	$XmlDocument = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]::New()
 	$XmlDocument.loadXml($XML.Replace("DDPARM","$DDPARM").Replace("DDTEXT","$DDTEXT").Replace("BOOL","$SILENT").Replace("MYLINK","$MYLINK"))
@@ -9,33 +9,70 @@ $TOAST ={
 	[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
 }
 
-[XML]$TASKINFO = Export-ScheduledTask BT_BAN_UPDATE -ErrorAction Ignore
+$SET_UPDATE = {
+	$VBS = 'createobject("wscript.shell").run "CMD",0'
+	$CMD = "powershell `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
+	$VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
+	
+	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId (whoami) -RunLevel Highest
+	$SETTINGS = New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -StartWhenAvailable -AllowStartIfOnBatteries
+	$TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval (New-TimeSpan -Hours 8) -RandomDelay (New-TimeSpan -Hours 1)
+	$ACTION = New-ScheduledTaskAction -Execute $env:USERPROFILE\BT_BAN\UPDATE.vbs
+	$TASK = New-ScheduledTask -Principal $PRINCIPAL -Settings $SETTINGS -Trigger $TRIGGER -Action $ACTION
+
+	$TASKLIST = (Get-ScheduledTask BT_BAN_*).TaskName
+	if ($TASKLIST) {Unregister-ScheduledTask $TASKLIST -Confirm:$false}
+	Register-ScheduledTask BT_BAN_UPDATE -InputObject $TASK | Out-Null
+
+	$SILENT = 'false'
+	$DDTEXT = "任务计划已创建"
+	$DDPARM = 'duration="long"'
+	$MYLINK = ''
+	if ($TASKINFO) {$DDTEXT = "任务计划已重建"}
+	&$TOAST
+
+	# 删除旧版本文件，此部分保留一段时间
+	$SYSTMP = [System.Environment]::GetEnvironmentVariable('TEMP','Machine')
+	$SYSUSR = 'C:\Windows\system32\config\systemprofile'
+	Remove-Item $SYSTMP -Include BT_BAN* -Recurse -Force -ErrorAction Ignore
+	Remove-Item $SYSUSR -Include BT_BAN* -Recurse -Force -ErrorAction Ignore
+}
+
+$TASKINFO = Get-ScheduledTask BT_BAN_UPDATE
+
 if ($TASKINFO) {
-	if (! ($TASKINFO.Task.Principals.Principal.RunLevel -Match 'HighestAvailable')) {
-		$DDPARM = 'scenario="incomingCall"'
-		$DDTEXT = "任务计划未配置最高权限`n若提示权限不足，请重新执行配置命令`n> iex (irm bt-ban.pages.dev)"
+	if ($TASKINFO.Principal.RunLevel -Notmatch 'Highest')) {
 		$SILENT = 'false'
+		$DDTEXT = "任务计划未配置最高权限`n若提示权限不足，请重新执行配置命令`n> iex (irm bt-ban.pages.dev)"
+		$DDPARM = 'scenario="incomingCall"'
 		$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN"/>'
 		&$TOAST
 	}
 }
 
 if ((Fltmc).Count -eq 3) {
-	$DDPARM = ''
-	$DDTEXT = "权限不足（请勿直接运行 VBS 文件）"
 	$SILENT = 'false'
+	$DDTEXT = "权限不足（请勿直接打开 VBS 文件）"
+	$DDPARM = ''
+	$MYLINK = ''
 	&$TOAST
 	exit 1
 }
 
-if (! (Get-NetFirewallRule -DisplayName "BT_BAN_*")) {
-	$DDPARM = 'scenario="incomingCall"'
-	$DDTEXT = "过滤规则丢失，请重新执行配置命令`n> iex (irm bt-ban.pages.dev)"
+if (!(Get-NetFirewallRule -DisplayName "BT_BAN_*")) {
 	$SILENT = 'false'
+	$DDTEXT = "过滤规则丢失，请重新执行启用命令`n> iex (irm bt-ban.pages.dev)"
+	$DDPARM = 'scenario="incomingCall"'
 	$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN"/>'
 	&$TOAST
 	exit 1
 }
+
+if ($TASKINFO) {
+	if ($TASKINFO.Uri -Notmatch 'BT_BAN_UPDATE') {$SETFLAG = 1}
+	if ($TASKINFO.Triggers.RandomDelay -Notmatch 'PT1H') {$SETFLAG = 1}
+	if ($SETFLAG -eq 1) {&$SET_UPDATE}
+} else {&$SET_UPDATE}
 
 New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
 while ($ZIP -lt 5) {
@@ -54,42 +91,15 @@ $IPLIST = Get-Content $env:USERPROFILE\BT_BAN\IPLIST.txt
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
 if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 	Update-NetFirewallDynamicKeywordAddress -Id $DYKWID -Addresses $IPLIST | Out-Null
-	$DDPARM = ''
-	$DDTEXT = '动态关键字已更新'
 	$SILENT = 'true'
+	$DDTEXT = "动态关键字已更新"
+	$DDPARM = ''
+	$MYLINK = ''
 } else {
 	New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST | Out-Null
-	$DDPARM = 'duration="long"'
-	$DDTEXT = '动态关键字已启用'
 	$SILENT = 'false'
-}
-
-$SET_UPDATE ={
-	$VBS = 'createobject("wscript.shell").run "CMD",0'
-	$CMD = "powershell `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
-	$VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
-	
-	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId (whoami) -RunLevel Highest
-	$SETTINGS = New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -AllowStartIfOnBatteries
-	$TRIGGER = New-ScheduledTaskTrigger -Once -At 00:05 -RepetitionInterval  (New-TimeSpan -Hours 8)
-	$ACTION = New-ScheduledTaskAction -Execute $env:USERPROFILE\BT_BAN\UPDATE.vbs
-	$TASK = New-ScheduledTask -Principal $PRINCIPAL -Settings $SETTINGS -Trigger $TRIGGER -Action $ACTION
-
-	$TASKLIST = (Get-ScheduledTask BT_BAN_*).TaskName
-	if ($TASKLIST) {Unregister-ScheduledTask $TASKLIST -Confirm:$false}
-	Register-ScheduledTask BT_BAN_UPDATE -InputObject $TASK | Out-Null
-
+	$DDTEXT = "动态关键字已启用"
 	$DDPARM = 'duration="long"'
-	$DDTEXT = "$DDTEXT`n任务计划已重建"
-	$SILENT = 'false'
-
-	# 删除旧版本文件，此部分保留一段时间
-	$SYSTMP = [System.Environment]::GetEnvironmentVariable('TEMP','Machine')
-	$SYSUSR = 'C:\Windows\system32\config\systemprofile'
-	Remove-Item $SYSTMP -Include BT_BAN* -Recurse -Force -ErrorAction Ignore
-	Remove-Item $SYSUSR -Include BT_BAN* -Recurse -Force -ErrorAction Ignore
+	$MYLINK = ''
 }
-
-if (! ($TASKINFO.Task.RegistrationInfo.URI -Match 'BT_BAN_UPDATE')) {&$SET_UPDATE}
-
 &$TOAST
