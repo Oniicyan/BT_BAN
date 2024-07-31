@@ -9,12 +9,20 @@ $TOAST ={
 	[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
 }
 
+if ((Fltmc).Count -eq 3) {
+	$DDPARM = 'scenario="incomingCall"'
+	$DDTEXT = "未以管理员权限启动，请重新执行配置命令`n> iex (irm bt-ban.pages.dev)"
+	$SILENT = 'false'
+	$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN"/>'
+	&$TOAST
+	exit 1
+}
+
 if (! (Get-NetFirewallRule -DisplayName "BT_BAN_*")) {
 	$DDPARM = 'scenario="incomingCall"'
 	$DDTEXT = "过滤规则丢失，请重新执行配置命令`n> iex (irm bt-ban.pages.dev)"
 	$SILENT = 'false'
 	$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN"/>'
-
 	&$TOAST
 	exit 1
 }
@@ -73,8 +81,6 @@ $SET_UPDATE ={
 }
 
 [XML]$TASKINFO = Export-ScheduledTask BT_BAN_UPDATE -ErrorAction Ignore
-if (! ($TASKINFO.Task.RegistrationInfo.URI -Match 'BT_BAN_UPDATE')) {
-	&$SET_UPDATE
-}
+if (! ($TASKINFO.Task.RegistrationInfo.URI -Match 'BT_BAN_UPDATE')) {&$SET_UPDATE}
 
 &$TOAST
