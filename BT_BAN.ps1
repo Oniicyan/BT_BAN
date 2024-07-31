@@ -43,7 +43,7 @@ $TASKINFO = Get-ScheduledTask BT_BAN_UPDATE -ErrorAction Ignore
 if ($TASKINFO) {
 	if ($TASKINFO.Principal.RunLevel -Notmatch 'Highest') {
 		$SILENT = 'false'
-		$DDTEXT = "当前任务计划未配置最高权限`n若提示权限不足，请重新执行启用命令`n> iex (irm bt-ban.pages.dev)`n无提示或正在重新启用时，请忽略本通知"
+		$DDTEXT = "当前任务计划未配置最高权限`n若提示权限不足，请执行启用命令重建`n> iex (irm bt-ban.pages.dev)`n无提示或正在重建时，请忽略本通知"
 		$DDPARM = 'duration="long"'
 		$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN"/>'
 		&$TOAST
@@ -62,7 +62,7 @@ if ((Fltmc).Count -eq 3) {
 
 if ((Get-NetFirewallRule -DisplayName "BT_BAN_*").Count -lt 2) {
 	$SILENT = 'false'
-	$DDTEXT = "过滤规则丢失，请重新执行启用命令`n> iex (irm bt-ban.pages.dev)"
+	$DDTEXT = "过滤规则丢失，请执行启用命令重建`n> iex (irm bt-ban.pages.dev)"
 	$DDPARM = 'scenario="incomingCall"'
 	$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN"/>'
 	&$TOAST
