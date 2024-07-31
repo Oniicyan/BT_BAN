@@ -18,29 +18,30 @@ if ($TASKLIST) {
 	echo "  没有需要删除的任务计划"
 }
 
-$FILELIST = (Get-ChildItem -Path $env:USERPROFILE).Name -Match 'BT_BAN_'
-if ($FILELIST) {
-	echo ""
-	echo "  找到并删除以下 VBS 脚本"
-	echo ""
-	$FILELIST | ForEach-Object {'  ' + $_}
-	Remove-Item $FILELIST
-} else {
-	echo ""
-	echo "  没有需要删除的 VBS 脚本"
-}
-
-$RULELIST = (Get-NetFirewallRule -DisplayName BT_BAN_*).DisplayName
+$RULELIST = Get-NetFirewallRule -DisplayName BT_BAN_* | Select-Object -Property Displayname, Direction
 if ($RULELIST) {
 	echo ""
 	echo "  找到并删除以下过滤规则"
 	echo ""
-	$RULELIST | ForEach-Object {'  ' + $_}
-	Remove-NetFirewallRule -DisplayName $RULELIST
+	$RULELIST | ForEach-Object {'  ' + $_.DisplayName + ' (' + $_.Direction + ')'}
+	Remove-NetFirewallRule -DisplayName $RULELIST.DisplayName
 } else {
 	echo ""
 	echo "  没有需要删除的过滤规则"
-	echo "  首次启用时，请等待右下角通知弹出"
+}
+
+$SYSTMP = [System.Environment]::GetEnvironmentVariable('TEMP','Machine')
+$FILELIST = (Get-ChildItem -Recurse $SYSTMP\BT_BAN).FullName
+if ($FILELIST) {
+	echo ""
+	echo "  找到并删除以下临时文件"
+	echo ""
+	echo "  $SYSTMP\BT_BAN"
+	$FILELIST | ForEach-Object {'  ' + $_}
+	Remove-Item $SYSTMP\BT_BAN -Force -Recurse -ErrorAction Ignore
+} else {
+	echo ""
+	echo "  没有需要删除的临时文件"
 }
 
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
@@ -54,7 +55,7 @@ if ($DYKWNAME) {
 } else {
 	echo ""
 	echo "  没有需要删除的动态关键字"
-	echo "  首次启用时，请等待右下角通知弹出"
+	echo "  若首次启用，请等待右下角弹出通知后再清除"
 }
 
 echo ""
