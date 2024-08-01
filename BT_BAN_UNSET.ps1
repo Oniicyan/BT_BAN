@@ -65,3 +65,5 @@ if ($DYKWNAME) {
 }
 
 echo ""
+echo "  已清除所有配置"
+echo ""
