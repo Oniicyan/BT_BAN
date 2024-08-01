@@ -1,4 +1,4 @@
-$PS1URL = 'https://bt-ban.pages.dev/BT_BAN.ps1'
+$PS1URL = 'https://bt-ban.pages.dev/run'
 
 if ((Fltmc).Count -eq 3) {
 	echo ""
@@ -90,7 +90,7 @@ try {
 } catch {
 	echo "  脚本下载或执行失败，请尝试手动执行配置命令"
 	echo ""
-	echo "  iex (irm bt-ban.pages.dev/BT_BAN.ps1)"
+	echo "  iex (irm bt-ban.pages.dev/run)"
 	echo ""
 	return
 }
@@ -103,7 +103,7 @@ echo "  启用及更新结果，请留意右下角通知"
 echo ""
 echo "  执行以下命令清除配置"
 echo ""
-echo "  iex (irm bt-ban.pages.dev/BT_BAN_UNSET.ps1)"
+echo "  iex (irm bt-ban.pages.dev/unset)"
 echo ""
 echo "  启用配置与清除配置的脚本均允许重复执行"
 echo ""
