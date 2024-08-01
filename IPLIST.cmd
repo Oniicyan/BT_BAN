@@ -5,4 +5,4 @@ set IPLIST="https://bt-ban.pages.dev/IPLIST.txt"
 set DYKWID="{3817fa89-3f21-49ca-a4a4-80541ddf7465}"
 
 powershell.exe "Remove-NetFirewallDynamicKeywordAddress -Id '%DYKWID%'" >nul
-powershell.exe "New-NetFirewallDynamicKeywordAddress -Id '%DYKWID%' -Keyword "BT_BAN_IPLIST" -Addresses (irm '%IPLIST%')"
+powershell.exe "New-NetFirewallDynamicKeywordAddress -Id '%DYKWID%' -Keyword "BT_BAN_IPLIST" -Addresses (irm '%IPLIST%' -TimeoutSec 30)"
