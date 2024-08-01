@@ -39,9 +39,9 @@ $BTINFO = New-Object System.Windows.Forms.OpenFileDialog -Property @{InitialDire
 $BTINFO.ShowDialog() | Out-Null
 
 if (!$BTINFO.FileName) {
-	cls
 	echo ""
 	echo "  未选择文件"
+	echo ""
 	echo "  请重新执行脚本，并正确选择 BT 应用程序"
 	echo ""
 	return
