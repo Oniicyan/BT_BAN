@@ -37,7 +37,7 @@ if ($RULELIST) {
 $FILELIST = (Get-Childitem $env:USERPROFILE\BT_BAN -Recurse).FullName
 if ($FILELIST) {
 	echo ""
-	echo "  找到并删除以下脚本文件"
+	echo "  删除以下脚本文件"
 	echo ""
 	echo "  $env:USERPROFILE\BT_BAN"
 	$FILELIST | ForEach-Object {'  ' + $_}
@@ -53,10 +53,11 @@ $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
 $DYKWNAME = (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore).Keyword
 if ($DYKWNAME) {
 	echo ""
-	echo "  找到并删除以下动态关键字"
+	echo "  删除以下动态关键字"
 	echo ""
 	$DYKWNAME | ForEach-Object {'  ' + $_}
 	echo ""
+	pause
 	Remove-NetFirewallDynamicKeywordAddress -Id $DYKWID
 } else {
 	echo ""
