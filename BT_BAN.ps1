@@ -1,6 +1,8 @@
 $PS1URL = 'https://bt-ban.pages.dev/BT_BAN.ps1'
 $ZIPURL = 'https://bt-ban.pages.dev/IPLIST.zip'
 
+New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
+
 $TOAST = {
 	$XML = '<toast DDPARM><visual><binding template="ToastText02"><text id="1">BT_BAN_IPLIST</text><text id="2">DDTEXT</text></binding></visual><audio silent="BOOL"/><actions>MYLINK</actions></toast>'
 	$XmlDocument = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]::New()
@@ -10,7 +12,6 @@ $TOAST = {
 }
 
 $SET_UPDATE = {
-	New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
 	$VBS = 'createobject("wscript.shell").run "CMD",0'
 	$CMD = "powershell `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
 	$VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
@@ -87,7 +88,6 @@ if ($TASKINFO) {
 	if (!(Test-Path $env:USERPROFILE\BT_BAN\UPDATE.vbs)) {$SETFLAG = 1}
 } else {&$SET_UPDATE}
 
-New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
 while ($ZIP -lt 5) {
 	try {
 		Invoke-WebRequest -OutFile $env:USERPROFILE\BT_BAN\IPLIST.zip $ZIPURL -TimeoutSec 30
