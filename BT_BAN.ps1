@@ -35,10 +35,6 @@ $SET_UPDATE = {
 $TASKINFO = Get-ScheduledTask BT_BAN_* -ErrorAction Ignore
 
 if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
-		$SILENT = 'false'
-		$DDTEXT = "当前任务计划由 SYSTEM 执行，尝试更改为当前用户"
-		$DDPARM = 'duration="long"'
-		$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN"/>'
 	if ($PROCINFO = Get-WmiObject Win32_Process -Filter "name='$BTNAME'") {
 		$USERNAME = $PROCINFO.GetOwner().User
 	} elseif ($USERNAME = (Get-WMIObject -class Win32_ComputerSystem).UserName){
