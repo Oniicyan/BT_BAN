@@ -30,15 +30,29 @@ $SET_UPDATE = {
 	$MYLINK = ''
 	if ($TASKINFO) {$DDTEXT = "任务计划已重建"}
 	&$TOAST
-
-	# 删除旧版本文件，此部分保留一段时间
-	$SYSTMP = [System.Environment]::GetEnvironmentVariable('TEMP','Machine')
-	$SYSUSR = 'C:\Windows\system32\config\systemprofile'
-	Remove-Item $SYSTMP -Include BT_BAN* -Recurse -Force -ErrorAction Ignore
-	Remove-Item $SYSUSR -Include BT_BAN* -Recurse -Force -ErrorAction Ignore
 }
 
-$TASKINFO = Get-ScheduledTask BT_BAN_UPDATE -ErrorAction Ignore
+$TASKINFO = Get-ScheduledTask BT_BAN_* -ErrorAction Ignore
+
+if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
+		$SILENT = 'false'
+		$DDTEXT = "当前任务计划由 SYSTEM 执行，尝试更改为当前用户"
+		$DDPARM = 'duration="long"'
+		$MYLINK = '<action content="查看帮助" activationType="protocol" arguments="https://github.com/Oniicyan/BT_BAN"/>'
+	if ($PROCINFO = Get-WmiObject Win32_Process -Filter "name='$BTNAME'") {
+		$USERNAME = $PROCINFO.GetOwner().User
+	} elseif ($USERNAME = (Get-WMIObject -class Win32_ComputerSystem).UserName){
+	} else {
+		$PROCINFO = Get-WmiObject Win32_Process -Filter "name='explorer.exe'"
+		$USERNAME = $PROCINFO.GetOwner().User
+	}
+	if ($USERNAME) {
+		$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $USERNAME -RunLevel Highest
+		Set-ScheduledTask $TASKINFO.Uri -Principal $PRINCIPAL
+		Start-ScheduledTask $TASKINFO.Uri
+		exit
+	}
+}
 
 if ($TASKINFO) {
 	if ($TASKINFO.Principal.RunLevel -Notmatch 'Highest') {
@@ -111,3 +125,10 @@ if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 	$MYLINK = ''
 }
 &$TOAST
+
+# 删除旧版本文件，此部分保留一段时间
+$SYSTMP = [System.Environment]::GetEnvironmentVariable('TEMP','Machine')
+$SYSUSR = 'C:\Windows\system32\config\systemprofile'
+Remove-Item $SYSTMP -Include BT_BAN* -Recurse -Force -ErrorAction Ignore
+Remove-Item $SYSUSR -Include BT_BAN* -Recurse -Force -ErrorAction Ignore
+Remove-Item $env:USERPROFILE/BT_BAN*.* -Force -ErrorAction Ignore
