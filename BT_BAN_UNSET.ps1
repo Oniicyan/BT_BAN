@@ -9,9 +9,11 @@ if ((Fltmc).Count -eq 3) {
 $TASKLIST = (Get-ScheduledTask BT_BAN_*).TaskName
 if ($TASKLIST) {
 	echo ""
-	echo "  找到并删除以下任务计划"
+	echo "  删除以下任务计划"
 	echo ""
 	$TASKLIST | ForEach-Object {'  ' + $_}
+	echo ""
+	pause
 	Unregister-ScheduledTask $TASKLIST -Confirm:$false
 } else {
 	echo ""
@@ -21,9 +23,11 @@ if ($TASKLIST) {
 $RULELIST = Get-NetFirewallRule -DisplayName BT_BAN_* | Select-Object -Property Displayname, Direction
 if ($RULELIST) {
 	echo ""
-	echo "  找到并删除以下过滤规则"
+	echo "  删除以下过滤规则"
 	echo ""
 	$RULELIST | ForEach-Object {'  ' + $_.DisplayName + ' (' + $_.Direction + ')'}
+	echo ""
+	pause
 	Remove-NetFirewallRule -DisplayName $RULELIST.DisplayName
 } else {
 	echo ""
@@ -37,6 +41,8 @@ if ($FILELIST) {
 	echo ""
 	echo "  $env:USERPROFILE\BT_BAN"
 	$FILELIST | ForEach-Object {'  ' + $_}
+	echo ""
+	pause
 	Remove-Item $env:USERPROFILE\BT_BAN -Force -Recurse -ErrorAction Ignore
 } else {
 	echo ""
@@ -50,6 +56,7 @@ if ($DYKWNAME) {
 	echo "  找到并删除以下动态关键字"
 	echo ""
 	$DYKWNAME | ForEach-Object {'  ' + $_}
+	echo ""
 	Remove-NetFirewallDynamicKeywordAddress -Id $DYKWID
 } else {
 	echo ""
