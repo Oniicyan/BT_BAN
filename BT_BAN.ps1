@@ -35,6 +35,9 @@ $SET_UPDATE = {
 	$MYLINK = ''
 	if ($TASKINFO) {$DDTEXT = "任务计划已重建"}
 	&$TOAST
+	
+	Start-ScheduledTask $TASKINFO.Uri
+	return
 }
 
 if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
