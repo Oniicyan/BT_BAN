@@ -1,7 +1,7 @@
 $PS1URL = 'https://bt-ban.pages.dev/BT_BAN.ps1'
 $ZIPURL = 'https://bt-ban.pages.dev/IPLIST.zip'
 
-New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
+New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -ErrorAction Ignore | Out-Null
 
 $TOAST = {
 	$XML = '<toast DDPARM><visual><binding template="ToastText02"><text id="1">BT_BAN_IPLIST</text><text id="2">DDTEXT</text></binding></visual><audio silent="BOOL"/><actions>MYLINK</actions></toast>'
@@ -15,7 +15,7 @@ $SET_UPDATE = {
 	$VBS = 'createobject("wscript.shell").run "CMD",0'
 	$CMD = "powershell `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
 	$VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
-	
+
 	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId (whoami) -RunLevel Highest
 	$SETTINGS = New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -StartWhenAvailable -AllowStartIfOnBatteries
 	$TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval (New-TimeSpan -Hours 8) -RandomDelay (New-TimeSpan -Hours 1)
