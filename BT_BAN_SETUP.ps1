@@ -21,7 +21,7 @@ if (New-NetFirewallDynamicKeywordAddress -Id $TESTGUID -Keyword "BT_BAN_TEST" -A
 }
 
 # 禁用 IE 引擎的初始化检测，否则可能会影响 Invoke-WebRequest
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 2
+# Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 2
 
 echo ""
 echo "  请指定启用过滤规则的 BT 应用程序文件"
