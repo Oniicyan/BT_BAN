@@ -36,8 +36,7 @@ $SET_UPDATE = {
 }
 
 if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
-	if ($PROCINFO = Get-WmiObject Win32_Process -Filter "name='$BTNAME'") {
-		$USERNAME = $PROCINFO.GetOwner().User
+	if ($USERNAME = (quser) -Match '^>' -Replace ' .*' -Replace '>') {
 	} elseif ($USERNAME = (Get-WMIObject -class Win32_ComputerSystem).UserName){
 	} else {
 		$PROCINFO = Get-WmiObject Win32_Process -Filter "name='explorer.exe'"
