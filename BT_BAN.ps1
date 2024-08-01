@@ -36,7 +36,7 @@ $SET_UPDATE = {
 	if ($TASKINFO) {$DDTEXT = "任务计划已重建"}
 	&$TOAST
 	
-	Start-ScheduledTask $TASKINFO.Uri
+	Start-ScheduledTask BT_BAN_UPDATE
 	return
 }
 
@@ -51,7 +51,7 @@ if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
 		$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $USERNAME -RunLevel Highest
 		Set-ScheduledTask $TASKINFO.Uri -Principal $PRINCIPAL
 		Start-ScheduledTask $TASKINFO.Uri
-		exit
+		return
 	}
 }
 
