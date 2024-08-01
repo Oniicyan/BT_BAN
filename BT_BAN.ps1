@@ -10,6 +10,7 @@ $TOAST = {
 }
 
 $SET_UPDATE = {
+	New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
 	$VBS = 'createobject("wscript.shell").run "CMD",0'
 	$CMD = "powershell `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
 	$VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
@@ -32,7 +33,6 @@ $SET_UPDATE = {
 	&$TOAST
 }
 
-New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
 $TASKINFO = Get-ScheduledTask BT_BAN_* -ErrorAction Ignore
 
 if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
@@ -103,6 +103,7 @@ while ($ZIP -lt 5) {
 		}
 	}
 }
+New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
 Expand-Archive -Force -Path $env:USERPROFILE\BT_BAN\IPLIST.zip -DestinationPath $env:USERPROFILE\BT_BAN
 $IPLIST = Get-Content $env:USERPROFILE\BT_BAN\IPLIST.txt
 
