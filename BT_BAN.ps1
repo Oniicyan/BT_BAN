@@ -32,6 +32,7 @@ $SET_UPDATE = {
 	&$TOAST
 }
 
+New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
 $TASKINFO = Get-ScheduledTask BT_BAN_* -ErrorAction Ignore
 
 if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
@@ -85,7 +86,6 @@ if ($TASKINFO) {
 	if ($SETFLAG -eq 1) {&$SET_UPDATE}
 } else {&$SET_UPDATE}
 
-New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
 while ($ZIP -lt 5) {
 	try {
 		Invoke-WebRequest -OutFile $env:USERPROFILE\BT_BAN\IPLIST.zip $ZIPURL -TimeoutSec 30
