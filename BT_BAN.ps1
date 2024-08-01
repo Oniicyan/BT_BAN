@@ -1,4 +1,4 @@
-$PS1URL = 'https://bt-ban.pages.dev/BT_BAN.ps1'
+$PS1URL = 'https://bt-ban.pages.dev/run'
 $ZIPURL = 'https://bt-ban.pages.dev/IPLIST.zip'
 
 New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -ErrorAction Ignore | Out-Null
