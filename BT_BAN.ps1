@@ -37,7 +37,7 @@ $SET_UPDATE = {
 	&$TOAST
 	
 	Start-ScheduledTask BT_BAN_UPDATE
-	exit
+	return
 }
 
 if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
