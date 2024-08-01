@@ -37,7 +37,7 @@ $SET_UPDATE = {
 	&$TOAST
 	
 	Start-ScheduledTask $TASKINFO.Uri
-	exit
+	return
 }
 
 if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
