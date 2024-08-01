@@ -2,6 +2,7 @@ $PS1URL = 'https://bt-ban.pages.dev/run'
 $ZIPURL = 'https://bt-ban.pages.dev/IPLIST.zip'
 
 New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -ErrorAction Ignore | Out-Null
+$TASKINFO = Get-ScheduledTask BT_BAN_* -ErrorAction Ignore
 
 $TOAST = {
 	$XML = '<toast DDPARM><visual><binding template="ToastText02"><text id="1">BT_BAN_IPLIST</text><text id="2">DDTEXT</text></binding></visual><audio silent="BOOL"/><actions>MYLINK</actions></toast>'
@@ -33,8 +34,6 @@ $SET_UPDATE = {
 	if ($TASKINFO) {$DDTEXT = "任务计划已重建"}
 	&$TOAST
 }
-
-$TASKINFO = Get-ScheduledTask BT_BAN_* -ErrorAction Ignore
 
 if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
 	if ($PROCINFO = Get-WmiObject Win32_Process -Filter "name='$BTNAME'") {
@@ -84,8 +83,8 @@ if ((Get-NetFirewallRule -DisplayName "BT_BAN_*").Count -lt 2) {
 if ($TASKINFO) {
 	if ($TASKINFO.Uri -Notmatch 'BT_BAN_UPDATE') {$SETFLAG = 1}
 	if ($TASKINFO.Triggers.RandomDelay -Notmatch 'PT1H') {$SETFLAG = 1}
-	if ($SETFLAG -eq 1) {&$SET_UPDATE}
 	if (!(Test-Path $env:USERPROFILE\BT_BAN\UPDATE.vbs)) {$SETFLAG = 1}
+	if ($SETFLAG -eq 1) {&$SET_UPDATE}
 } else {&$SET_UPDATE}
 
 while ($ZIP -lt 5) {
@@ -97,7 +96,7 @@ while ($ZIP -lt 5) {
 		$ZIP++
 		if ($ZIP -ge 5) {
 			$SILENT = 'true'
-			$DDTEXT = "IP 列表下载失败`n通常是服务器问题"
+			$DDTEXT = "IP 列表下载失败`n通常是服务器问题，跳过本次更新"
 			$DDPARM = ''
 			$MYLINK = ''
 			&$TOAST
