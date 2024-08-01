@@ -84,6 +84,7 @@ if ($TASKINFO) {
 	if ($TASKINFO.Uri -Notmatch 'BT_BAN_UPDATE') {$SETFLAG = 1}
 	if ($TASKINFO.Triggers.RandomDelay -Notmatch 'PT1H') {$SETFLAG = 1}
 	if ($SETFLAG -eq 1) {&$SET_UPDATE}
+	if (!(Test-Path $env:USERPROFILE\BT_BAN\UPDATE.vbs)) {$SETFLAG = 1}
 } else {&$SET_UPDATE}
 
 New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -Force | Out-Null
