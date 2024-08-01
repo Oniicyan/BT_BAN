@@ -1,7 +1,9 @@
 / /BT_BAN_SETUP.ps1 302
+/set /BT_BAN_SETUP.ps1 302
 /run /BT_BAN.ps1 302
 /unset /BT_BAN_UNSET.ps1 302
 # / https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN_SETUP.ps1 302
+# /set https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN_SETUP.ps1 302
 # /run https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN.ps1 302
 # /unset https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN_UNSET.ps1 302
 # /BT_BAN.ps1 https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN.ps1 302
