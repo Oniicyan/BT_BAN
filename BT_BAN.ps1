@@ -37,7 +37,7 @@ $SET_UPDATE = {
 	&$TOAST
 	
 	Start-ScheduledTask BT_BAN_UPDATE
-	return
+	exit
 }
 
 if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
@@ -51,7 +51,7 @@ if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
 		$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $USERNAME -RunLevel Highest
 		Set-ScheduledTask $TASKINFO.Uri -Principal $PRINCIPAL
 		Start-ScheduledTask $TASKINFO.Uri
-		return
+		exit
 	}
 }
 
