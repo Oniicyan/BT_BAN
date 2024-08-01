@@ -1,3 +1,5 @@
+Remove-Variable * -ErrorAction Ignore
+
 $PS1URL = 'https://bt-ban.pages.dev/run'
 $ZIPURL = 'https://bt-ban.pages.dev/IPLIST.zip'
 
