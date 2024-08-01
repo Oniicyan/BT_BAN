@@ -80,6 +80,7 @@ if (($RULELS.RemoteDynamicKeywordAddresses -Match $DYKWID).Count -ne 2) {
 }
 
 cls
+echo "  成功配置过滤规则"
 echo ""
 echo "  正在下载并执行脚本，可能需要等待 30 秒左右"
 echo ""
