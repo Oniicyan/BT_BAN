@@ -63,7 +63,7 @@
 BT 的特性上，需要同时配置入站与出站规则
 
 ```
-$BTPATH = '* BT 程序的绝对路径 *' # 
+$BTPATH = 'C:\Program Files\BitComet\BitComet.exe' # 请编辑 BT 程序的绝对路径
 $BTNAME = [System.IO.Path]::GetFileName($BTPATH) # 从绝对路径中提取文件名
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}' # 可用 New-GUID 生成，注意添加大括号
 New-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -Direction Inbound -Action Block -Program $BTPATH -RemoteDynamicKeywordAddresses $DYKWID
@@ -119,7 +119,7 @@ CMD 脚本无法显示通知，因此可以由 SYSTEM 直接执行来隐藏窗�
 # 创建 VBS 脚本用作隐藏窗口
 $VBS = 'createobject("wscript.shell").run "CMD",0'
 # 示例从本地的 PS1 脚本执行更新
-# 注意编辑脚本路径，如有空格请加两个双引号
+# 请编辑脚本路径，如有空格请加两个双引号
 $CMD = "powershell D:\BT_BAN\IPLIST.ps1"
 $VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
 
