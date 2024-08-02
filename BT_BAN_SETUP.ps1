@@ -28,7 +28,7 @@ if ((Get-NetFirewallProfile).Enabled -contains 0) {
 		echo ""
 		echo "  仍可继续配置，在 Windows 防火墙启用时生效"
 		echo ""
-		echo "  通常第三方防护软件可与 Windows 防火墙共存，不建议禁用"
+		echo "  通常防护软件可与 Windows 防火墙共存，不建议禁用"
 		pause
 	}
 }
