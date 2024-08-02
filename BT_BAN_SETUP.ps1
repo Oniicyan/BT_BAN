@@ -26,9 +26,9 @@ if ((Get-NetFirewallProfile).Enabled -contains 0) {
 		echo ""
 		echo "  当前网络下未启用 Windows 防火墙"
 		echo ""
-		echo "  仍可继续配置，在 Windows 防火墙启用时生效"
-		echo ""
 		echo "  通常防护软件可与 Windows 防火墙共存，不建议禁用"
+		echo ""
+		echo "  仍可继续配置，在 Windows 防火墙启用时生效"
 		echo ""
 		pause
 	}
