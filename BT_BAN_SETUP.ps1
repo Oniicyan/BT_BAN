@@ -27,7 +27,7 @@ echo "  本方案仅对选中的程序生效，不影响其他程序的通信"
 echo "  详细请阅 https://github.com/Oniicyan/BT_BAN"
 echo ""
 echo "  可选择快捷方式"
-echo "  可选择多款客户端（需再次执行脚本）"
+echo "  可选择多款客户端（需再次执行命令）"
 echo ""
 echo "  同名程序多开，即使目录不同，也需修改文件名以区分"
 echo ""
@@ -81,22 +81,36 @@ if (($RULELS.RemoteDynamicKeywordAddresses -Match $DYKWID).Count -ne 2) {
 cls
 echo "  成功配置过滤规则"
 echo ""
-echo "  正在下载并执行脚本，可能需要等待 30 秒左右"
+echo "  正在获取并执行任务计划，可能需要等待 30 秒左右"
 echo ""
 
 try {
 	iex (irm $PS1URL -TimeoutSec 30)
 } catch {
-	echo "  脚本下载或执行失败，请尝试手动执行配置命令"
+	echo "  脚本获取或执行失败，请尝试手动执行配置命令"
 	echo ""
 	echo "  iex (irm bt-ban.pages.dev/run)"
 	echo ""
 	return
 }
 
-echo "  成功执行并添加任务计划"
+$RULELIST = Get-NetFirewallRule -DisplayName BT_BAN_* | Select-Object -Property Displayname, Direction
+$TASKLIST = (Get-ScheduledTask BT_BAN_*).TaskName
+$DYKWNAME = (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore).Keyword
+cls
+echo "  成功配置以下过滤规则"
 echo ""
-echo "  每天 0-1 8-9 16-17 时之间更新"
+$RULELIST | ForEach-Object {'  ' + $_.DisplayName + ' (' + $_.Direction + ')'}
+echo ""
+echo "  成功配置以下任务计划"
+echo ""
+$TASKLIST | ForEach-Object {'  ' + $_}
+echo ""
+echo "  成功配置以下动态关键字"
+echo ""
+$DYKWNAME | ForEach-Object {'  ' + $_}
+echo ""
+echo "  每天 0-1 8-9 16-17 时之间更新 IP 列表"
 echo ""
 echo "  启用及更新结果，请留意右下角通知"
 echo ""
@@ -104,5 +118,5 @@ echo "  执行以下命令清除配置"
 echo ""
 echo "  iex (irm bt-ban.pages.dev/unset)"
 echo ""
-echo "  启用配置与清除配置的脚本均允许重复执行"
+echo "  启用命令与清除命令均允许重复执行"
 echo ""
