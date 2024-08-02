@@ -1,5 +1,4 @@
 Remove-Variable * -ErrorAction Ignore
-
 $PS1URL = 'https://bt-ban.pages.dev/run'
 
 if ((Fltmc).Count -eq 3) {
@@ -15,7 +14,7 @@ if (New-NetFirewallDynamicKeywordAddress -Id $TESTGUID -Keyword "BT_BAN_TEST" -A
 	Remove-NetFirewallDynamicKeywordAddress -Id $TESTGUID
 } else {
 	echo ""
-	echo "  Windows 版本不支持动态关键字，请升级操作系统"
+	echo "  当前 Windows 版本不支持动态关键字，请升级操作系统"
 	echo ""
 	return
 }
