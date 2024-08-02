@@ -87,15 +87,15 @@ New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addre
 
 任务计划执行的命令分为以下几种
 
-- `powershell ""iex (irm $PS1URL -TimeoutSec 30)""`
+- `powershell iex (irm bt-ban.pages.dev/IPLIST.ps1 -TimeoutSec 30)`
 
   从网络上的 PS1 脚本执行更新
   
-- `powershell $DIRPATH\IPLIST.ps1`
+- `powershell D:\BT_BAN\IPLIST.ps1`
 
   从本地的 PS1 脚本执行更新
 
-- `$DIRPATH\IPLIST.cmd`
+- `D:\BT_BAN\IPLIST.cmd`
 
   从本地的 CMD 脚本执行更新
 
@@ -119,7 +119,7 @@ CMD 脚本无法显示通知，因此可以由 SYSTEM 直接执行来隐藏窗�
 # 创建 VBS 脚本用作隐藏窗口
 $VBS = 'createobject("wscript.shell").run "CMD",0'
 # 示例从本地的 PS1 脚本执行更新
-# 请编辑脚本路径，请不要删除双引号
+# 请编辑脚本路径，请注意双引号的数量
 $CMD = "powershell ""D:\BT_BAN\IPLIST.ps1"""
 $VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
 
