@@ -96,7 +96,6 @@ try {
 
 $RULELIST = Get-NetFirewallRule -DisplayName BT_BAN_* | Select-Object -Property Displayname, Direction
 $TASKLIST = (Get-ScheduledTask BT_BAN_*).TaskName
-cls
 echo "  成功配置以下过滤规则"
 echo ""
 $RULELIST | ForEach-Object {'  ' + $_.DisplayName + ' (' + $_.Direction + ')'}
