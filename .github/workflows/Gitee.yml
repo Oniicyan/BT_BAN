@@ -23,10 +23,11 @@ jobs:
           git config --global user.name ${GITHUB_ACTOR}
           git config --global user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
 
+          REPOURL=bt_ban
           REPODIR=$PWD
           cd ~
-          git clone git@gitee.com:oniicyan/bt_ban.git
-          cd bt_ban
+          git clone git@gitee.com:oniicyan/$REPOURL.git
+          cd $REPOURL
           cp $REPODIR/*.* ./
 
           git add .
