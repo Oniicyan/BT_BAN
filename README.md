@@ -105,12 +105,22 @@ New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addre
 
 CMD 脚本无法显示通知，因此可以由 SYSTEM 直接执行来隐藏窗口，而无需通过 VBS 脚本嵌套
 
-**IPLIST.ps1 IPLIST.cmd IPLIST.vbs** 可从仓库中查看及下载示例
+**IPLIST.ps1、IPLIST.cmd、IPLIST.vbs** 
+
+以上示例脚本可在仓库中查看及下载
+
+> 安全提醒
+> 
+> 配置从网络上获取脚本执行的任务计划会造成风险，特别是给予最高权限的
+> 
+> 当网络脚本被恶意修改，或网络地址被挟持到恶意脚本时，会造成严重的后果
 
 ```
 # 创建 VBS 脚本用作隐藏窗口
 $VBS = 'createobject("wscript.shell").run "CMD",0'
-$CMD = "powershell `"`"iex (irm $PS1URL -TimeoutSec 30)`"`"" # 示例从网络上的 PS1 脚本执行更新
+# 示例从本地的 PS1 脚本执行更新
+# 注意编辑脚本路径，如有空格请加两个双引号
+$CMD = "powershell D:\BT_BAN\IPLIST.ps1"
 $VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
 
 # 部分设置项目并非必要
