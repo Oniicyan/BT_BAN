@@ -92,7 +92,6 @@ if ($TASKINFO) {
 
 if ($SETFLAG -eq 1) {
 	&$SET_UPDATE
-	return
 }
 
 while ($ZIP -lt 5) {
