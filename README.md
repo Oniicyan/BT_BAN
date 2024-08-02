@@ -1,12 +1,30 @@
 ## 介绍
-此项目从 [BTN-Collected-Rules](https://github.com/PBH-BTN/BTN-Collected-Rules) 同步黑名单（combine/all.txt）
 
-使用 PowerShell 配置 Windows 防火墙动态关键字（类似 Linux 的 ipset），只对选定程序生效，不影响其他通信活动
+### 基于 Windows 防火墙过滤规则，获取 IP 黑名单并添加到动态关键字（类似 Linux 的 ipset）
 
-不限客户端类型，可能有客户端的启动文件和通信文件不同
+### 全自动的，不影响全局通信，不限客户端的 BT 反吸血
 
-虽然不建议，但也可以为 BT 以外的程序配置过滤规则
+- 全自动
 
+  使用 PowerShell 脚本配置，使用任务计划更新 IP 黑名单
+
+- 不影响全局通信
+
+  Windows 过滤规则可选择特定的程序
+
+- 不限客户端
+
+  只要是在 Windows 下进行通信的程序，包括非 `.exe` 文件
+
+  可能个别客户端的启动程序和通信程序不同，请正确区分
+
+  如有需要，也可以为 BT 以外的程序配置过滤规则
+
+　
+
+**此项目从 [BTN-Collected-Rules](https://github.com/PBH-BTN/BTN-Collected-Rules) 获取 IP 黑名单（combine/all.txt）**
+
+感谢开发者及加入 BTN 威胁防护网络计划的所有成员
 
 ## 使用方法
 
