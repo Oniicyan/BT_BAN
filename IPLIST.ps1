@@ -1,7 +1,7 @@
 # 从网络上的 ZIP 文件中获取 IPLIST
 # 可自行替换 URL
 $ZIPURL = 'https://bt-ban.pages.dev/IPLIST.zip'
-New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -ErrorAction Ignore | Out-Null
+New-Item -ItemType Directory -Path $env:temp\BT_BAN -ErrorAction Ignore | Out-Null
 while ($ZIP -lt 5) {
 	try {
 		Invoke-WebRequest -OutFile $env:temp\BT_BAN\IPLIST.zip $ZIPURL -TimeoutSec 30
