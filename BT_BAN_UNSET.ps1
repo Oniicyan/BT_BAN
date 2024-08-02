@@ -9,7 +9,7 @@ if ((Fltmc).Count -eq 3) {
 $RULELIST = Get-NetFirewallRule -DisplayName BT_BAN_* | Select-Object -Property Displayname, Direction
 if ($RULELIST) {
 	echo ""
-	echo "  删除以下过滤规则"
+	echo "  清除以下过滤规则"
 	echo ""
 	$RULELIST | ForEach-Object {'  ' + $_.DisplayName + ' (' + $_.Direction + ')'}
 	echo ""
@@ -17,13 +17,13 @@ if ($RULELIST) {
 	Remove-NetFirewallRule -DisplayName $RULELIST.DisplayName
 } else {
 	echo ""
-	echo "  没有需要删除的过滤规则"
+	echo "  没有需要清除的过滤规则"
 }
 
 $TASKLIST = (Get-ScheduledTask BT_BAN_*).TaskName
 if ($TASKLIST) {
 	echo ""
-	echo "  删除以下任务计划"
+	echo "  清除以下任务计划"
 	echo ""
 	$TASKLIST | ForEach-Object {'  ' + $_}
 	echo ""
@@ -31,14 +31,14 @@ if ($TASKLIST) {
 	Unregister-ScheduledTask $TASKLIST -Confirm:$false
 } else {
 	echo ""
-	echo "  没有需要删除的任务计划"
+	echo "  没有需要清除的任务计划"
 }
 
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
 $DYKWNAME = (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore).Keyword
 if ($DYKWNAME) {
 	echo ""
-	echo "  删除以下动态关键字"
+	echo "  清除以下动态关键字"
 	echo ""
 	$DYKWNAME | ForEach-Object {'  ' + $_}
 	echo ""
@@ -46,13 +46,13 @@ if ($DYKWNAME) {
 	Remove-NetFirewallDynamicKeywordAddress -Id $DYKWID
 } else {
 	echo ""
-	echo "  没有需要删除的动态关键字"
+	echo "  没有需要清除的动态关键字"
 }
 
 $FILELIST = (Get-Childitem $env:USERPROFILE\BT_BAN -Recurse).FullName
 if ($FILELIST) {
 	echo ""
-	echo "  删除以下脚本文件"
+	echo "  清除以下脚本文件"
 	echo ""
 	echo "  $env:USERPROFILE\BT_BAN"
 	$FILELIST | ForEach-Object {'  ' + $_}
@@ -61,7 +61,7 @@ if ($FILELIST) {
 	Remove-Item $env:USERPROFILE\BT_BAN -Force -Recurse -ErrorAction Ignore
 } else {
 	echo ""
-	echo "  没有需要删除的脚本文件"
+	echo "  没有需要清除的脚本文件"
 }
 
 echo ""
