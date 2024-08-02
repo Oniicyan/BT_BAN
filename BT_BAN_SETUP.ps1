@@ -96,7 +96,6 @@ try {
 
 $RULELIST = Get-NetFirewallRule -DisplayName BT_BAN_* | Select-Object -Property Displayname, Direction
 $TASKLIST = (Get-ScheduledTask BT_BAN_*).TaskName
-$DYKWNAME = (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore).Keyword
 cls
 echo "  成功配置以下过滤规则"
 echo ""
@@ -108,7 +107,7 @@ $TASKLIST | ForEach-Object {'  ' + $_}
 echo ""
 echo "  成功配置以下动态关键字"
 echo ""
-$DYKWNAME | ForEach-Object {'  ' + $_}
+echo "  BT_BAN_IPLIST"
 echo ""
 echo "  每天 0-1 8-9 16-17 时之间更新 IP 列表"
 echo ""
