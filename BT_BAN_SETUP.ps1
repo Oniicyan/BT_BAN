@@ -19,6 +19,19 @@ if (New-NetFirewallDynamicKeywordAddress -Id $TESTGUID -Keyword "BT_BAN_TEST" -A
 	return
 }
 
+if ((Get-NetFirewallProfile).Enabled -contains 0) {
+	if ([string](Get-NetFirewallProfile | %{`
+	if ($_.Enabled -eq 1) {$_.Name}`
+	}) -Notmatch (((Get-NetFirewallSetting -PolicyStore ActiveStore).ActiveProfile) -Replace(', ','|'))) {
+		echo ""
+		echo "  当前网络下未启用 Windows 防火墙"
+		echo ""
+		echo "  仍可继续配置，在 Windows 防火墙启用时生效"
+		echo ""
+		pause
+	}
+}
+
 echo ""
 echo "  请指定启用过滤规则的 BT 应用程序文件"
 echo ""
