@@ -69,15 +69,15 @@ New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addre
 
 - `powershell ""iex (irm $PS1URL -TimeoutSec 30)""`
 
-    从网络上的 PS1 脚本执行更新
+  从网络上的 PS1 脚本执行更新
   
 - `powershell $DIRPATH\IPLIST.ps1`
 
-   从本地的 PS1 脚本执行更新
+  从本地的 PS1 脚本执行更新
 
 - `$DIRPATH\IPLIST.cmd`
 
-    从本地的 CMD 脚本执行更新
+  从本地的 CMD 脚本执行更新
 
 为隐藏执行更新时的窗口显示，以上命令均通过 VBS 脚本嵌套执行
 
@@ -106,24 +106,24 @@ Register-ScheduledTask BT_BAN_UPDATE -InputObject $TASK
 
 - `New-ScheduledTaskPrincipal -UserId (whoami) -RunLevel Highest`
 
-    由当前用户以最高权限执行
+  由当前用户以最高权限执行
 
 - `New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -StartWhenAvailable -AllowStartIfOnBatteries`
 
-    尝试重启 5 次，间隔 60 秒；可在错过预定时间后执行；允许使用电池时执行
+  尝试重启 5 次，间隔 60 秒；可在错过预定时间后执行；允许使用电池时执行
 
 - `New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval (New-TimeSpan -Hours 8) -RandomDelay (New-TimeSpan -Hours 1)`
 
-    > 在 今日 的 0:00 时 - 触发后，无限期地每隔 08:00:00 重复一次。
+  > 在 今日 的 0:00 时 - 触发后，无限期地每隔 08:00:00 重复一次。
 
 - `New-ScheduledTaskAction -Execute $env:USERPROFILE\BT_BAN\UPDATE.vbs`
 
-    执行 `$env:USERPROFILE\BT_BAN\UPDATE.vbs`
+  执行 `$env:USERPROFILE\BT_BAN\UPDATE.vbs`
 
 - `New-ScheduledTask -Principal $PRINCIPAL -Settings $SETTINGS -Trigger $TRIGGER -Action $ACTION`
 
-    创建包含以上内容的实例
+  创建包含以上内容的实例
 
 - `Register-ScheduledTask BT_BAN_UPDATE -InputObject $TASK`
 
-    使用以上实例注册名为 `BT_BAN_UPDATE` 的任务计划
+  使用以上实例注册名为 `BT_BAN_UPDATE` 的任务计划
