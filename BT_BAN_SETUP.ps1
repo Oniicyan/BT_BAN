@@ -21,8 +21,8 @@ if (New-NetFirewallDynamicKeywordAddress -Id $TESTGUID -Keyword "BT_BAN_TEST" -A
 
 if ((Get-NetFirewallProfile).Enabled -contains 0) {
 	if ([string](Get-NetFirewallProfile | %{`
-	if ($_.Enabled -eq 1) {$_.Name}`
-	}) -Notmatch (((Get-NetFirewallSetting -PolicyStore ActiveStore).ActiveProfile) -Replace(', ','|'))) {
+	if ($_.Enabled -eq 1) {$_.Name}})`
+	-Notmatch (((Get-NetFirewallSetting -PolicyStore ActiveStore).ActiveProfile) -Replace(', ','|'))) {
 		echo ""
 		echo "  当前网络下未启用 Windows 防火墙"
 		echo ""
