@@ -1,8 +1,8 @@
 Remove-Variable * -ErrorAction Ignore
-
 $PS1URL = 'https://bt-ban.pages.dev/run'
 $ZIPURL = 'https://bt-ban.pages.dev/IPLIST.zip'
 
+echo "  成功获取脚本"
 New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -ErrorAction Ignore | Out-Null
 $TASKINFO = Get-ScheduledTask BT_BAN_* -ErrorAction Ignore
 
@@ -35,6 +35,9 @@ $SET_UPDATE = {
 	$MYLINK = ''
 	if ($TASKINFO) {$DDTEXT = "任务计划已重建"}
 	&$TOAST
+
+	Start-ScheduledTask BT_BAN_UPDATE
+	return
 }
 
 if ($TASKINFO.Principal.UserId -Match 'SYSTEM') {
@@ -85,16 +88,21 @@ if ($TASKINFO) {
 	if ($TASKINFO.Uri -Notmatch 'BT_BAN_UPDATE') {$SETFLAG = 1}
 	if ($TASKINFO.Triggers.RandomDelay -Notmatch 'PT1H') {$SETFLAG = 1}
 	if (!(Test-Path $env:USERPROFILE\BT_BAN\UPDATE.vbs)) {$SETFLAG = 1}
-	if ($SETFLAG -eq 1) {&$SET_UPDATE}
-} else {&$SET_UPDATE}
+} else {$SETFLAG = 1}
+
+if ($SETFLAG -eq 1) {
+	&$SET_UPDATE
+	return
+}
 
 while ($ZIP -lt 5) {
+	$ZIP++
 	try {
 		Invoke-WebRequest -OutFile $env:USERPROFILE\BT_BAN\IPLIST.zip $ZIPURL -TimeoutSec 30
 		break
 	} catch {
+		echo "  IP 列表下载失败，等待 1 分钟后尝试 （$ZIP/5）"
 		sleep 60
-		$ZIP++
 		if ($ZIP -ge 5) {
 			$SILENT = 'true'
 			$DDTEXT = "IP 列表下载失败`n通常是服务器问题，跳过本次更新"
