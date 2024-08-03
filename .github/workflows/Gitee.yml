@@ -3,6 +3,8 @@ name: Gitee
 on:
  push:
    branches: main
+ schedule:
+ - cron: 55 * * * *
 
 jobs:
   Gitee:
