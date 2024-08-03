@@ -32,7 +32,7 @@
 
 至少要求 Windows 10 21H2 左右的版本 （[未确认](https://github.com/MicrosoftDocs/windows-powershell-docs/blob/main/docset/winserver2022-ps/netsecurity/Get-NetFirewallDynamicKeywordAddress.md)）
 
-提供自动配置脚本，说明手动配置流程
+提供自动配置脚本，及手动配置流程
 
 **所有脚本及命令默认在 PowerShell 下以管理员权限执行**
 
