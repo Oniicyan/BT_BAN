@@ -19,7 +19,7 @@ $SET_UPDATE = {
 	$CMD = "powershell `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
 	$VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
 
-	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId (whoami) -RunLevel Highest
+	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $env:USERNAME -RunLevel Highest
 	$SETTINGS = New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -StartWhenAvailable -AllowStartIfOnBatteries
 	$TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval (New-TimeSpan -Hours 8) -RandomDelay (New-TimeSpan -Hours 1)
 	$ACTION = New-ScheduledTaskAction -Execute $env:USERPROFILE\BT_BAN\UPDATE.vbs
@@ -86,6 +86,7 @@ if ((Get-NetFirewallRule -DisplayName "BT_BAN_*").Count -lt 2) {
 
 if ($TASKINFO) {
 	if ($TASKINFO.Uri -Notmatch 'BT_BAN_UPDATE') {$SETFLAG = 1}
+	if ($TASKINFO.Principal.UserId -Notmatch $env:USERNAME) {$SETFLAG = 1}
 	if ($TASKINFO.Triggers.RandomDelay -Notmatch 'PT1H') {$SETFLAG = 1}
 	if (!(Test-Path $env:USERPROFILE\BT_BAN\UPDATE.vbs)) {$SETFLAG = 1}
 } else {$SETFLAG = 1}
