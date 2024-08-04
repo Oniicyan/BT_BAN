@@ -1,4 +1,4 @@
-## 介绍
+# 介绍
 
 **基于 Windows 防火墙过滤规则，获取 IP 黑名单并添加到动态关键字（类似 Linux 的 ipset）**
 
@@ -28,7 +28,7 @@
 
 本项目为替代方案，有条件的用户建议加入 BTN 网络
 
-## 使用方法
+# 使用方法
 
 至少要求 Windows 10 21H2 左右的版本 （[未确认](https://github.com/MicrosoftDocs/windows-powershell-docs/blob/main/docset/winserver2022-ps/netsecurity/Get-NetFirewallDynamicKeywordAddress.md)）
 
@@ -36,9 +36,9 @@
 
 **所有脚本及命令默认在 PowerShell 下以管理员权限执行**
 
-### 自动配置
+## 自动配置
 
-#### 启用配置
+### 启用配置
 
 执行
 
@@ -48,7 +48,7 @@
 
 多款 BT 应用启用需要执行多次，程序的文件名不能重复
 
-#### 清除配置
+### 清除配置
 
 执行
 
@@ -56,9 +56,9 @@
 
 确认清除的项目后按 Enter 键继续
 
-### 手动配置
+## 手动配置
 
-#### 配置过滤规则
+### 配置过滤规则
 
 BT 的特性上，需要同时配置入站与出站规则
 
@@ -70,7 +70,7 @@ New-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -Direction Inbound -Action Blo
 New-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -Direction Outbound -Action Block -Program $BTPATH -RemoteDynamicKeywordAddresses $DYKWID
 ```
 
-#### 配置动态关键字
+### 配置动态关键字
 
 ```
 $IPLIST = irm https://bt-ban.pages.dev/IPLIST.txt # 示例脚本中默认使用 ZIP 压缩包
@@ -81,7 +81,7 @@ New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addre
 
 后续只需要更新动态关键字，无需更改过滤规则
 
-#### 配置任务计划
+### 配置任务计划
 
 通过任务计划更新动态关键字的 IP 列表
 
@@ -132,7 +132,7 @@ $TASK = New-ScheduledTask -Principal $PRINCIPAL -Settings $SETTINGS -Trigger $TR
 Register-ScheduledTask BT_BAN_UPDATE -InputObject $TASK
 ```
 
-##### 说明
+#### 说明
 
 - `New-ScheduledTaskPrincipal -UserId (whoami) -RunLevel Highest`
 
