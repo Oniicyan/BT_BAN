@@ -146,7 +146,7 @@ Register-ScheduledTask BT_BAN_UPDATE -InputObject $TASK
 
 - `New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval (New-TimeSpan -Hours 8) -RandomDelay (New-TimeSpan -Hours 1)`
 
-  > 在 今日 的 0:00 时 - 触发后，无限期地每隔 08:00:00 重复一次。
+  > 在 今日 的 0:00 时 - 触发后，无限期地每隔 08:00:00 重复一次。（随机延迟 1 小时）
 
 - `New-ScheduledTaskAction -Execute $env:USERPROFILE\BT_BAN\UPDATE.vbs`
 
