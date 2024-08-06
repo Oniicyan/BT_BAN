@@ -126,7 +126,7 @@ $CMD = "powershell ""D:\BT_BAN\IPLIST.ps1"""
 $VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
 
 # 部分设置项目并非必要
-$PRINCIPAL = New-ScheduledTaskPrincipal -UserId (whoami) -RunLevel Highest
+$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $env:USERNAME -RunLevel Highest
 $SETTINGS = New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -StartWhenAvailable -AllowStartIfOnBatteries
 $TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval (New-TimeSpan -Hours 8) -RandomDelay (New-TimeSpan -Hours 1)
 $ACTION = New-ScheduledTaskAction -Execute $env:USERPROFILE\BT_BAN\UPDATE.vbs
@@ -136,7 +136,7 @@ Register-ScheduledTask BT_BAN_UPDATE -InputObject $TASK
 
 #### 说明
 
-- `New-ScheduledTaskPrincipal -UserId (whoami) -RunLevel Highest`
+- `New-ScheduledTaskPrincipal -UserId $env:USERNAME -RunLevel Highest`
 
   由当前用户以最高权限执行
 
