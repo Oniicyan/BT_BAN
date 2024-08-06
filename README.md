@@ -36,6 +36,8 @@
 
 **所有脚本及命令默认在 PowerShell 下以管理员权限执行**
 
+按下 **Win + X 键**，Windows 11 选择 “**终端管理员**”，Windows 10 选择 “**Windows PowerShell（管理员）**”
+
 ## 自动配置
 
 ### 启用配置
