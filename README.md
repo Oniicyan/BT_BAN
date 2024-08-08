@@ -119,8 +119,8 @@ CMD 脚本无法显示通知，因此可以由 SYSTEM 直接执行来隐藏窗�
 
 ```
 # 创建 VBS 脚本用作隐藏窗口
-$VBS = 'createobject("wscript.shell").run "CMD",0'
 # 示例从本地的 PS1 脚本执行更新
+$VBS = 'createobject("wscript.shell").run "CMD",0'
 # 请编辑脚本路径，请注意双引号的数量
 $CMD = "powershell ""D:\BT_BAN\IPLIST.ps1"""
 $VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
