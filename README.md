@@ -22,7 +22,7 @@
 
 　
 
-**本项目从 [BTN-Collected-Rules](https://github.com/PBH-BTN/BTN-Collected-Rules) 获取 IP 黑名单（combine/all.txt）**
+**本项目从 [BTN-Collected-Rules](https://github.com/PBH-BTN/BTN-Collected-Rules) 获取 IP 黑名单（[combine/all.txt](https://raw.githubusercontent.com/PBH-BTN/BTN-Collected-Rules/main/combine/all.txt)）**
 
 感谢开发者及加入 BTN 威胁防护网络计划的所有成员
 
