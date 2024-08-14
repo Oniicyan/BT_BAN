@@ -30,9 +30,9 @@ jobs:
           REPODIR=${PWD}_ORG
           cd ~
           git clone git@gitcode.com:Oniicyan/$REPOURL.git
-          cd $REPOURL
-          cp $REPODIR/*.* ./
+          #cd $REPOURL
+          #cp $REPODIR/*.* ./
 
-          git add .
-          git commit -m "Update from GitHub Actions" || exit 0
-          git push
+          #git add .
+          #git commit -m "Update from GitHub Actions" || exit 0
+          #git push
