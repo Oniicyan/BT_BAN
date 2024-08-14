@@ -10,7 +10,7 @@ jobs:
   GitCode:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: |
           mkdir ~/.ssh
           cat > ~/.ssh/id_rsa <<EOF
@@ -27,11 +27,11 @@ jobs:
 
           REPOURL=BT_BAN
           REPODIR=$PWD
-          mv $REPODIR ${REPODIR}_ORIG
-          cd ~
+          mkdir ~/TARGET
+          cd ~/TARGET
           git clone git@gitcode.com:Oniicyan/$REPOURL.git
           cd $REPOURL
-          cp ${REPODIR}_ORIG/*.* ./
+          cp $REPODIR/*.* ./
 
           git add .
           git commit -m "Update from GitHub Actions" || exit 0
