@@ -1,4 +1,4 @@
-name: Gitee
+name: GitCode
 
 on:
  push:
@@ -7,7 +7,7 @@ on:
  - cron: 55 * * * *
 
 jobs:
-  Gitee:
+  GitCode:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,7 +25,7 @@ jobs:
           git config --global user.name ${GITHUB_ACTOR}
           git config --global user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
 
-          REPOURL=BT_BAN
+          REPOURL=BT_TEST
           REPODIR=$PWD
           cd ~
           git clone git@gitee.com:Oniicyan/$REPOURL.git
