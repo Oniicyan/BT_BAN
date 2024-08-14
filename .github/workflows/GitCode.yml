@@ -22,8 +22,8 @@ jobs:
           ssh-keyscan gitcode.com >> ~/.ssh/known_hosts
           ssh -T git@gitcode.com
 
-          git config --global user.name ${GITHUB_ACTOR}
-          git config --global user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
+          git config --global user.name "Oniicyan"
+          git config --global user.email "Oniicyan@noreply.gitcode.com"
 
           REPOURL=BT_BAN
           mv $PWD ${PWD}_ORG
