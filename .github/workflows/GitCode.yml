@@ -1,0 +1,37 @@
+name: Gitee
+
+on:
+ push:
+   branches: main
+ schedule:
+ - cron: 55 * * * *
+
+jobs:
+  Gitee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir ~/.ssh
+          cat > ~/.ssh/id_rsa <<EOF
+          ${{secrets.GITEE}}
+          EOF
+          chmod 700 ~/.ssh/id_rsa
+          eval $(ssh-agent -s)
+          ssh-add ~/.ssh/id_rsa
+          ssh-keyscan gitcode.com >> ~/.ssh/known_hosts
+          ssh -T git@gitcode.com
+
+          git config --global user.name ${GITHUB_ACTOR}
+          git config --global user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
+
+          REPOURL=BT_BAN
+          REPODIR=$PWD
+          cd ~
+          git clone git@gitee.com:Oniicyan/$REPOURL.git
+          cd $REPOURL
+          cp $REPODIR/*.* ./
+
+          git add .
+          git commit -m "Update from GitHub Actions" || exit 0
+          git push
