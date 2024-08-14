@@ -10,7 +10,7 @@ jobs:
   GitCode:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
       - run: |
           mkdir ~/.ssh
           cat > ~/.ssh/id_rsa <<EOF
@@ -22,8 +22,8 @@ jobs:
           ssh-keyscan gitcode.com >> ~/.ssh/known_hosts
           ssh -T git@gitcode.com || true
 
-          git config --global user.name "Oniicyan"
-          git config --global user.email "Oniicyan@noreply.gitcode.com"
+          git config --global user.name ${GITHUB_ACTOR}
+          git config --global user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
 
           REPOURL=BT_BAN
           REPODIR=$PWD
@@ -31,7 +31,7 @@ jobs:
           cd ~
           git clone git@gitcode.com:Oniicyan/$REPOURL.git
           cd $REPOURL
-          cp $REPODIR_ORIG/*.* ./
+          cp ${REPODIR}_ORIG/*.* ./
 
           git add .
           git commit -m "Update from GitHub Actions" || exit 0
