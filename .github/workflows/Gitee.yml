@@ -20,14 +20,15 @@ jobs:
           eval $(ssh-agent -s)
           ssh-add ~/.ssh/id_rsa
           ssh-keyscan gitee.com >> ~/.ssh/known_hosts
-          ssh -T git@gitee.com
+          ssh -T git@gitee.com || true
 
           git config --global user.name ${GITHUB_ACTOR}
           git config --global user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
 
           REPOURL=bt_ban
           REPODIR=$PWD
-          cd ~
+          mkdir ~/TARGET
+          cd ~/TARGET
           git clone git@gitee.com:oniicyan/$REPOURL.git
           cd $REPOURL
           cp $REPODIR/*.* ./
