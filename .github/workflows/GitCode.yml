@@ -20,19 +20,19 @@ jobs:
           eval $(ssh-agent -s)
           ssh-add ~/.ssh/id_rsa
           ssh-keyscan gitcode.com >> ~/.ssh/known_hosts
-          ssh -T git@gitcode.com
+          ssh -T git@gitcode.com || true
 
           git config --global user.name "Oniicyan"
           git config --global user.email "Oniicyan@noreply.gitcode.com"
 
           REPOURL=BT_BAN
-          mv $PWD ${PWD}_ORG
-          REPODIR=${PWD}_ORG
+          REPODIR=$PWD
+          mv $REPODIR ${REPODIR}_ORIG
           cd ~
           git clone git@gitcode.com:Oniicyan/$REPOURL.git
-          #cd $REPOURL
-          #cp $REPODIR/*.* ./
+          cd $REPOURL
+          cp $REPODIR_ORIG/*.* ./
 
-          #git add .
-          #git commit -m "Update from GitHub Actions" || exit 0
-          #git push
+          git add .
+          git commit -m "Update from GitHub Actions" || exit 0
+          git push
