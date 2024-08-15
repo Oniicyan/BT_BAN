@@ -31,7 +31,8 @@ jobs:
           cd ~/TARGET
           git clone git@gitcode.com:Oniicyan/$REPOURL.git
           cd $REPOURL
-          cp $REPODIR/*.* ./
+          rm -rf *
+          cp -rf $REPODIR/*.* ./
 
           git add .
           git commit -m "Update from GitHub Actions" || exit 0
