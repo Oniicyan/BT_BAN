@@ -99,7 +99,7 @@ if ($SETFLAG -eq 1) {
 while ($ZIP -lt 5) {
 	$ZIP++
 	try {
-		Invoke-WebRequest -OutFile $env:USERPROFILE\BT_BAN\IPLIST.zip $ZIPURL -TimeoutSec 30
+		Invoke-RestMethod -OutFile $env:USERPROFILE\BT_BAN\IPLIST.zip $ZIPURL -TimeoutSec 30
 		break
 	} catch {
 		echo "  IP 列表下载失败，等待 1 分钟后尝试 （$ZIP/5）"
