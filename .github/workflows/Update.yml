@@ -15,10 +15,11 @@ jobs:
          zip -r IPLIST.zip IPLIST.txt
          git config --local user.name ${GITHUB_ACTOR}
          git config --local user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
+         git add all.txt
+         git commit -m "Update all.txt" || exit 0
          git add IPLIST.txt
-         git commit -m "Update IPLIST.txt" || exit 0
          git add IPLIST.zip
-         git commit -m "Update IPLIST Archive"
+         git commit -m "Update IPLIST"
      - name: Push changes
        uses: ad-m/github-push-action@master
        with:
