@@ -11,7 +11,7 @@ jobs:
      - run: |
          curl -LsO https://raw.githubusercontent.com/PBH-BTN/BTN-Collected-Rules/main/combine/all.txt
          sed -i 's/#.*\n//' all.txt
-         sed 's/\n/,' all.txt >IPLIST.txt
+         sed 's/\n/,/' all.txt >IPLIST.txt
          zip -r IPLIST.zip IPLIST.txt
          git config --local user.name ${GITHUB_ACTOR}
          git config --local user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
