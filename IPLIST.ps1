@@ -33,7 +33,7 @@ if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 # 若不需要，可自行删除
 # 不需要通知时，建议使用 CMD 脚本
 $COUNT = ((Get-NetFirewallDynamicKeywordAddress -Id $DYKWID).Addresses -Split ',').Count
-$XML = '<toast><visual><binding template="ToastText01"><text id="1">IPLIST 已更新，当前共 $COUNT 条 IP（段）</text></binding></visual><audio silent="true"/></toast>'
+$XML = '<toast><visual><binding template="ToastText01"><text id="1">IPLIST 已更新，当前共 $COUNT 条 IP 规则</text></binding></visual><audio silent="true"/></toast>'
 $XmlDocument = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]::New()
 $XmlDocument.loadXml($XML)
 $AppId = '{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe'
