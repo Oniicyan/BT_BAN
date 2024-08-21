@@ -132,10 +132,3 @@ if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 	$MYLINK = ''
 }
 &$TOAST
-
-# 删除旧版本文件，此部分保留一段时间
-$SYSTMP = [System.Environment]::GetEnvironmentVariable('TEMP','Machine')
-$SYSUSR = 'C:\Windows\system32\config\systemprofile'
-Remove-Item $SYSTMP -Include BT_BAN* -Recurse -Force -ErrorAction Ignore
-Remove-Item $SYSUSR -Include BT_BAN* -Recurse -Force -ErrorAction Ignore
-Remove-Item $env:USERPROFILE/BT_BAN*.* -Force -ErrorAction Ignore
