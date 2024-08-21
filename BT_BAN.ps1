@@ -115,7 +115,7 @@ while ($ZIP -lt 5) {
 	}
 }
 Expand-Archive -Force -Path $env:USERPROFILE\BT_BAN\IPLIST.zip -DestinationPath $env:USERPROFILE\BT_BAN
-$IPLIST = Get-Content $env:USERPROFILE\BT_BAN\IPLIST.txt
+$IPLIST = (Get-Content $env:USERPROFILE\BT_BAN\IPLIST.txt) -Join ','
 
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
 if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
