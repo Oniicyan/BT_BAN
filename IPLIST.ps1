@@ -13,7 +13,7 @@ while ($ZIP -lt 5) {
 	}
 }
 Expand-Archive -Force -Path $env:temp\BT_BAN\IPLIST.zip -DestinationPath $env:temp\BT_BAN
-$IPLIST = Get-Content $env:temp\BT_BAN\IPLIST.txt
+$IPLIST = (Get-Content $env:USERPROFILE\BT_BAN\IPLIST.txt) -Join ','
 
 # 从网络上的 TXT 文件中获取 IPLIST
 # 可自行替换 URL
