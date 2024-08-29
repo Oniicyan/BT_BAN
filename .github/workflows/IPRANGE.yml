@@ -19,7 +19,7 @@ jobs:
          try {
            git commit -m "Update IPRANGE.txt"
          } catch {
-           exit
+           exit 0
          }
      - name: Push changes
        uses: ad-m/github-push-action@master
