@@ -79,7 +79,7 @@ New-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -Direction Outbound -Action Bl
 ### 配置动态关键字
 
 ```PowerShell
-$IPLIST = irm https://bt-ban.pages.dev/IPLIST.txt # 示例脚本中默认使用 ZIP 压缩包
+$IPLIST = (irm https://bt-ban.pages.dev/IPLIST.txt) -Join ',' # 示例脚本中默认使用 ZIP 压缩包
 New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST
 ```
 
