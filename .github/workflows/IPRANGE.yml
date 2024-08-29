@@ -16,11 +16,7 @@ jobs:
          git config --local user.name ${GITHUB_ACTOR}
          git config --local user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
          git add IPRANGE.txt
-         try {
-           git commit -m "Update IPRANGE.txt"
-         } catch {
-           exit 0
-         }
+         git commit -m "Update IPRANGE.txt" || exit 0
      - name: Push changes
        uses: ad-m/github-push-action@master
        with:
