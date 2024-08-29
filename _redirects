@@ -2,6 +2,8 @@
 /set /BT_BAN_SETUP.ps1 301
 /run /BT_BAN.ps1 301
 /unset /BT_BAN_UNSET.ps1 301
+/iplist /IPLIST.txt 301
+/iprange /IPRANGE.txt 301
 /test /TEST.ps1 302
 
 # / https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN_SETUP.ps1 301
