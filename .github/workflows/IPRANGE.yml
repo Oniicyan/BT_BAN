@@ -1,0 +1,22 @@
+name: Update IPLIST
+on:
+ schedule:
+ - cron: 50 * * * *
+ workflow_dispatch:
+jobs:
+ IPLIST:
+   runs-on: windows-latest
+   steps:
+     - uses: actions/checkout@v4
+     - run: |
+         $IPLIST = (Get-Content IPLIST.txt) -Join ','
+         $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
+         New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST | Out-Null
+         (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID).Addresses -Split ',' | IPRANGE.txt
+         git add IPRANGE.txt
+         git commit -m "Update IPRANGE.txt"
+     - name: Push changes
+       uses: ad-m/github-push-action@master
+       with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         branch: ${{ github.ref }}
