@@ -12,7 +12,7 @@ jobs:
          $IPLIST = (Get-Content IPLIST.txt) -Join ','
          $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
          New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST | Out-Null
-         (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID).Addresses -Split ',' | IPRANGE.txt
+         (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID).Addresses -Split ',' | Out-File IPRANGE.txt
          git add IPRANGE.txt
          git commit -m "Update IPRANGE.txt"
      - name: Push changes
