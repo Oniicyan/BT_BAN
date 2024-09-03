@@ -18,7 +18,7 @@ $IPLIST = (Get-Content $env:USERPROFILE\BT_BAN\IPLIST.txt) -Join ','
 # 从网络上的 TXT 文件中获取 IPLIST
 # 可自行替换 URL
 # 请自行删除注释以启用
-# $IPLIST = irm https://bt-ban.pages.dev/IPLIST.txt
+# $IPLIST = -Split (irm 'https://bt-ban.pages.dev/IPLIST.txt' -TimeoutSec 30) -Join ','
 
 # 配置动态关键字
 # 可自行替换 GUID
