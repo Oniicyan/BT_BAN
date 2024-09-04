@@ -3,8 +3,6 @@ name: GitCode
 on:
  push:
    branches: main
- schedule:
- - cron: 55 * * * *
 
 jobs:
   GitCode:
