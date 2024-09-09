@@ -1,19 +1,9 @@
 / /BT_BAN_SETUP.ps1 301
 /set /BT_BAN_SETUP.ps1 301
 /run /BT_BAN.ps1 301
+/add /BT_BAN_ADDFW.ps1 301
 /unset /BT_BAN_UNSET.ps1 301
 /iplist /IPLIST.txt 302
 /iprange /IPRANGE.txt 302
 /clean /Clean_Firewall_Rules.ps1 301
 /test /TEST.ps1 302
-
-# / https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN_SETUP.ps1 301
-# /set https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN_SETUP.ps1 301
-# /run https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN.ps1 301
-# /unset https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN_UNSET.ps1 301
-# /test https://gitee.com/oniicyan/bt_ban/raw/master/TEST.ps1 302
-
-# /BT_BAN.ps1 https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN.ps1 301
-# /BT_BAN_UNSET.ps1 https://gitee.com/oniicyan/bt_ban/raw/master/BT_BAN_UNSET.ps1 301
-# /IPLIST.zip https://gitee.com/oniicyan/bt_ban/raw/master/IPLIST.zip 301
-# /IPLIST.txt https://gitee.com/oniicyan/bt_ban/raw/master/IPLIST.txt 301
