@@ -39,7 +39,7 @@ Write-Host 如要清理，请按 Enter 键
 Write-Host 如要退出，请按 Ctrl+C 键或关闭本窗口`n
 pause
 Get-NetFirewallApplicationFilter -Program $LOST | Remove-NetFirewallRule
-Write-Host 清理完成`n
+Write-Host `n清理完成`n
 if ($FAIL) {
 	Write-Host 以下关联程序的过滤规则清理失败，请手动删除`n
 	$FAIL
