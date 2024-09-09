@@ -42,6 +42,12 @@
 
 按下 **Win + X 键**，Windows 11 选择 “**终端管理员**”，Windows 10 选择 “**Windows PowerShell（管理员）**”
 
+## 清理过滤规则（可选）
+
+可选执行以下命令清理 Windows 防火墙中的冗余规则
+
+`iex (irm bt-ban.pages.dev/clean)`
+
 ## 自动配置
 
 ### 启用配置
