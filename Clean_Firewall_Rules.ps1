@@ -28,7 +28,7 @@ if ($LOST) {
 		} else {$FAIL += $PATH}
 	}
 } else {
-	Write-Host `n没有需要清理的过滤规则
+	Write-Host `n没有需要清理的过滤规则`n
 	return
 }
 
