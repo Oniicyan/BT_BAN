@@ -3,11 +3,8 @@ if ((Fltmc).Count -eq 3) {
 	return
 }
 
-Write-Host
-Write-Host 即将扫描 Windows 防火墙中，关联程序已被删除或移动的过滤规则
-Write-Host
-Write-Host 可能需要耗时几分钟
-Write-Host
+Write-Host `n即将扫描 Windows 防火墙中，关联程序已被删除或移动的过滤规则
+Write-Host `n可能需要耗时几分钟`n
 pause
 
 $LIST = (Get-NetFirewallApplicationFilter).Program | Select-String -Notmatch 'Any|^System$|%systemroot%' | Unique
@@ -31,7 +28,7 @@ if ($LOST) {
 	Write-Host `n没有需要清理的过滤规则
 	return
 }
-Write-Host 以上过滤规则的关联程序不存在`n
+Write-Host 关联程序已被删除或移动`n
 Write-Host 如要清理，请按 Enter 键
 Write-Host 如要退出，请按 Ctrl+C 键或关闭本窗口`n
 
