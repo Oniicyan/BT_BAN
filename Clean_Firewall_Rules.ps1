@@ -7,7 +7,7 @@ Write-Host `n即将扫描 Windows 防火墙中，关联程序已被删除或移�
 Write-Host `n可能需要耗时几分钟`n
 pause
 
-$LIST = (Get-NetFirewallApplicationFilter).Program | Select-String -Notmatch 'Any|^System$|%systemroot%' | Sort-Object | Unique
+$LIST = (Get-NetFirewallApplicationFilter).Program | Select-String -Notmatch 'Any|^System$|%systemroot%' | Sort-Object | Get-Unique
 $LOST = @()
 foreach ($PATH in $LIST) {
 	if ($PATH -Match '^%') {
