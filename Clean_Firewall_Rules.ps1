@@ -20,18 +20,19 @@ foreach ($PATH in $LIST) {
 }
 if ($LOST) {
 	foreach ($PATH in $LOST) {
-		Write-Host "程序：$PATH"
-		Write-Host "规则："
+		Write-Host
+		Write-Host 程序：$PATH
+		Write-Host 规则：
 		if ($RULE = Get-NetFirewallApplicationFilter -Program $PATH | Get-NetFirewallRule) {
 			$RULE | ForEach-Object {'　　　' + $_.DisplayName + ' (' +$_.Direction + ')'}
 		} else {$FAIL += $PATH}
-		Write-Host
 	}
 } else {
 	Write-Host `n没有需要清理的过滤规则
 	return
 }
 
+Write-Host
 Write-Host 以上过滤规则的关联程序已被删除或移动
 Write-Host Inbound/Outbound 代表 入站规则/出站规则`n
 Write-Host 如要清理，请按 Enter 键
