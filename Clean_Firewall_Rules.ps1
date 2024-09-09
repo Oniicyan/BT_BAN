@@ -41,6 +41,7 @@ pause
 Get-NetFirewallApplicationFilter -Program $LOST | Remove-NetFirewallRule
 if (FAIL) {
 	Write-Host `n以下关联程序的过滤规则清理失败，请手动删除`n
+	$FAIL
 } else {
 	Write-Host `n清理完成`n
 }
