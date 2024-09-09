@@ -58,7 +58,11 @@
 
 选择需要启用过滤的 BT 应用程序文件即可自动完成配置
 
-多款 BT 应用启用需要执行多次，程序的文件名不能重复
+可自动识别，支持 [受到社区广泛认可](https://github.com/PBH-BTN/quick-references/blob/main/peer_ids.md) 的 BT 应用程序
+
+自动识别时会关联所有识别到的程序，手动选择时每次只能选择一个程序
+
+需要添加关联程序的过滤规则时，执行 `iex (irm bt-ban.pages.dev/add)`
 
 ### 清除配置
 
