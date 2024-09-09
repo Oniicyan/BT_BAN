@@ -9,6 +9,7 @@ pause
 
 $LIST = (Get-NetFirewallApplicationFilter).Program | Select-String -Notmatch 'Any|^System$|%systemroot%' | Sort-Object | Get-Unique
 $LOST = @()
+$FAIL = @()
 foreach ($PATH in $LIST) {
 	if ($PATH -Match '^%') {
 		$TEST = Invoke-Expression (($PATH -Replace '^%','${ENV:').Replace('%','} + ''') + "'")
@@ -21,7 +22,9 @@ if ($LOST) {
 	foreach ($PATH in $LOST) {
 		Write-Host "程序：$PATH"
 		Write-Host "规则："
-		Get-NetFirewallApplicationFilter -Program $PATH | Get-NetFirewallRule | ForEach-Object {'　　　' + $_.DisplayName + ' (' +$_.Direction + ')'}
+		if ($RULE = Get-NetFirewallApplicationFilter -Program $PATH | Get-NetFirewallRule) {
+			$RULE | ForEach-Object {'　　　' + $_.DisplayName + ' (' +$_.Direction + ')'}
+		} else {$FAIL += $PATH}
 		Write-Host
 	}
 } else {
@@ -35,4 +38,8 @@ Write-Host 如要清理，请按 Enter 键
 Write-Host 如要退出，请按 Ctrl+C 键或关闭本窗口`n
 pause
 Get-NetFirewallApplicationFilter -Program $LOST | Remove-NetFirewallRule
-Write-Host `n清理完成`n
+if (FAIL) {
+	Write-Host `n以下关联程序的过滤规则清理失败，请手动删除`n
+} else {
+	Write-Host `n清理完成`n
+}
