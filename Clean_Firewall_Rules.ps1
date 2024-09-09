@@ -9,7 +9,7 @@ pause
 
 $LIST = (Get-NetFirewallApplicationFilter).Program | Select-String -Notmatch 'Any|^System$|%systemroot%' | Unique
 $LOST = @()
-foreach ($PATH in $LIST) {
+foreach ($PATH in $LIST | Unique) {
 	if ($PATH -Match '^%') {
 		$TEST = Invoke-Expression (($PATH -Replace '^%','${ENV:').Replace('%','} + ''') + "'")
 	} else {
