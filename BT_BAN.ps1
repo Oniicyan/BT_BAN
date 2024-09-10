@@ -6,6 +6,7 @@ Write-Output "  成功获取脚本"
 $TASKINFO = Get-ScheduledTask BT_BAN_* -ErrorAction Ignore
 $USERPATH = "$ENV:USERPROFILE\BT_BAN"
 New-Item -ItemType Directory -Path $USERPATH -ErrorAction Ignore | Out-Null
+if ((Get-Content $USERPATH\Output.log).Count -ge 1000) {Move-Item $USERPATH\Output.log $USERPATH\Output.old -Force -ErrorAction Ignore}
 
 $TOAST = {
 	$XML = '<toast DDPARM><visual><binding template="ToastText01"><text id="1">DDTEXT</text></binding></visual><audio silent="BOOL"/><actions>MYLINK</actions></toast>'
@@ -13,7 +14,7 @@ $TOAST = {
 	$XmlDocument.loadXml($XML.Replace("DDPARM","$DDPARM").Replace("DDTEXT","$DDTEXT").Replace("BOOL","$SILENT").Replace("MYLINK","$MYLINK"))
 	$AppId = 'BT_BAN_IPLIST'
 	[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
-	Write-Output (Get-Date) $DDTEXT | Out-File -Append $USERPATH\Output.log
+	Write-Output (Get-Date).ToString() "$DDTEXT`n" | Out-File -Append $USERPATH\Output.log
 }
 
 $SET_UPDATE = {
@@ -101,7 +102,7 @@ if ($SETFLAG -eq 1) {
 while ($ZIP -lt 5) {
 	$ZIP++
 	try {
-		Invoke-RestMethod -OutFile $USERPATH\IPLIST.zip $ZIPURL -TimeoutSec 30
+		Invoke-RestMethod -OutFile $ENV:TEMP\IPLIST.zip $ZIPURL -TimeoutSec 30
 		break
 	} catch {
 		Write-Output "  IP 列表下载失败，等待 1 分钟后尝试 （$ZIP/5）"
@@ -116,9 +117,16 @@ while ($ZIP -lt 5) {
 		}
 	}
 }
-Expand-Archive -Force -Path $USERPATH\IPLIST.zip -DestinationPath $USERPATH
-$IPLIST = (Get-Content $USERPATH\IPLIST.txt) -Join ','
+Expand-Archive -Force -Path $ENV:TEMP\IPLIST.zip -DestinationPath $ENV:TEMP
+if (Test-Path $USERPATH\IPLIST.txt) {
+	if (Compare-Object (Get-Content $ENV:TEMP\IPLIST.txt) (Get-Content $USERPATH\IPLIST.txt)) {
+		Move-Item $ENV:TEMP\IPLIST.txt $USERPATH\IPLIST.txt -Force -ErrorAction Ignore
+	} else {
+		return
+	}
+}
 
+$IPLIST = (Get-Content $USERPATH\IPLIST.txt) -Join ','
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
 if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 	Update-NetFirewallDynamicKeywordAddress -Id $DYKWID -Addresses $IPLIST | Out-Null
