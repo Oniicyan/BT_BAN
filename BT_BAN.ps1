@@ -4,7 +4,7 @@ $ZIPURL = 'https://bt-ban.pages.dev/IPLIST.zip'
 
 Write-Output "  成功获取脚本"
 $TASKINFO = Get-ScheduledTask BT_BAN_* -ErrorAction Ignore
-$USERPATH = $ENV:USERPROFILE\BT_BAN
+$USERPATH = "$ENV:USERPROFILE\BT_BAN"
 New-Item -ItemType Directory -Path $USERPATH -ErrorAction Ignore | Out-Null
 
 $TOAST = {
