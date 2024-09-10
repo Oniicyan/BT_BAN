@@ -116,7 +116,7 @@ while ($ZIP -lt 5) {
 		}
 	}
 }
-Expand-Archive -Force -Path $USERPATH\IPLIST.zip -DestinationPath $USERPATH\BT_BAN
+Expand-Archive -Force -Path $USERPATH\IPLIST.zip -DestinationPath $USERPATH
 $IPLIST = (Get-Content $USERPATH\IPLIST.txt) -Join ','
 
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
