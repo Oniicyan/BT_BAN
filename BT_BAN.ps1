@@ -124,6 +124,9 @@ if (Test-Path $USERPATH\IPLIST.txt) {
 	} else {
 		return
 	}
+} else {
+	Move-Item $ENV:TEMP\IPLIST.txt $USERPATH\IPLIST.txt -Force -ErrorAction Ignore
+	$NOTIFY = 1
 }
 
 $IPLIST = (Get-Content $USERPATH\IPLIST.txt) -Join ','
