@@ -13,7 +13,7 @@ $TOAST = {
 	$XmlDocument.loadXml($XML.Replace("DDPARM","$DDPARM").Replace("DDTEXT","$DDTEXT").Replace("BOOL","$SILENT").Replace("MYLINK","$MYLINK"))
 	$AppId = 'BT_BAN_IPLIST'
 	[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
-	Write-Output Get-Date $DDTEXT | Out-File -Append $USERPATH\Output.log
+	Write-Output (Get-Date) $DDTEXT | Out-File -Append $USERPATH\Output.log
 }
 
 $SET_UPDATE = {
