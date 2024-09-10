@@ -21,7 +21,7 @@ $SET_UPDATE = {
 	$CMD = "powershell `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
 	$VBS.Replace("CMD","$CMD") >$USERPATH\UPDATE.vbs
 
-	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $USERPATH\$ENV:USERNAME -RunLevel Highest
+	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $ENV:COMPUTERNAME\$ENV:USERNAME -RunLevel Highest
 	$SETTINGS = New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -StartWhenAvailable -AllowStartIfOnBatteries
 	$TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval (New-TimeSpan -Hours 8) -RandomDelay (New-TimeSpan -Hours 1)
 	$ACTION = New-ScheduledTaskAction -Execute $USERPATH\UPDATE.vbs
