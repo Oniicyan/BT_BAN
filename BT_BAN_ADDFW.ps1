@@ -28,6 +28,10 @@ if ((Get-NetFirewallProfile).Enabled -contains 0) {
 	}
 }
 
+Write-Host "  已配置以下过滤规则`n"
+Get-NetFirewallRule -DisplayName BT_BAN_* | ForEach-Object {'  ' + $_.DisplayName + ' (' + $_.Direction + ')'}
+Write-Host
+
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
 Write-Host "  --------------------------------"
 Write-Host "  请指定启用过滤规则的 BT 应用程序"
