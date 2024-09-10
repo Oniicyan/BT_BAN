@@ -2,27 +2,29 @@ Remove-Variable * -ErrorAction Ignore
 $PS1URL = 'https://bt-ban.pages.dev/run'
 $ZIPURL = 'https://bt-ban.pages.dev/IPLIST.zip'
 
-echo "  成功获取脚本"
-New-Item -ItemType Directory -Path $env:USERPROFILE\BT_BAN -ErrorAction Ignore | Out-Null
+Write-Output "  成功获取脚本"
 $TASKINFO = Get-ScheduledTask BT_BAN_* -ErrorAction Ignore
+$USERPATH = $ENV:USERPROFILE\BT_BAN
+New-Item -ItemType Directory -Path $USERPATH -ErrorAction Ignore | Out-Null
 
 $TOAST = {
-	$XML = '<toast DDPARM><visual><binding template="ToastText02"><text id="1">BT_BAN_IPLIST</text><text id="2">DDTEXT</text></binding></visual><audio silent="BOOL"/><actions>MYLINK</actions></toast>'
+	$XML = '<toast DDPARM><visual><binding template="ToastText01"><text id="1">DDTEXT</text></binding></visual><audio silent="BOOL"/><actions>MYLINK</actions></toast>'
 	$XmlDocument = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]::New()
 	$XmlDocument.loadXml($XML.Replace("DDPARM","$DDPARM").Replace("DDTEXT","$DDTEXT").Replace("BOOL","$SILENT").Replace("MYLINK","$MYLINK"))
-	$AppId = '{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe'
+	$AppId = 'BT_BAN_IPLIST'
 	[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
+	Write-Output Get-Date $DDTEXT | Out-File -Append $USERPATH\Output.log
 }
 
 $SET_UPDATE = {
 	$VBS = 'createobject("wscript.shell").run "CMD",0'
 	$CMD = "powershell `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
-	$VBS.Replace("CMD","$CMD") >$env:USERPROFILE\BT_BAN\UPDATE.vbs
+	$VBS.Replace("CMD","$CMD") >$USERPATH\UPDATE.vbs
 
-	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $env:COMPUTERNAME\$env:USERNAME -RunLevel Highest
+	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $USERPATH\$ENV:USERNAME -RunLevel Highest
 	$SETTINGS = New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -StartWhenAvailable -AllowStartIfOnBatteries
 	$TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval (New-TimeSpan -Hours 8) -RandomDelay (New-TimeSpan -Hours 1)
-	$ACTION = New-ScheduledTaskAction -Execute $env:USERPROFILE\BT_BAN\UPDATE.vbs
+	$ACTION = New-ScheduledTaskAction -Execute $USERPATH\UPDATE.vbs
 	$TASK = New-ScheduledTask -Principal $PRINCIPAL -Settings $SETTINGS -Trigger $TRIGGER -Action $ACTION
 
 	$TASKLIST = (Get-ScheduledTask BT_BAN_*).TaskName
@@ -86,9 +88,9 @@ if ((Get-NetFirewallRule -DisplayName "BT_BAN_*").Count -lt 2) {
 
 if ($TASKINFO) {
 	if ($TASKINFO.Uri -Notmatch 'BT_BAN_UPDATE') {$SETFLAG = 1}
-	if ($TASKINFO.Principal.UserId -Notmatch $env:USERNAME) {$SETFLAG = 1}
+	if ($TASKINFO.Principal.UserId -Notmatch $ENV:USERNAME) {$SETFLAG = 1}
 	if ($TASKINFO.Triggers.RandomDelay -Notmatch 'PT1H') {$SETFLAG = 1}
-	if (!(Test-Path $env:USERPROFILE\BT_BAN\UPDATE.vbs)) {$SETFLAG = 1}
+	if (!(Test-Path $USERPATH\UPDATE.vbs)) {$SETFLAG = 1}
 } else {$SETFLAG = 1}
 
 if ($SETFLAG -eq 1) {
@@ -99,11 +101,11 @@ if ($SETFLAG -eq 1) {
 while ($ZIP -lt 5) {
 	$ZIP++
 	try {
-		Invoke-RestMethod -OutFile $env:USERPROFILE\BT_BAN\IPLIST.zip $ZIPURL -TimeoutSec 30
+		Invoke-RestMethod -OutFile $USERPATH\IPLIST.zip $ZIPURL -TimeoutSec 30
 		break
 	} catch {
-		echo "  IP 列表下载失败，等待 1 分钟后尝试 （$ZIP/5）"
-		sleep 60
+		Write-Output "  IP 列表下载失败，等待 1 分钟后尝试 （$ZIP/5）"
+		Start-Sleep 60
 		if ($ZIP -ge 5) {
 			$SILENT = 'true'
 			$DDTEXT = "IP 列表下载失败`n通常是服务器问题，跳过本次更新"
@@ -114,8 +116,8 @@ while ($ZIP -lt 5) {
 		}
 	}
 }
-Expand-Archive -Force -Path $env:USERPROFILE\BT_BAN\IPLIST.zip -DestinationPath $env:USERPROFILE\BT_BAN
-$IPLIST = (Get-Content $env:USERPROFILE\BT_BAN\IPLIST.txt) -Join ','
+Expand-Archive -Force -Path $USERPATH\IPLIST.zip -DestinationPath $USERPATH\BT_BAN
+$IPLIST = (Get-Content $USERPATH\IPLIST.txt) -Join ','
 
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
 if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
@@ -131,4 +133,5 @@ if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
 	$DDPARM = 'duration="long"'
 	$MYLINK = ''
 }
+
 &$TOAST
