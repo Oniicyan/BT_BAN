@@ -6,7 +6,7 @@ Write-Output "  成功获取脚本"
 $TASKINFO = Get-ScheduledTask BT_BAN_UPDATE -ErrorAction Ignore
 $USERPATH = "$ENV:USERPROFILE\BT_BAN"
 New-Item -ItemType Directory -Path $USERPATH -ErrorAction Ignore | Out-Null
-if ((Get-Content $USERPATH\OUTPUT.log).Count -ge 1000) {Move-Item $USERPATH\OUTPUT.log $USERPATH\OUTPUT.old -Force -ErrorAction Ignore}
+if ((Get-Content $USERPATH\OUTPUT.log -ErrorAction Ignore).Count -ge 1000) {Move-Item $USERPATH\OUTPUT.log $USERPATH\OUTPUT.old -Force -ErrorAction Ignore}
 
 $TOAST = {
 	$AppId = 'BT_BAN_IPLIST'
