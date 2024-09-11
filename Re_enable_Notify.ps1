@@ -1,7 +1,7 @@
 $AppId = 'BT_BAN_IPLIST'
 Remove-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\$AppId" -Name "Enabled" -Force -ErrorAction Ignore
-"" | Out-File -Force $ENV:LOCALAPPDATA\Microsoft\Windows\Notifications\wpndatabase.db
-"" | Out-File -Force $ENV:LOCALAPPDATA\Microsoft\Windows\Notifications\wpndatabase.db-wal
+"" | Out-File $ENV:LOCALAPPDATA\Microsoft\Windows\Notifications\wpndatabase.db -Force -ErrorAction Ignore
+"" | Out-File $ENV:LOCALAPPDATA\Microsoft\Windows\Notifications\wpndatabase.db-wal -Force -ErrorAction Ignore
 Write-Host "`n  正在重启通知平台，可能需要几分钟...`n"
 $SVCLIST = Get-Service -Name OneSyncSvc_*,CDPUserSvc_*,WpnUserService_*
 foreach ($SVCNAME in $SVCLIST.Name) {
