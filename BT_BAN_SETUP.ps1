@@ -26,16 +26,16 @@ if ($DISABLED = Get-NetFirewallProfile | Where-Object {$_.Enabled -eq 0}) {
 		Write-Host "  当前网络下未启用 Windows 防火墙`n"
 		Write-Host "  通常防护软件可与 Windows 防火墙共存，不建议禁用`n"
 		Write-Host "  仍可继续配置，在 Windows 防火墙启用时生效`n"
-	}
-	$ENABLEPF = Read-Host "  输入 Y 启用 Windows 防火墙，否则跳过"
-	Clear-Host
-	switch -regex ($ENABLEPF) {
-		'Y|y' {
-			Set-NetFirewallProfile $NEEDEDPF -Enabled 1
-			Write-Host "`n  成功启用 Windows 防火墙`n"
-		}
-		default {
-			Write-Host "`n  跳过启用 Windows 防火墙`n"
+		$ENABLEPF = Read-Host "  输入 Y 启用 Windows 防火墙，否则跳过"
+		Clear-Host
+		switch -regex ($ENABLEPF) {
+			'Y|y' {
+				Set-NetFirewallProfile $NEEDEDPF -Enabled 1
+				Write-Host "`n  成功启用 Windows 防火墙`n"
+			}
+			default {
+				Write-Host "`n  跳过启用 Windows 防火墙`n"
+			}
 		}
 	}
 }
