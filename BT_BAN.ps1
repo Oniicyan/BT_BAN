@@ -3,33 +3,55 @@ $PS1URL = 'https://bt-ban.pages.dev/run'
 $ZIPURL = 'https://bt-ban.pages.dev/IPLIST.zip'
 
 Write-Output "  成功获取脚本"
-$TASKINFO = Get-ScheduledTask BT_BAN_* -ErrorAction Ignore
+$TASKINFO = Get-ScheduledTask BT_BAN_UPDATE -ErrorAction Ignore
 $USERPATH = "$ENV:USERPROFILE\BT_BAN"
 New-Item -ItemType Directory -Path $USERPATH -ErrorAction Ignore | Out-Null
-if ((Get-Content $USERPATH\Output.log).Count -ge 1000) {Move-Item $USERPATH\Output.log $USERPATH\Output.old -Force -ErrorAction Ignore}
+if ((Get-Content $USERPATH\OUTPUT.log).Count -ge 1000) {Move-Item $USERPATH\OUTPUT.log $USERPATH\OUTPUT.old -Force -ErrorAction Ignore}
 
 $TOAST = {
+	$AppId = 'BT_BAN_IPLIST'
 	$XML = '<toast DDPARM><visual><binding template="ToastText01"><text id="1">DDTEXT</text></binding></visual><audio silent="BOOL"/><actions>MYLINK</actions></toast>'
 	$XmlDocument = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]::New()
 	$XmlDocument.loadXml($XML.Replace("DDPARM","$DDPARM").Replace("DDTEXT","$DDTEXT").Replace("BOOL","$SILENT").Replace("MYLINK","$MYLINK"))
-	$AppId = 'BT_BAN_IPLIST'
 	[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
-	Write-Output (Get-Date).ToString() "$DDTEXT`n" | Out-File -Append $USERPATH\Output.log
+	Write-Output (Get-Date).ToString() "$DDTEXT`n" | Out-File -Append $USERPATH\OUTPUT.log
+}
+
+$SET_NOTIFY = {
+	Write-Output @'
+$DDTEXT = "当前共 $(((Get-NetFirewallDynamicKeywordAddress -Id '{3817fa89-3f21-49ca-a4a4-80541ddf7465}').Addresses -Split ',').Count) 条 IP 规则"
+$AppId = 'BT_BAN_IPLIST'
+$XML = '<toast><visual><binding template="ToastText01"><text id="1">DDTEXT</text></binding></visual><audio silent="true"/></toast>'
+$XmlDocument = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]::New()
+$XmlDocument.loadXml($XML.Replace("DDTEXT","$DDTEXT"))
+[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
+'@ | Out-File $USERPATH\NOTIFY.ps1
+	
+	$VBS = 'createobject("wscript.shell").run "CMD",0'
+	$CMD = "powershell $USERPATH\NOTIFY.ps1"
+	$VBS.Replace("CMD","$CMD") | Out-File -Encoding ASCII $USERPATH\NOTIFY.vbs
+
+	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $ENV:COMPUTERNAME\$ENV:USERNAME
+	$SETTINGS = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries
+	$TRIGGER1 = New-ScheduledTaskTrigger -Daily -At 00:05
+	$TRIGGER2 = New-ScheduledTaskTrigger -AtLogon -User $ENV:COMPUTERNAME\$ENV:USERNAME
+	$ACTION = New-ScheduledTaskAction -Execute $USERPATH\NOTIFY.vbs
+	$TASK = New-ScheduledTask -Principal $PRINCIPAL -Settings $SETTINGS -Trigger $TRIGGER1,$TRIGGER2 -Action $ACTION
+	Unregister-ScheduledTask BT_BAN_NOTIFY -Confirm:$false -ErrorAction Ignore
+	Register-ScheduledTask BT_BAN_NOTIFY -InputObject $TASK | Out-Null
 }
 
 $SET_UPDATE = {
 	$VBS = 'createobject("wscript.shell").run "CMD",0'
 	$CMD = "powershell `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
-	$VBS.Replace("CMD","$CMD") >$USERPATH\UPDATE.vbs
+	$VBS.Replace("CMD","$CMD") | Out-File -Encoding ASCII $USERPATH\UPDATE.vbs
 
 	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $ENV:COMPUTERNAME\$ENV:USERNAME -RunLevel Highest
 	$SETTINGS = New-ScheduledTaskSettingsSet -RestartCount 5 -RestartInterval (New-TimeSpan -Seconds 60) -StartWhenAvailable -AllowStartIfOnBatteries
-	$TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval (New-TimeSpan -Hours 8) -RandomDelay (New-TimeSpan -Hours 1)
+	$TRIGGER = New-ScheduledTaskTrigger -Once -At 00:00 -RepetitionInterval (New-TimeSpan -Hours 1) -RandomDelay (New-TimeSpan -Minutes 10)
 	$ACTION = New-ScheduledTaskAction -Execute $USERPATH\UPDATE.vbs
 	$TASK = New-ScheduledTask -Principal $PRINCIPAL -Settings $SETTINGS -Trigger $TRIGGER -Action $ACTION
-
-	$TASKLIST = (Get-ScheduledTask BT_BAN_*).TaskName
-	if ($TASKLIST) {Unregister-ScheduledTask $TASKLIST -Confirm:$false}
+	Unregister-ScheduledTask BT_BAN_UPDATE -Confirm:$false -ErrorAction Ignore
 	Register-ScheduledTask BT_BAN_UPDATE -InputObject $TASK | Out-Null
 
 	$SILENT = 'false'
@@ -87,10 +109,12 @@ if ((Get-NetFirewallRule -DisplayName "BT_BAN_*").Count -lt 2) {
 	exit 1
 }
 
+if (!(Get-ScheduledTask BT_BAN_NOTIFY -ErrorAction Ignore)) {&$SET_NOTIFY}
+
 if ($TASKINFO) {
 	if ($TASKINFO.Uri -Notmatch 'BT_BAN_UPDATE') {$SETFLAG = 1}
 	if ($TASKINFO.Principal.UserId -Notmatch $ENV:USERNAME) {$SETFLAG = 1}
-	if ($TASKINFO.Triggers.RandomDelay -Notmatch 'PT1H') {$SETFLAG = 1}
+	if ($TASKINFO.Triggers.Repetition.Interval -Notmatch 'PT1H') {$SETFLAG = 1}
 	if (!(Test-Path $USERPATH\UPDATE.vbs)) {$SETFLAG = 1}
 } else {$SETFLAG = 1}
 
@@ -131,18 +155,18 @@ if (Test-Path $USERPATH\IPLIST.txt) {
 
 $IPLIST = (Get-Content $USERPATH\IPLIST.txt) -Join ','
 $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
-if (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID -ErrorAction Ignore) {
-	Update-NetFirewallDynamicKeywordAddress -Id $DYKWID -Addresses $IPLIST | Out-Null
-	$SILENT = 'true'
-	$DDTEXT = "动态关键字已更新，当前共 $(((Get-NetFirewallDynamicKeywordAddress -Id $DYKWID).Addresses -Split ',').Count) 条 IP 规则"
-	$DDPARM = ''
-	$MYLINK = ''
-} else {
-	New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST | Out-Null
+New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses 1.2.3.4 -ErrorAction Ignore | Out-Null
+Update-NetFirewallDynamicKeywordAddress -Id $DYKWID -Addresses $IPLIST | Out-Null
+if ($NOTIFY) {
 	$SILENT = 'false'
 	$DDTEXT = "动态关键字已启用，当前共 $(((Get-NetFirewallDynamicKeywordAddress -Id $DYKWID).Addresses -Split ',').Count) 条 IP 规则"
 	$DDPARM = 'duration="long"'
 	$MYLINK = ''
+	&$TOAST
+} else {
+	$SILENT = 'true'
+	$DDTEXT = "动态关键字已更新，当前共 $(((Get-NetFirewallDynamicKeywordAddress -Id $DYKWID).Addresses -Split ',').Count) 条 IP 规则"
+	$DDPARM = ''
+	$MYLINK = ''
+	Write-Output (Get-Date).ToString() "$DDTEXT`n" | Out-File -Append $USERPATH\OUTPUT.log
 }
-
-&$TOAST
