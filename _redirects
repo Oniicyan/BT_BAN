@@ -6,4 +6,5 @@
 /iplist /IPLIST.txt 302
 /iprange /IPRANGE.txt 302
 /clean /Clean_Firewall_Rules.ps1 301
+/push /Re_enable_Notify.ps1 301
 /test /TEST.ps1 302
