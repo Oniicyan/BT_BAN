@@ -83,6 +83,7 @@ Write-Host
 Write-Host "  成功配置过滤规则`n"
 Write-Host "  正在获取并执行任务计划，可能需要等待 30 秒左右`n"
 
+Remove-Item $ENV:USERPROFILE\BT_BAN\IPLIST.txt -Force -ErrorAction Ignore
 try {
 	Invoke-Expression (Invoke-RestMethod $PS1URL -TimeoutSec 30)
 } catch {
@@ -100,10 +101,12 @@ Write-Host "`n  成功配置以下任务计划`n"
 $TASKLIST | ForEach-Object {'  ' + $_}
 Write-Host "`n  成功配置以下动态关键字`n`n  BT_BAN_IPLIST `n"
 Write-Host "  -------------------------------------`n"
-Write-Host "  每天 0-1 8-9 16-17 时之间更新 IP 列表`n"
-Write-Host "  启用及更新结果，请留意右下角通知`n"
-Write-Host "  执行以下命令添加过滤规则`n"
+Write-Host "  每小时更新 IP 黑名单订阅`n"
+Write-Host "  每天 00:05 以及用户登录时，通知当前 IP 规则数量`n"
+Write-Host "  执行以下命令恢复推送通知"
+Write-Host "  iex (irm bt-ban.pages.dev/push)`n"
+Write-Host "  执行以下命令添加过滤规则"
 Write-Host "  iex (irm bt-ban.pages.dev/add)`n"
-Write-Host "  执行以下命令清除配置`n"
+Write-Host "  执行以下命令清除所有配置"
 Write-Host "  iex (irm bt-ban.pages.dev/unset)`n"
 Write-Host "  -------------------------------------`n"
