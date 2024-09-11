@@ -18,14 +18,25 @@ if (New-NetFirewallDynamicKeywordAddress -Id $TESTGUID -Keyword "BT_BAN_TEST" -A
 	return
 }
 
-if ((Get-NetFirewallProfile).Enabled -contains 0) {
-	if ([string](Get-NetFirewallProfile | ForEach-Object {
-	if ($_.Enabled -eq 1) {$_.Name}})`
-	-Notmatch (((Get-NetFirewallSetting -PolicyStore ActiveStore).ActiveProfile) -Replace ', ','|')) {
+if ($DISABLED = Get-NetFirewallProfile | Where-Object {$_.Enabled -eq 0}) {
+	$ACTIVEPF = ((Get-NetFirewallSetting -PolicyStore ActiveStore).ActiveProfile) -Replace ', ','|'
+	$NEEDEDPF = @()
+	foreach ($PFNAME in $DISABLED.Name) {if ($PFNAME -Match $ACTIVEPF) {$NEEDEDPF += $PFNAME}}
+	if ($NEEDEDPF) {
 		Write-Host "  当前网络下未启用 Windows 防火墙`n"
 		Write-Host "  通常防护软件可与 Windows 防火墙共存，不建议禁用`n"
 		Write-Host "  仍可继续配置，在 Windows 防火墙启用时生效`n"
-		pause
+	}
+	$ENABLEPF = Read-Host "  输入 Y 启用 Windows 防火墙，否则跳过"
+	Clear-Host
+	switch -regex ($ENABLEPF) {
+		'Y|y' {
+			Set-NetFirewallProfile $NEEDEDPF -Enabled 1
+			Write-Host "`n  成功启用 Windows 防火墙`n"
+		}
+		default {
+			Write-Host "`n  跳过启用 Windows 防火墙`n"
+		}
 	}
 }
 
