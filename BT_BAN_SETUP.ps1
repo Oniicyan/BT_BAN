@@ -22,7 +22,8 @@ Remove-NetFirewallDynamicKeywordAddress -Id $TESTGUID -ErrorAction Ignore
 if (New-NetFirewallDynamicKeywordAddress -Id $TESTGUID -Keyword "BT_BAN_TEST" -Address 1.2.3.4 -ErrorAction Ignore) {
 	Remove-NetFirewallDynamicKeywordAddress -Id $TESTGUID
 } else {
-	Write-Host "  当前 Windows 版本不支持动态关键字，请升级操作系统`n"
+	Write-Host "  当前 Windows 版本不支持动态关键字，请升级操作系统"
+	Read-Host `n操作失败，按 Enter 键结束...
 	return
 }
 
@@ -87,7 +88,11 @@ switch ($BTRULE) {
 			}
 			if (Test-Path $BTTEST) {$BTLIST += $BTPATH}
 		}
-		if (!$BTLIST) {Write-Host "`n  识别不到 BT 应用程序`n  请重新执行脚本并手动选择`n"; return}
+		if (!$BTLIST) {
+			Write-Host "`n  识别不到 BT 应用程序`n`n  请重新执行脚本并手动选择"
+			Read-Host `n操作失败，按 Enter 键结束...
+			return
+		}
 		foreach ($BTPATH in $BTLIST) {
 			$BTNAME = [System.IO.Path]::GetFileName($BTPATH)
 			Remove-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -ErrorAction Ignore
@@ -107,7 +112,8 @@ try {
 	Invoke-Expression (Invoke-RestMethod $PS1URL -TimeoutSec 30)
 } catch {
 	Write-Host "  脚本获取或执行失败，请尝试手动执行配置命令`n"
-	Write-Host "  iex (irm bt-ban.pages.dev/run)`n"
+	Write-Host "  iex (irm bt-ban.pages.dev/run)"
+	Read-Host `n操作失败，按 Enter 键结束...
 	return
 }
 
