@@ -5,7 +5,15 @@ $BTSCAN = 'Azureus\.exe|BitComet\.exe|BitComet_.*\.exe|biglybt\.exe|BitTorrent\.
 Write-Host
 
 if ((Fltmc).Count -eq 3) {
-	Write-Host "  请以管理员权限执行`n"
+	$APPWTPATH = "$ENV:LOCALAPPDATA\Microsoft\WindowsApps\wt.exe"
+	if (Test-Path $APPWTPATH) {
+		$PROCESS = "$APPWTPATH -ArgumentList `"powershell $($MyInvocation.MyCommand.Definition)`""
+	} else {
+		$PROCESS = "powershell -ArgumentList `"$($MyInvocation.MyCommand.Definition)`""
+	}
+	Write-Host "  10 秒后以管理员权限继续执行"
+	timeout 10
+	Invoke-Expression "Start-Process $PROCESS -Verb RunAs"
 	return
 }
 
@@ -53,7 +61,7 @@ Write-Host "  2. 手动选择"
 Write-Host "     可选择快捷方式"
 Write-Host "     每次选择单个 BT 应用程序"
 Write-Host
-$BTRULE = Read-Host "请输入 1 或 2（默认为自动识别）"
+$BTRULE = Read-Host "请输入 1 或 2（默认为 自动识别）"
 switch ($BTRULE) {
 	2 {
 		Add-Type -AssemblyName System.Windows.Forms
