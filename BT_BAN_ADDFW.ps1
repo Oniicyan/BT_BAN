@@ -1,4 +1,6 @@
 Remove-Variable * -ErrorAction Ignore
+$DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
+$PREFIX = 'BT_BAN'
 
 Write-Host
 
@@ -17,41 +19,48 @@ if ((Fltmc).Count -eq 3) {
 
 $TESTGUID = '{62809d89-9d3b-486b-808f-8c893c1c3378}'
 Remove-NetFirewallDynamicKeywordAddress -Id $TESTGUID -ErrorAction Ignore
-if (New-NetFirewallDynamicKeywordAddress -Id $TESTGUID -Keyword "BT_BAN_TEST" -Address 1.2.3.4 -ErrorAction Ignore) {
+if (New-NetFirewallDynamicKeywordAddress -Id $TESTGUID -Keyword "${PREFIX}_TEST" -Address 1.2.3.4 -ErrorAction Ignore) {
 	Remove-NetFirewallDynamicKeywordAddress -Id $TESTGUID
 } else {
 	Write-Host "  当前 Windows 版本不支持动态关键字，请升级操作系统`n"
 	return
 }
 
-if ((Get-NetFirewallProfile).Enabled -contains 0) {
-	if ([string](Get-NetFirewallProfile | ForEach-Object {
-	if ($_.Enabled -eq 1) {$_.Name}})`
-	-Notmatch (((Get-NetFirewallSetting -PolicyStore ActiveStore).ActiveProfile) -Replace ', ','|')) {
+if ($DISABLED = Get-NetFirewallProfile | Where-Object {$_.Enabled -eq 0}) {
+	$ACTIVEPF = ((Get-NetFirewallSetting -PolicyStore ActiveStore).ActiveProfile) -Replace ', ','|'
+	$NEEDEDPF = @()
+	foreach ($PFNAME in $DISABLED.Name) {if ($PFNAME -Match $ACTIVEPF) {$NEEDEDPF += $PFNAME}}
+	if ($NEEDEDPF) {
 		Write-Host "  当前网络下未启用 Windows 防火墙`n"
 		Write-Host "  通常防护软件可与 Windows 防火墙共存，不建议禁用`n"
 		Write-Host "  仍可继续配置，在 Windows 防火墙启用时生效`n"
-		pause
+		$ENABLEPF = Read-Host "输入 Y 启用 Windows 防火墙，否则跳过"
+		Clear-Host
+		switch -regex ($ENABLEPF) {
+			'Y|y' {
+				Set-NetFirewallProfile $NEEDEDPF -Enabled 1
+				Write-Host "`n  成功启用 Windows 防火墙`n"
+			}
+			default {
+				Write-Host "`n  跳过启用 Windows 防火墙`n"
+			}
+		}
 	}
 }
 
 Write-Host "  已配置以下过滤规则`n"
-Get-NetFirewallRule -DisplayName BT_BAN_* | ForEach-Object {'  ' + $_.DisplayName + ' (' + $_.Direction + ')'}
+Get-NetFirewallRule -DisplayName ${PREFIX}_* | ForEach-Object {'  ' + $_.DisplayName + ' (' + $_.Direction + ')'}
 Write-Host
 
-$DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
 Write-Host "  --------------------------------"
 Write-Host "  请指定启用过滤规则的 BT 应用程序"
-Write-Host "  --------------------------------"
-Write-Host
+Write-Host "  --------------------------------`n"
 Write-Host "  1. 自动识别"
 Write-Host "     从现有的 Windows 防火墙过滤规则中识别 BT 应用程序路径"
-Write-Host "     仅识别常见的 BT 应用程序"
-Write-Host
+Write-Host "     仅识别常见的 BT 应用程序`n"
 Write-Host "  2. 手动选择"
 Write-Host "     可选择快捷方式"
-Write-Host "     每次选择单个 BT 应用程序"
-Write-Host
+Write-Host "     每次选择单个 BT 应用程序`n"
 $BTRULE = Read-Host "请输入 1 或 2（默认为自动识别）"
 switch ($BTRULE) {
 	2 {
@@ -63,9 +72,9 @@ switch ($BTRULE) {
 		}
 		$BTPATH = $BTINFO.FileName
 		$BTNAME = [System.IO.Path]::GetFileName($BTPATH)
-		Remove-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -ErrorAction Ignore
-		New-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -Direction Inbound -Action Block -Program $BTPATH -RemoteDynamicKeywordAddresses $DYKWID | Out-Null
-		New-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -Direction Outbound -Action Block -Program $BTPATH -RemoteDynamicKeywordAddresses $DYKWID | Out-Null
+		Remove-NetFirewallRule -DisplayName "${PREFIX}_$BTNAME" -ErrorAction Ignore
+		New-NetFirewallRule -DisplayName "${PREFIX}_$BTNAME" -Direction Inbound -Action Block -Program $BTPATH -RemoteDynamicKeywordAddresses $DYKWID | Out-Null
+		New-NetFirewallRule -DisplayName "${PREFIX}_$BTNAME" -Direction Outbound -Action Block -Program $BTPATH -RemoteDynamicKeywordAddresses $DYKWID | Out-Null
 	}
 	default {
 		$BTPTRN = 'Azureus\.exe|BitComet\.exe|BitComet_.*\.exe|biglybt\.exe|BitTorrent\.exe|btweb\.exe|deluge\.exe|qbittorrent\.exe|transmission-qt\.exe|uTorrent\.exe|utweb\.exe|tixati\.exe'
@@ -82,14 +91,14 @@ switch ($BTRULE) {
 		if (!$BTLIST) {Write-Host "`n  识别不到 BT 应用程序`n  请重新执行脚本并手动选择`n"; return}
 		foreach ($BTPATH in $BTLIST) {
 			$BTNAME = [System.IO.Path]::GetFileName($BTPATH)
-			Remove-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -ErrorAction Ignore
-			New-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -Direction Inbound -Action Block -Program $BTPATH -RemoteDynamicKeywordAddresses $DYKWID | Out-Null
-			New-NetFirewallRule -DisplayName "BT_BAN_$BTNAME" -Direction Outbound -Action Block -Program $BTPATH -RemoteDynamicKeywordAddresses $DYKWID | Out-Null
+			Remove-NetFirewallRule -DisplayName "${PREFIX}_$BTNAME" -ErrorAction Ignore
+			New-NetFirewallRule -DisplayName "${PREFIX}_$BTNAME" -Direction Inbound -Action Block -Program $BTPATH -RemoteDynamicKeywordAddresses $DYKWID | Out-Null
+			New-NetFirewallRule -DisplayName "${PREFIX}_$BTNAME" -Direction Outbound -Action Block -Program $BTPATH -RemoteDynamicKeywordAddresses $DYKWID | Out-Null
 		}
 	}
 }
 
 Clear-Host
 Write-Host "`n  已配置以下过滤规则`n"
-Get-NetFirewallRule -DisplayName BT_BAN_* | ForEach-Object {'  ' + $_.DisplayName + ' (' + $_.Direction + ')'}
+Get-NetFirewallRule -DisplayName ${PREFIX}_* | ForEach-Object {'  ' + $_.DisplayName + ' (' + $_.Direction + ')'}
 Read-Host `n操作完成，按 Enter 键结束...
