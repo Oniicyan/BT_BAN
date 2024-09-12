@@ -68,10 +68,6 @@
 
 ### 可选配置
 
-执行以下命令清理 Windows 防火墙中的冗余规则
-
-`iex (irm bt-ban.pages.dev/clean)`
-
 执行以下命令添加过滤规则
 
 `iex (irm bt-ban.pages.dev/add)`
@@ -79,6 +75,10 @@
 执行以下命令恢复推送通知
 
 `iex (irm bt-ban.pages.dev/push)`
+
+执行以下命令清理 Windows 防火墙中的冗余规则
+
+`iex (irm bt-ban.pages.dev/clean)`
 
 ## 手动配置
 
