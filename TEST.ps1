@@ -1,8 +1,8 @@
 $WTPATH = "$ENV:LOCALAPPDATA\Microsoft\WindowsApps\wt.exe"
 if (Test-Path $WTPATH) {
-	$PROCESS = "$WTPATH -ArgumentList powershell $MyInvocation.MyCommand"
+	$PROCESS = "$WTPATH -ArgumentList powershell $MyInvocation.MyCommand.Definition"
 } else {
-	$PROCESS = "powershell -ArgumentList $MyInvocation.MyCommand"
+	$PROCESS = "powershell -ArgumentList $MyInvocation.MyCommand.Definition"
 }
 if ((Fltmc).Count -eq 3) {
 	Write-Host "`n  以管理员权限重新执行`n"
@@ -11,5 +11,8 @@ if ((Fltmc).Count -eq 3) {
 	Write-Host "`n  OK`n"
 }
 $MyInvocation
+"----------------------"
 $MyInvocation.MyCommand
+"----------------------"
+$MyInvocation.MyCommand.Definition
 pause
