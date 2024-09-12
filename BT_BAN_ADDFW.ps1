@@ -92,4 +92,4 @@ switch ($BTRULE) {
 Clear-Host
 Write-Host "`n  已配置以下过滤规则`n"
 Get-NetFirewallRule -DisplayName BT_BAN_* | ForEach-Object {'  ' + $_.DisplayName + ' (' + $_.Direction + ')'}
-Write-Host
+Read-Host "`n  操作已完成，按 Enter 结束"
