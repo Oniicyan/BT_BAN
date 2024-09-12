@@ -11,7 +11,7 @@ if ((Fltmc).Count -eq 3) {
 	} else {
 		$PROCESS = "powershell -ArgumentList `"$($MyInvocation.MyCommand.Definition)`""
 	}
-	Write-Host "  10 秒后以管理员权限继续执行`n"
+	Write-Host "  10 秒后以管理员权限继续执行"
 	timeout 10
 	Invoke-Expression "Start-Process $PROCESS -Verb RunAs"
 	return
