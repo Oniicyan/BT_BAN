@@ -36,7 +36,8 @@ if ($LOST) {
 		} else {$FAIL += $PATH}
 	}
 } else {
-	Write-Host `n没有需要清理的过滤规则`n
+	Write-Host `n没有需要清理的过滤规则，10 秒后退出`n
+ 	timeout 10
 	return
 }
 
