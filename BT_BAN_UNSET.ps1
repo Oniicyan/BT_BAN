@@ -1,7 +1,14 @@
 Remove-Variable * -ErrorAction Ignore
-
 if ((Fltmc).Count -eq 3) {
-	Write-Host "`n  请以管理员权限执行`n"
+	$APPWTPATH = "$ENV:LOCALAPPDATA\Microsoft\WindowsApps\wt.exe"
+	if (Test-Path $APPWTPATH) {
+		$PROCESS = "$APPWTPATH -ArgumentList `"powershell $($MyInvocation.MyCommand.Definition)`""
+	} else {
+		$PROCESS = "powershell -ArgumentList `"$($MyInvocation.MyCommand.Definition)`""
+	}
+	Write-Host "`n  10 秒后以管理员权限继续执行"
+	timeout 10
+	Invoke-Expression "Start-Process $PROCESS -Verb RunAs"
 	return
 }
 
