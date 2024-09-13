@@ -22,7 +22,7 @@ $XmlDocument.loadXml($XML)
 [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
 Write-Host "  已恢复推送通知`n"
 if ((Fltmc).Count -eq 3) {
-	Write-Host "  如未显示，请以管理员权限执行`n"
+	Write-Host "  如未显示，请重启 Windows 或以管理员权限执行`n"
 } else {
 	Write-Host "  如未显示，请重启 Windows`n"
 }
