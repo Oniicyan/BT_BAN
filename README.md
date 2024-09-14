@@ -37,7 +37,7 @@
 
 提供自动配置脚本，及手动配置流程
 
-**所有脚本及命令默认在 PowerShell 下以管理员权限执行**
+**所有命令及脚本默认在 Windows PowerShell 下以管理员权限执行**
 
 按下 **Win + X 键**，Windows 11 选择 “**终端管理员**”，Windows 10 选择 “**Windows PowerShell（管理员）**”
 
