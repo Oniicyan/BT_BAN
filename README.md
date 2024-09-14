@@ -33,7 +33,7 @@
 
 # 使用方法
 
-动态关键字至少要求 Windows 10 21H2（更早的版本 [未确认](https://github.com/MicrosoftDocs/windows-powershell-docs/blob/main/docset/winserver2022-ps/netsecurity/Get-NetFirewallDynamicKeywordAddress.md)）
+动态关键字至少要求 Windows 10 21H2（更早的版本 [未确认](https://github.com/MicrosoftDocs/windows-powershell-docs/blob/main/docset/winserver2022-ps/netsecurity/New-NetFirewallDynamicKeywordAddress.md)）
 
 提供自动配置脚本，及手动配置流程
 
