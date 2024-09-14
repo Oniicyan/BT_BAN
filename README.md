@@ -30,20 +30,13 @@
 
 **BitComet 用户可使用 [BTNScriptBC](https://github.com/Oniicyan/BTNScriptBC) 外挂脚本加入 BTN 网络**
 
-
-# 使用方法
-
-提供自动配置脚本，及手动配置流程
-
-## 系统要求
+# 系统要求
 
 动态关键字至少要求 Windows 10 21H2（更早的版本 [未确认](https://github.com/MicrosoftDocs/windows-powershell-docs/blob/main/docset/winserver2022-ps/netsecurity/New-NetFirewallDynamicKeywordAddress.md)）
 
 **所有命令及脚本默认在 Windows PowerShell 下以管理员权限执行**
 
-按下 **Win + X 键**，Windows 11 选择 “**终端管理员**”，Windows 10 选择 “**Windows PowerShell（管理员）**”
-
-### 为什么需要管理员权限？
+## 为什么需要管理员权限？
 
 以下 Windows 防火墙命令需要管理员权限执行
 
@@ -57,6 +50,12 @@
 当网络脚本被恶意修改，或网络地址被挟持到恶意脚本时，会造成严重的后果。
 
 如有安全需求，请自行审查代码内容并保存至本地执行。
+
+# 使用方法
+
+按下 **Win + X 键**，Windows 11 选择 “**终端管理员**”，Windows 10 选择 “**Windows PowerShell（管理员）**”
+
+提供自动配置脚本，及手动配置流程
 
 ## 自动配置
 
