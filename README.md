@@ -26,7 +26,7 @@
 
 感谢开发者及加入 BTN 威胁防护网络计划的所有成员
 
-本项目为替代方案，有条件的用户建议加入 BTN 网络
+本项目为替代方案，有条件的用户建议使用 [PeerBanHelper](https://github.com/PBH-BTN/PeerBanHelper) 并加入 BTN 网络
 
 **BitComet 用户可使用 [BTNScriptBC](https://github.com/Oniicyan/BTNScriptBC) 外挂脚本加入 BTN 网络**
 
