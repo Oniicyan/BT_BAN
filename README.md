@@ -1,6 +1,6 @@
 # 介绍
 
-**基于 Windows 防火墙过滤规则，获取 IP 黑名单并添加到动态关键字（类似 Linux 的 ipset）**
+**基于 Windows 防火墙过滤规则，获取 IP 黑名单并添加到 [动态关键字](https://learn.microsoft.com/windows/security/operating-system-security/network-security/windows-firewall/dynamic-keywords)**
 
 **实现全自动、不影响全局通信、不限客户端的 BT 反吸血封禁**
 
@@ -33,7 +33,7 @@
 
 # 使用方法
 
-至少要求 Windows 10 21H2 左右的版本 （[未确认](https://github.com/MicrosoftDocs/windows-powershell-docs/blob/main/docset/winserver2022-ps/netsecurity/Get-NetFirewallDynamicKeywordAddress.md)）
+动态关键字至少要求 Windows 10 21H2 左右的版本 （[未确认](https://github.com/MicrosoftDocs/windows-powershell-docs/blob/main/docset/winserver2022-ps/netsecurity/Get-NetFirewallDynamicKeywordAddress.md)）
 
 提供自动配置脚本，及手动配置流程
 
