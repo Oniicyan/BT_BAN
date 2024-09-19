@@ -20,7 +20,7 @@ $TOAST = {
 $SET_NOTIFY = {
 	Write-Output @'
 $DDTEXT = "当前共 $(((Get-NetFirewallDynamicKeywordAddress -Id '{3817fa89-3f21-49ca-a4a4-80541ddf7465}').Addresses -Split ',').Count) 条 IP 规则"
-$AppId = 'BT_BAN_REPORT'
+$AppId = 'BT_BAN_IPLIST'
 $XML = '<toast><visual><binding template="ToastText01"><text id="1">DDTEXT</text></binding></visual><audio silent="true"/></toast>'
 $XmlDocument = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]::New()
 $XmlDocument.loadXml($XML.Replace("DDTEXT","$DDTEXT"))
@@ -109,11 +109,7 @@ if ((Get-NetFirewallRule -DisplayName "BT_BAN_*").Count -lt 2) {
 	exit 1
 }
 
-if (Get-ScheduledTask BT_BAN_NOTIFY -ErrorAction Ignore) {
-	if ((Get-Content $USERPATH\NOTIFY.ps1) -Notmatch 'BT_BAN_REPORT') {&$SET_NOTIFY}
-} else {
-	&$SET_NOTIFY
-}
+if (!(Get-ScheduledTask BT_BAN_NOTIFY -ErrorAction Ignore)) {&$SET_NOTIFY}
 
 if ($TASKINFO) {
 	if ($TASKINFO.Uri -Notmatch 'BT_BAN_UPDATE') {$SETFLAG = 1}
