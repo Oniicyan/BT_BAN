@@ -109,7 +109,11 @@ if ((Get-NetFirewallRule -DisplayName "BT_BAN_*").Count -lt 2) {
 	exit 1
 }
 
-if (!(Get-ScheduledTask BT_BAN_NOTIFY -ErrorAction Ignore)) {&$SET_NOTIFY}
+if (Get-ScheduledTask BT_BAN_NOTIFY -ErrorAction Ignore) {
+	if (!((Get-Content $USERPATH\NOTIFY.ps1 -ErrorAction Ignore) -Match 'BT_BAN_IPLIST')) {&$SET_NOTIFY}
+} else {
+	&$SET_NOTIFY
+}
 
 if ($TASKINFO) {
 	if ($TASKINFO.Uri -Notmatch 'BT_BAN_UPDATE') {$SETFLAG = 1}
