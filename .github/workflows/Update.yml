@@ -10,7 +10,7 @@ jobs:
      - uses: actions/checkout@v4
      - run: |
          curl -Lso IPLIST.txt https://raw.githubusercontent.com/PBH-BTN/BTN-Collected-Rules/main/combine/all.txt
-         sed -i -e 's/#.*//' -e '/^$/d' IPLIST.txt
+         sed -i -e 's/#.*//' -e '/^$/d' -e '/^::1$/d' IPLIST.txt
          zip -r IPLIST.zip IPLIST.txt
          git config --local user.name ${GITHUB_ACTOR}
          git config --local user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
