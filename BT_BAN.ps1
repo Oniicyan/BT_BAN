@@ -30,7 +30,7 @@ $XmlDocument.loadXml($XML.Replace("DDTEXT","$DDTEXT"))
 '@ | Out-File $USERPATH\NOTIFY.ps1
 
 	$VBS = 'createobject("wscript.shell").run "CMD",0'
-	$CMD = "powershell -ExecutionPolicy Bypass $USERPATH\NOTIFY.ps1"
+	$CMD = "powershell -v 3 -ExecutionPolicy Bypass $USERPATH\NOTIFY.ps1"
 	$VBS.Replace("CMD","$CMD") | Out-File -Encoding ASCII $USERPATH\NOTIFY.vbs
 
 	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $ENV:COMPUTERNAME\$ENV:USERNAME
