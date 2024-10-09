@@ -9,12 +9,14 @@ New-Item -ItemType Directory -Path $USERPATH -ErrorAction Ignore | Out-Null
 if ((Get-Content $USERPATH\OUTPUT.log -ErrorAction Ignore).Count -ge 1000) {Move-Item $USERPATH\OUTPUT.log $USERPATH\OUTPUT.old -Force -ErrorAction Ignore}
 
 $TOAST = {
-	$AppId = 'BT_BAN_IPLIST'
-	$XML = '<toast DDPARM><visual><binding template="ToastText01"><text id="1">DDTEXT</text></binding></visual><audio silent="BOOL"/><actions>MYLINK</actions></toast>'
-	$XmlDocument = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]::New()
-	$XmlDocument.loadXml($XML.Replace("DDPARM","$DDPARM").Replace("DDTEXT","$DDTEXT").Replace("BOOL","$SILENT").Replace("MYLINK","$MYLINK"))
-	[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
-	Write-Output (Get-Date).ToString() "$DDTEXT`n" | Out-File -Append $USERPATH\OUTPUT.log
+	try {
+		$AppId = 'BT_BAN_IPLIST'
+		$XML = '<toast DDPARM><visual><binding template="ToastText01"><text id="1">DDTEXT</text></binding></visual><audio silent="BOOL"/><actions>MYLINK</actions></toast>'
+		$XmlDocument = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]::New()
+		$XmlDocument.loadXml($XML.Replace("DDPARM","$DDPARM").Replace("DDTEXT","$DDTEXT").Replace("BOOL","$SILENT").Replace("MYLINK","$MYLINK"))
+		[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
+		Write-Output (Get-Date).ToString() "$DDTEXT`n" | Out-File -Append $USERPATH\OUTPUT.log
+	} catch {}
 }
 
 $SET_NOTIFY = {
