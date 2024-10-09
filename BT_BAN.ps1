@@ -45,7 +45,7 @@ $XmlDocument.loadXml($XML.Replace("DDTEXT","$DDTEXT"))
 
 $SET_UPDATE = {
 	$VBS = 'createobject("wscript.shell").run "CMD",0'
-	$CMD = "powershell `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
+	$CMD = "powershell -v 3 `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
 	$VBS.Replace("CMD","$CMD") | Out-File -Encoding ASCII $USERPATH\UPDATE.vbs
 
 	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $ENV:COMPUTERNAME\$ENV:USERNAME -RunLevel Highest
