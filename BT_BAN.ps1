@@ -27,7 +27,7 @@ $XML = '<toast><visual><binding template="ToastText01"><text id="1">DDTEXT</text
 $XmlDocument = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]::New()
 $XmlDocument.loadXml($XML.Replace("DDTEXT","$DDTEXT"))
 [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
-'@ | Out-File $USERPATH\NOTIFY.ps1
+'@ | Out-File -Encoding Unicode $USERPATH\NOTIFY.ps1
 
 	$VBS = 'createobject("wscript.shell").run "CMD",0'
 	$CMD = "powershell -v 3 -ExecutionPolicy Bypass $USERPATH\NOTIFY.ps1"
