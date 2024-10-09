@@ -16,7 +16,7 @@ $TOAST = {
 		$XmlDocument.loadXml($XML.Replace("DDPARM","$DDPARM").Replace("DDTEXT","$DDTEXT").Replace("BOOL","$SILENT").Replace("MYLINK","$MYLINK"))
 		[Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]::CreateToastNotifier($AppId).Show($XmlDocument)
 		Write-Output (Get-Date).ToString() "$DDTEXT`n" | Out-File -Append $USERPATH\OUTPUT.log
-	} catch {}
+	} catch {Write-Output "  当前环境不支持推送通知，已跳过"}
 }
 
 $SET_NOTIFY = {
