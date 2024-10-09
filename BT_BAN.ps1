@@ -112,7 +112,8 @@ if ((Get-NetFirewallRule -DisplayName "BT_BAN_*").Count -lt 2) {
 }
 
 if (Get-ScheduledTask BT_BAN_NOTIFY -ErrorAction Ignore) {
-	if (!((Get-Content $USERPATH\NOTIFY.ps1 -ErrorAction Ignore) -Match 'BT_BAN_IPLIST')) {&$SET_NOTIFY}
+	if ((Get-Content $USERPATH\NOTIFY.ps1 -ErrorAction Ignore) -Notmatch 'BT_BAN_IPLIST') {&$SET_NOTIFY}
+	if ((Get-Content $USERPATH\NOTIFY.vbs -ErrorAction Ignore) -Notmatch 'Bypass') {&$SET_NOTIFY}
 } else {
 	&$SET_NOTIFY
 }
@@ -122,6 +123,7 @@ if ($TASKINFO) {
 	if ($TASKINFO.Principal.UserId -Notmatch $ENV:USERNAME) {$SETFLAG = 1}
 	if ($TASKINFO.Triggers.Repetition.Interval -Notmatch 'PT1H') {$SETFLAG = 1}
 	if (!(Test-Path $USERPATH\UPDATE.vbs)) {$SETFLAG = 1}
+	if ((Get-Content $USERPATH\UPDATE.vbs -ErrorAction Ignore) -Notmatch '-v 3') {$SETFLAG = 1}
 } else {$SETFLAG = 1}
 
 if ($SETFLAG -eq 1) {
