@@ -113,7 +113,7 @@ if ((Get-NetFirewallRule -DisplayName "BT_BAN_*").Count -lt 2) {
 
 if (Get-ScheduledTask BT_BAN_NOTIFY -ErrorAction Ignore) {
 	if ((Get-Content $USERPATH\NOTIFY.ps1 -ErrorAction Ignore) -Notmatch 'BT_BAN_IPLIST') {&$SET_NOTIFY}
-	if ((Get-Content $USERPATH\NOTIFY.vbs -ErrorAction Ignore) -Notmatch 'Bypass') {&$SET_NOTIFY}
+	if ((Get-Content $USERPATH\NOTIFY.vbs -ErrorAction Ignore) -Notmatch '-v 3') {&$SET_NOTIFY}
 } else {
 	&$SET_NOTIFY
 }
