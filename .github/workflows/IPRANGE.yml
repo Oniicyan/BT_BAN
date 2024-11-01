@@ -14,7 +14,7 @@ jobs:
          New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST | Out-Null
          (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID).Addresses -Split ',' | Out-File IPRANGE.txt
          Get-Content IPRANGE.txt | Select-String '\.' | Out-File IPRANGE4.txt
-         Get-Content IPRANGE.txt | Select-String '.' | Out-File IPRANGE6.txt
+         Get-Content IPRANGE.txt | Select-String ':' | Out-File IPRANGE6.txt
          $GIT = {
            git config --local user.name ${GITHUB_ACTOR}
            git config --local user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
