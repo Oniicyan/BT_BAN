@@ -13,13 +13,17 @@ jobs:
          $DYKWID = '{3817fa89-3f21-49ca-a4a4-80541ddf7465}'
          New-NetFirewallDynamicKeywordAddress -Id $DYKWID -Keyword "BT_BAN_IPLIST" -Addresses $IPLIST | Out-Null
          (Get-NetFirewallDynamicKeywordAddress -Id $DYKWID).Addresses -Split ',' | Out-File IPRANGE.txt
-         $IPRANGE = {
+         Get-Content IPRANGE.txt | Select-String '\.' | Out-File IPRANGE4.txt
+         Get-Content IPRANGE.txt | Select-String '.' | Out-File IPRANGE6.txt
+         $GIT = {
            git config --local user.name ${GITHUB_ACTOR}
            git config --local user.email ${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com
            git add IPRANGE.txt
+           git add IPRANGE4.txt
+           git add IPRANGE6.txt
            git commit -m "Update IPRANGE.txt"
          }
-         Start-Job $IPRANGE
+         Start-Job $GIT
          Get-Job | Wait-Job
      - name: Push changes
        uses: ad-m/github-push-action@master
