@@ -14,6 +14,7 @@
 2001:d08:e3:4b30::-2001:d08:e3:4b3f:ffff:ffff:ffff:ffff
 2001:da8:201:1030::-2001:da8:201:103f:ffff:ffff:ffff:ffff
 2001:da8:20d:40f0::-2001:da8:20d:40ff:ffff:ffff:ffff:ffff
+2001:da8:1016:240::-2001:da8:1016:24f:ffff:ffff:ffff:ffff
 2001:da8:b000:6600::-2001:da8:b000:660f:ffff:ffff:ffff:ffff
 2001:e68::-2001:e68:ffff:ffff:ffff:ffff:ffff:ffff
 2001:41d0:8:b100::-2001:41d0:8:b10f:ffff:ffff:ffff:ffff
