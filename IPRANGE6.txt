@@ -196,7 +196,6 @@
 2408:822f:1e00::-2408:822f:1fff:ffff:ffff:ffff:ffff:ffff
 2408:8239:104:6bd0::-2408:8239:104:6bdf:ffff:ffff:ffff:ffff
 2408:8239:1b01:1040::-2408:8239:1b01:104f:ffff:ffff:ffff:ffff
-2408:823c:a410:13b0::-2408:823c:a410:13bf:ffff:ffff:ffff:ffff
 2408:8240:9416:ac80:9c5c:14ce:8711:cafc
 2408:8240:941c:b800:9527:b17:173d:3ab0
 2408:8244:110:2a7c:cd6b:cb2e:8d15:9189
