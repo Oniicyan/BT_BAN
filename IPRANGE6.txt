@@ -1189,6 +1189,7 @@
 2a04:52c0:104:42b0::-2a04:52c0:104:42bf:ffff:ffff:ffff:ffff
 2a0a:8dc0:1000:20::-2a0a:8dc0:1000:2f:ffff:ffff:ffff:ffff
 2a0a:8dc0:2000:10::-2a0a:8dc0:2000:1f:ffff:ffff:ffff:ffff
+2a0a:e340:1001:600::-2a0a:e340:1001:60f:ffff:ffff:ffff:ffff
 2a0b:f4c0:16c::-2a0b:f4c0:16c:1f:ffff:ffff:ffff:ffff
 2a0b:f4c2:1::-2a0b:f4c2:1:f:ffff:ffff:ffff:ffff
 2a0d:5600:8:30::-2a0d:5600:8:3f:ffff:ffff:ffff:ffff
