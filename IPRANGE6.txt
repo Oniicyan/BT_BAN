@@ -12,7 +12,6 @@
 2001:470:1f14:30::-2001:470:1f14:3f:ffff:ffff:ffff:ffff
 2001:bc8:32d7:1d0::-2001:bc8:32d7:1df:ffff:ffff:ffff:ffff
 2001:bc8:32d7:d00::-2001:bc8:32d7:d0f:ffff:ffff:ffff:ffff
-2001:ce8:100:6030::-2001:ce8:100:603f:ffff:ffff:ffff:ffff
 2001:da8:c6::-2001:da8:c6:ffff:ffff:ffff:ffff:ffff
 2001:da8:201:1030::-2001:da8:201:103f:ffff:ffff:ffff:ffff
 2001:da8:1016:240::-2001:da8:1016:24f:ffff:ffff:ffff:ffff
