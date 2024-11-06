@@ -24,6 +24,7 @@
 2001:41d0:a:62c0::-2001:41d0:a:62cf:ffff:ffff:ffff:ffff
 2001:41d0:a:6830::-2001:41d0:a:683f:ffff:ffff:ffff:ffff
 2001:41d0:251:e800::-2001:41d0:251:e80f:ffff:ffff:ffff:ffff
+2001:41d0:254:900::-2001:41d0:254:90f:ffff:ffff:ffff:ffff
 2001:41d0:303:3090::-2001:41d0:303:309f:ffff:ffff:ffff:ffff
 2001:b011:1001:9ac0::-2001:b011:1001:9acf:ffff:ffff:ffff:ffff
 2001:b011:5c0e:1a90::-2001:b011:5c0e:1a9f:ffff:ffff:ffff:ffff
