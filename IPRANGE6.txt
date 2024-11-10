@@ -1346,6 +1346,7 @@
 2605:a140:2208:8320::-2605:a140:2208:832f:ffff:ffff:ffff:ffff
 2605:a141:2223:5170::-2605:a141:2223:517f:ffff:ffff:ffff:ffff
 2606:a8c0:3::-2606:a8c0:3:f:ffff:ffff:ffff:ffff
+2606:a8c0:3:710::-2606:a8c0:3:71f:ffff:ffff:ffff:ffff
 2606:a8c0:3:860::-2606:a8c0:3:86f:ffff:ffff:ffff:ffff
 2607:9000:6000:10::-2607:9000:6000:1f:ffff:ffff:ffff:ffff
 2a00:7c80:0:200::-2a00:7c80:0:2ff:ffff:ffff:ffff:ffff
