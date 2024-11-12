@@ -225,6 +225,7 @@
 2409:896d:6516:37e0::-2409:896d:6516:37ef:ffff:ffff:ffff:ffff
 2409:8974:70ac:4b0::-2409:8974:70ac:4bf:ffff:ffff:ffff:ffff
 2409:897a:20f4:ea10::-2409:897a:20f4:ea1f:ffff:ffff:ffff:ffff
+2409:8a00:844e:7930::-2409:8a00:844e:793f:ffff:ffff:ffff:ffff
 2409:8a04:2022:76d0:79ad:31ec:cc97:bd83
 2409:8a04:2023:4c10:c8d2:24fa:f120:70a0
 2409:8a04:2024:d3d0:c8d2:24fa:f120:70a0
