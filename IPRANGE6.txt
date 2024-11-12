@@ -1391,6 +1391,7 @@
 2a02:c207:2042:7440::-2a02:c207:2042:744f:ffff:ffff:ffff:ffff
 2a03:4000::-2a03:4000:ffff:ffff:ffff:ffff:ffff:ffff
 2a04:bdc7:100:6990::-2a04:bdc7:100:699f:ffff:ffff:ffff:ffff
+2a0a:e340:1001:600::-2a0a:e340:1001:60f:ffff:ffff:ffff:ffff
 2a0b:f4c0:16c::-2a0b:f4c0:16c:1f:ffff:ffff:ffff:ffff
 2a0e:dc0:2:8610::-2a0e:dc0:2:861f:ffff:ffff:ffff:ffff
 2a0f:9400:7e11:60b0::-2a0f:9400:7e11:60bf:ffff:ffff:ffff:ffff
