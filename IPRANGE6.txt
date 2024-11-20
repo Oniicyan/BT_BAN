@@ -805,6 +805,7 @@
 240e:353:7410:8000::-240e:353:7410:800f:ffff:ffff:ffff:ffff
 240e:353:7485:c700::-240e:353:7485:c70f:ffff:ffff:ffff:ffff
 240e:353:754f:dc00::-240e:353:754f:dc0f:ffff:ffff:ffff:ffff
+240e:356:b0:d900::-240e:356:b0:d90f:ffff:ffff:ffff:ffff
 240e:356:4cc:2900::-240e:356:4cc:290f:ffff:ffff:ffff:ffff
 240e:356:4e7:4e00::-240e:356:4e7:4e0f:ffff:ffff:ffff:ffff
 240e:357:1787:2b00::-240e:357:1787:2b0f:ffff:ffff:ffff:ffff
