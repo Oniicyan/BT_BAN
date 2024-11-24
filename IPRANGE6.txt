@@ -286,6 +286,7 @@
 2408:8256:3483:a590::-2408:8256:3483:a59f:ffff:ffff:ffff:ffff
 2408:8256:3488:fa0::-2408:8256:3488:faf:ffff:ffff:ffff:ffff
 2408:8256:348a:a460::-2408:8256:348a:a46f:ffff:ffff:ffff:ffff
+2408:8256:348b:a20::-2408:8256:348b:a2f:ffff:ffff:ffff:ffff
 2408:8256:348b:4700::-2408:8256:348b:470f:ffff:ffff:ffff:ffff
 2408:8256:348b:f500::-2408:8256:348b:f50f:ffff:ffff:ffff:ffff
 2408:8256:348e:2d0::-2408:8256:348e:2df:ffff:ffff:ffff:ffff
