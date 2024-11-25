@@ -1,7 +1,7 @@
 name: Update IPRANGE
 on:
  schedule:
- - cron: 55 * * * *
+ - cron: 58 * * * *
  workflow_dispatch:
 jobs:
  IPRANGE:
