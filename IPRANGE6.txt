@@ -43,6 +43,7 @@
 2400:2410:5f20:cd00::-2400:2410:5f20:cd0f:ffff:ffff:ffff:ffff
 2400:4051:c362:bd00::-2400:4051:c362:bd0f:ffff:ffff:ffff:ffff
 2400:4150:6262:ec00::-2400:4150:6262:ec0f:ffff:ffff:ffff:ffff
+2400:4151:8780:9400::-2400:4151:8780:940f:ffff:ffff:ffff:ffff
 2400:4153:f062:b800::-2400:4153:f062:b80f:ffff:ffff:ffff:ffff
 2400:a980:7c00::-2400:a980:7cff:ffff:ffff:ffff:ffff:ffff
 2400:d320:2212:8040::-2400:d320:2212:804f:ffff:ffff:ffff:ffff
