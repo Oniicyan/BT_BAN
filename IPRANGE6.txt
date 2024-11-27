@@ -41,6 +41,7 @@
 2001:41d0:a:6830::-2001:41d0:a:683f:ffff:ffff:ffff:ffff
 2001:41d0:303:3090::-2001:41d0:303:309f:ffff:ffff:ffff:ffff
 2001:8003:ad30:cb00::-2001:8003:ad30:cb0f:ffff:ffff:ffff:ffff
+2001:b011:300c:3a70::-2001:b011:300c:3a7f:ffff:ffff:ffff:ffff
 2001:b011:5c09:fde0::-2001:b011:5c09:fdef:ffff:ffff:ffff:ffff
 2001:b011:d80a:3700::-2001:b011:d80a:370f:ffff:ffff:ffff:ffff
 2002:dc81:4769::-2002:dc81:4769:f:ffff:ffff:ffff:ffff
