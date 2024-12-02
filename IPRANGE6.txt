@@ -21,6 +21,7 @@
 2001:250:702a::-2001:250:702a:ffff:ffff:ffff:ffff:ffff
 2001:250:702e::-2001:250:702e:ffff:ffff:ffff:ffff:ffff
 2001:470:1f10:e0::-2001:470:1f10:ef:ffff:ffff:ffff:ffff
+2001:861:4482:2410::-2001:861:4482:241f:ffff:ffff:ffff:ffff
 2001:9e8:89ba:6b00::-2001:9e8:89ba:6b0f:ffff:ffff:ffff:ffff
 2001:bc8:32d7:d00::-2001:bc8:32d7:d0f:ffff:ffff:ffff:ffff
 2001:da8:a9::-2001:da8:a9:ffff:ffff:ffff:ffff:ffff
