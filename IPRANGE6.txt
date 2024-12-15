@@ -403,6 +403,7 @@
 2409:8a30:1630:9990::-2409:8a30:1630:999f:ffff:ffff:ffff:ffff
 2409:8a34:671a:b890::-2409:8a34:671a:b89f:ffff:ffff:ffff:ffff
 2409:8a38:413:1bb0::-2409:8a38:413:1bbf:ffff:ffff:ffff:ffff
+2409:8a38:41c:b80::-2409:8a38:41c:b8f:ffff:ffff:ffff:ffff
 2409:8a3c:925:9110::-2409:8a3c:925:911f:ffff:ffff:ffff:ffff
 2409:8a3c:c96:8b00::-2409:8a3c:c96:8b0f:ffff:ffff:ffff:ffff
 2409:8a3c:6513:cf90::-2409:8a3c:6513:cf9f:ffff:ffff:ffff:ffff
