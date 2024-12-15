@@ -24,6 +24,7 @@
 2001:da8:a9::-2001:da8:a9:ffff:ffff:ffff:ffff:ffff
 2001:da8:c6::-2001:da8:c6:ffff:ffff:ffff:ffff:ffff
 2001:da8:20d:40f0::-2001:da8:20d:40ff:ffff:ffff:ffff:ffff
+2001:da8:6002:1050::-2001:da8:6002:105f:ffff:ffff:ffff:ffff
 2001:da8:9007::-2001:da8:9007:ffff:ffff:ffff:ffff:ffff
 2001:da8:a800::-2001:da8:a807:ffff:ffff:ffff:ffff:ffff
 2001:da8:a808::-2001:da8:a80b:ffff:ffff:ffff:ffff:ffff
