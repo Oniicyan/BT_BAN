@@ -50,7 +50,6 @@
 2402:1980:3a5:a9e0::-2402:1980:3a5:a9ef:ffff:ffff:ffff:ffff
 2402:1980:82b8:1ac0::-2402:1980:82b8:1acf:ffff:ffff:ffff:ffff
 2402:1980:82bd:c0a0::-2402:1980:82bd:c0af:ffff:ffff:ffff:ffff
-2402:7500:4ed:8c70::-2402:7500:4ed:8c7f:ffff:ffff:ffff:ffff
 2403:9580::-2403:9580:ffff:ffff:ffff:ffff:ffff:ffff
 2403:9b80::-2403:9b80:ffff:ffff:ffff:ffff:ffff:ffff
 2404:c805:5309:e600::-2404:c805:5309:e60f:ffff:ffff:ffff:ffff
