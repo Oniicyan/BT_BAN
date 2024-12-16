@@ -21,6 +21,7 @@
 2001:470:1f10:e0::-2001:470:1f10:ef:ffff:ffff:ffff:ffff
 2001:bc8:32d7:160::-2001:bc8:32d7:16f:ffff:ffff:ffff:ffff
 2001:bc8:32d7:1700::-2001:bc8:32d7:170f:ffff:ffff:ffff:ffff
+2001:d08:de:cc90::-2001:d08:de:cc9f:ffff:ffff:ffff:ffff
 2001:d08:e5:c290::-2001:d08:e5:c29f:ffff:ffff:ffff:ffff
 2001:d08:e5:d480::-2001:d08:e5:d48f:ffff:ffff:ffff:ffff
 2001:da8:a9::-2001:da8:a9:ffff:ffff:ffff:ffff:ffff
