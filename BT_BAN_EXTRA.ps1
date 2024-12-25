@@ -25,9 +25,9 @@ if ($EXTURL) {
 
 $EXLIST = [Regex]::Matches($EXTEXT,'((\d{1,3}\.){3}\d{1,3}(\/\b([1-9]|[12][0-9]|3[0-2])\b)?)|([0-9a-f]{4}:([0-9a-f]{1,4}::?){1,6}(([0-9a-f]{1,4})|:)(\/\b([1-9]|[1-9][0-9]|1[01][0-9]|12[0-8])\b)?)').Value
 if (!$EXLIST) {
-	Write-Host "`n  解析附加规则失败，请确认 IP 格式"
-	Read-Host `n操作失败，按 Enter 键结束...
-	return
+	Write-Host "`n  解析附加规则为空，请确认 IP 格式"
+	$EXFALG = Read-Host `n输入 1 确认附加，留空按 Enter 键结束...
+	if (!$EXFLAG) {return}
 }
 
 $VBS = 'createobject("wscript.shell").run "CMD",0'
