@@ -29,4 +29,4 @@ $VBS.Replace("CMD","$CMD") | Out-File -Encoding ASCII $ENV:USERPROFILE\BT_BAN\UP
 
 Remove-Item $ENV:USERPROFILE\BT_BAN\IPLIST.txt -Force -ErrorAction Ignore
 Start-ScheduledTask BT_BAN_UPDATE
-return
+Read-Host `n操作完成，按 Enter 键结束...
