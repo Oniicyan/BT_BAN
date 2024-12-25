@@ -45,7 +45,8 @@ $XmlDocument.loadXml($XML.Replace("DDTEXT","$DDTEXT"))
 
 $SET_UPDATE = {
 	$VBS = 'createobject("wscript.shell").run "CMD",0'
-	$CMD = "powershell -v 3 `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
+	if ((Get-Content $USERPATH\UPDATE.vbs -ErrorAction Ignore) -Match '&') {$CMD = $(Get-Content $USERPATH\UPDATE.vbs)}
+	else {$CMD = "powershell -v 3 `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""}
 	$VBS.Replace("CMD","$CMD") | Out-File -Encoding ASCII $USERPATH\UPDATE.vbs
 
 	$PRINCIPAL = New-ScheduledTaskPrincipal -UserId $ENV:COMPUTERNAME\$ENV:USERNAME -RunLevel Highest
@@ -150,6 +151,21 @@ while ($ZIP -lt 5) {
 	}
 }
 Expand-Archive -Force -Path $ENV:TEMP\IPLIST.zip -DestinationPath $ENV:TEMP
+
+if ($Args[0]) {
+	try {$EXTEXT = $(Invoke-RestMethod $Args[0] -TimeoutSec 30)
+	} catch {
+		Write-Output (Get-Date).ToString() "获取用户附加规则失败，已跳过`n" | Out-File -Append $USERPATH\OUTPUT.log
+		return
+	}
+	$EXLIST = [Regex]::Matches($EXTEXT,'((\d{1,3}\.){3}\d{1,3}(\/\b([1-9]|[12][0-9]|3[0-2])\b)?)|(([0-9a-f]{1,4}::?){1,7}(([0-9a-f]{1,4})|:)(\/\b([1-9]|[1-9][0-9]|1[01][0-9]|12[0-8])\b)?)').Value
+	if ($EXLIST) {
+		(Get-Content $ENV:TEMP\IPLIST.txt) + $EXLIST | Out-File $ENV:TEMP\IPLIST.txt
+	} else {
+		Write-Output (Get-Date).ToString() "解析用户附加规则失败，已跳过`n" | Out-File -Append $USERPATH\OUTPUT.log
+	}
+}
+
 if (Test-Path $USERPATH\IPLIST.txt) {
 	if (Compare-Object (Get-Content $ENV:TEMP\IPLIST.txt) (Get-Content $USERPATH\IPLIST.txt)) {
 		Move-Item $ENV:TEMP\IPLIST.txt $USERPATH\IPLIST.txt -Force -ErrorAction Ignore
