@@ -162,7 +162,7 @@ if ($Args[0]) {
 	if ($EXLIST) {
 		(Get-Content $ENV:TEMP\IPLIST.txt) + $EXLIST | Out-File $ENV:TEMP\IPLIST.txt
 	} else {
-		Write-Output (Get-Date).ToString() "解析用户附加规则失败，已跳过`n" | Out-File -Append $USERPATH\OUTPUT.log
+		Write-Output (Get-Date).ToString() "解析用户附加规则为空，已跳过`n" | Out-File -Append $USERPATH\OUTPUT.log
 	}
 }
 
