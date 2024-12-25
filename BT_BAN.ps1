@@ -158,7 +158,7 @@ if ($Args[0]) {
 		Write-Output (Get-Date).ToString() "获取用户附加规则失败，已跳过`n" | Out-File -Append $USERPATH\OUTPUT.log
 		return
 	}
-	$EXLIST = [Regex]::Matches($EXTEXT,'((\d{1,3}\.){3}\d{1,3}(\/\b([1-9]|[12][0-9]|3[0-2])\b)?)|([0-9a-f]{4}:([0-9a-f]{1,4}::?){1,6}(([0-9a-f]{1,4})|:)(\/\b([1-9]|[1-9][0-9]|1[01][0-9]|12[0-8])\b)?)').Value
+	$EXLIST = [Regex]::Matches($EXTEXT,'((\d{1,3}\.){3}\d{1,3}((\/\b([1-9]|[12][0-9]|3[0-2])\b)|-)?){1,2}|([0-9a-f]{4}:([0-9a-f]{1,4}::?){1,6}(([0-9a-f]{1,4})|:)((\/\b([1-9]|[1-9][0-9]|1[01][0-9]|12[0-8])\b)|-)?){1,2}').Value
 	if ($EXLIST) {
 		(Get-Content $ENV:TEMP\IPLIST.txt) + $EXLIST | Out-File -Encoding UTF8 $ENV:TEMP\IPLIST.txt
 	} else {
