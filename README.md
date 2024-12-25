@@ -28,8 +28,6 @@
 
 本项目为替代方案，有条件的用户建议使用 [PeerBanHelper](https://github.com/PBH-BTN/PeerBanHelper) 并加入 BTN 网络
 
-**BitComet 用户可使用 [BTNScriptBC](https://github.com/Oniicyan/BTNScriptBC) 外挂脚本加入 BTN 网络**
-
 # 系统要求
 
 动态关键字至少要求 Windows 10 21H2（更早的版本 [未确认](https://github.com/MicrosoftDocs/windows-powershell-docs/blob/main/docset/winserver2022-ps/netsecurity/New-NetFirewallDynamicKeywordAddress.md)）
