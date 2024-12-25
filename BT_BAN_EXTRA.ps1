@@ -11,7 +11,7 @@ if (!(Test-Path $ENV:USERPROFILE\BT_BAN\UPDATE.vbs)) {
 Write-Host "  请输入附加规则的地址"
 Write-Host "  可以是网络，也可以是本地的文件地址"
 Write-Host ""
-Write-Host "  留空则清除附加规则"
+Write-Host "  留空则清除用户附加规则"
 $EXTURL = Read-Host `n规则地址
 
 if ($EXTURL) {
@@ -32,8 +32,10 @@ if ($EXTURL) {
 $VBS = 'createobject("wscript.shell").run "CMD",0'
 if ($EXTURL) {
 	$CMD = "powershell -v 3 `"`"iex `"`"`"`"& {`$(irm $PS1URL -TimeoutSec 30)} $EXTURL`"`"`"`"`"`""
+	Write-Host "`n  已附加用户规则"
 } else {
 	$CMD = "powershell -v 3 `"`"iex (irm $PS1URL -TimeoutSec 30)`"`""
+	Write-Host "`n  已清除用户规则"
 }
 $VBS.Replace("CMD","$CMD") | Out-File -Encoding ASCII $ENV:USERPROFILE\BT_BAN\UPDATE.vbs
 
