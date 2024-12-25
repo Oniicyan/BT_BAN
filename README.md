@@ -59,9 +59,7 @@
 
 ### 启用配置
 
-执行
-
-`iex (irm bt-ban.pages.dev)`
+执行 `iex (irm bt-ban.pages.dev)`
 
 选择需要启用过滤的 BT 应用程序文件即可自动完成配置
 
@@ -73,9 +71,7 @@
 
 ### 清除配置
 
-执行
-
-`iex (irm bt-ban.pages.dev/unset)`
+执行 `iex (irm bt-ban.pages.dev/unset)`
 
 确认清除的项目后按 Enter 键继续
 
@@ -84,6 +80,10 @@
 执行以下命令添加过滤规则
 
 `iex (irm bt-ban.pages.dev/add)`
+
+执行以下命令附加用户规则
+
+`iex (irm bt-ban.pages.dev/extra)`
 
 执行以下命令恢复推送通知
 
