@@ -9,9 +9,11 @@ if (!(Test-Path $ENV:USERPROFILE\BT_BAN\UPDATE.vbs)) {
 }
 
 Write-Host "  请输入附加规则的地址"
-Write-Host "  可以是网络，也可以是本地的文件地址"
-Write-Host ""
 Write-Host "  留空则清除用户附加规则"
+Write-Host ""
+Write-Host "  支持网络与本地文件"
+Write-Host "  支持 CIDR 与 IP 范围格式"
+Write-Host "  IPv4 与 IPv6 可在同一规则文件内"
 $EXTURL = Read-Host `n规则地址
 
 if ($EXTURL) {
