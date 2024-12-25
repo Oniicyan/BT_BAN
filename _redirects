@@ -2,6 +2,7 @@
 /set /BT_BAN_SETUP.ps1 301
 /run /BT_BAN.ps1 301
 /add /BT_BAN_ADDFW.ps1 301
+/extra /BT_BAN_EXTRA.ps1 301
 /unset /BT_BAN_UNSET.ps1 301
 /iplist /IPLIST.txt 302
 /iprange /IPRANGE.txt 302
