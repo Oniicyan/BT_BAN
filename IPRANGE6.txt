@@ -557,6 +557,7 @@
 2001:4479:cb02:5a00::-2001:4479:cb02:5a0f:ffff:ffff:ffff:ffff
 2001:448a:1022:2e90::-2001:448a:1022:2e9f:ffff:ffff:ffff:ffff
 2001:448a:1041:c150::-2001:448a:1041:c15f:ffff:ffff:ffff:ffff
+2001:448a:1070:80ae:73:9a47:40e3:7b42
 2001:448a:11b0:2ce0::-2001:448a:11b0:2cef:ffff:ffff:ffff:ffff
 2001:448a:2011:16a0::-2001:448a:2011:16af:ffff:ffff:ffff:ffff
 2001:448a:404d:7e50::-2001:448a:404d:7e5f:ffff:ffff:ffff:ffff
