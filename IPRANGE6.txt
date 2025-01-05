@@ -25,7 +25,6 @@
 2001:da8:a80c::-2001:da8:a80c:ffff:ffff:ffff:ffff:ffff
 2001:e68::-2001:e68:ffff:ffff:ffff:ffff:ffff:ffff
 2001:fb1:f9:84d0::-2001:fb1:f9:84df:ffff:ffff:ffff:ffff
-2001:448a:1070:80ae:73:9a47:40e3:7b42
 2400:4052:d63:5000::-2400:4052:d63:500f:ffff:ffff:ffff:ffff
 2400:a980:7c00::-2400:a980:7cff:ffff:ffff:ffff:ffff:ffff
 2401:3100::-2401:3100:ffff:ffff:ffff:ffff:ffff:ffff
