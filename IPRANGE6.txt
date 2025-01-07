@@ -87,7 +87,6 @@
 2408:8361:6c00::-2408:8361:6dff:ffff:ffff:ffff:ffff:ffff
 2408:8361:a000::-2408:8361:bfff:ffff:ffff:ffff:ffff:ffff
 2408:8361:c000::-2408:8361:c7ff:ffff:ffff:ffff:ffff:ffff
-2408:8374:1662:df00::-2408:8374:1662:df0f:ffff:ffff:ffff:ffff
 2408:842e:1a00::-2408:842e:1bff:ffff:ffff:ffff:ffff:ffff
 2408:842e:1c00::-2408:842e:1fff:ffff:ffff:ffff:ffff:ffff
 2408:842e:2000::-2408:842e:27ff:ffff:ffff:ffff:ffff:ffff
