@@ -297,7 +297,6 @@
 2a00:7c80:0:250::-2a00:7c80:0:25f:ffff:ffff:ffff:ffff
 2a01:4f9:5a:2120::-2a01:4f9:5a:212f:ffff:ffff:ffff:ffff
 2a01:e0a:492:5eb0::-2a01:e0a:492:5ebf:ffff:ffff:ffff:ffff
-2a02:2f07:400b:2800::-2a02:2f07:400b:280f:ffff:ffff:ffff:ffff
 2a02:a03f:8959:a300::-2a02:a03f:8959:a3ff:ffff:ffff:ffff:ffff
 2a03:4000::-2a03:4000:ffff:ffff:ffff:ffff:ffff:ffff
 
