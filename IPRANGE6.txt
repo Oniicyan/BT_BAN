@@ -275,7 +275,6 @@
 240e:90c:f000::-240e:90c:ffff:ffff:ffff:ffff:ffff:ffff
 240e:90d::-240e:90d:7fff:ffff:ffff:ffff:ffff:ffff
 240e:b8f:9311:8f00::-240e:b8f:9311:8f0f:ffff:ffff:ffff:ffff
-2600:1700:16a:a010::-2600:1700:16a:a01f:ffff:ffff:ffff:ffff
 2600:1700:65a3:5050::-2600:1700:65a3:505f:ffff:ffff:ffff:ffff
 2603:3024:1d06:5500::-2603:3024:1d06:5500:ffff:ffff:ffff:ffff
 2603:c020::-2603:c020:1fff:ffff:ffff:ffff:ffff:ffff
