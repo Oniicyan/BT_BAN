@@ -226,7 +226,6 @@
 240e:390:3600::-240e:390:37ff:ffff:ffff:ffff:ffff:ffff
 240e:390:3800::-240e:390:39ff:ffff:ffff:ffff:ffff:ffff
 240e:390:4000::-240e:390:41ff:ffff:ffff:ffff:ffff:ffff
-240e:390:5f0e:2280::-240e:390:5f0e:228f:ffff:ffff:ffff:ffff
 240e:390:9a57:6dc0::-240e:390:9a57:6dcf:ffff:ffff:ffff:ffff
 240e:391:3000::-240e:391:33ff:ffff:ffff:ffff:ffff:ffff
 240e:391:3600::-240e:391:37ff:ffff:ffff:ffff:ffff:ffff
