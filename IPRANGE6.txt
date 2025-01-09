@@ -43,6 +43,7 @@
 2403:9b80::-2403:9b80:ffff:ffff:ffff:ffff:ffff:ffff
 2405:880::-2405:880:ffff:ffff:ffff:ffff:ffff:ffff
 2405:4180::-2405:4180:ffff:ffff:ffff:ffff:ffff:ffff
+2405:4802:80f8:e380::-2405:4802:80f8:e38f:ffff:ffff:ffff:ffff
 2408:8207:c54:f620::-2408:8207:c54:f62f:ffff:ffff:ffff:ffff
 2408:8210:9025:4160::-2408:8210:9025:416f:ffff:ffff:ffff:ffff
 2408:8215:2610:2090::-2408:8215:2610:209f:ffff:ffff:ffff:ffff
