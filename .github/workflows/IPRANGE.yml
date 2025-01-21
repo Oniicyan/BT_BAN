@@ -23,7 +23,7 @@ jobs:
            git add IPRANGE6.txt
            git commit -m "Update IPRANGE.txt"
          }
-         Start-Job $GIT
+         try {Start-Job $GIT} catch {}
          Get-Job | Wait-Job
      - name: Push changes
        uses: ad-m/github-push-action@master
