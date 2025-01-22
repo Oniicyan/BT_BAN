@@ -7,6 +7,7 @@
 2001:b011:300b:2c50::-2001:b011:300b:2c5f:ffff:ffff:ffff:ffff
 2001:b011:800b:d6b0::-2001:b011:800b:d6bf:ffff:ffff:ffff:ffff
 2001:b011:b807:7780::-2001:b011:b807:778f:ffff:ffff:ffff:ffff
+2001:b011:d009:3e30::-2001:b011:d009:3e3f:ffff:ffff:ffff:ffff
 2400:4052:222:aa00::-2400:4052:222:aa0f:ffff:ffff:ffff:ffff
 2400:4153:bd60:8620::-2400:4153:bd60:862f:ffff:ffff:ffff:ffff
 2400:dd0d:1001:10a0::-2400:dd0d:1001:10af:ffff:ffff:ffff:ffff
