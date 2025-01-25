@@ -43,7 +43,6 @@
 240a:61:42c1:a5a0::-240a:61:42c1:a5af:ffff:ffff:ffff:ffff
 240a:42c8:800:49a0::-240a:42c8:800:49af:ffff:ffff:ffff:ffff
 240e:338:a1d:b3a0::-240e:338:a1d:b3af:ffff:ffff:ffff:ffff
-240e:341:e60:8a00::-240e:341:e60:8a0f:ffff:ffff:ffff:ffff
 240e:34c:7e:6ed0::-240e:34c:7e:6edf:ffff:ffff:ffff:ffff
 240e:35b:2316:df01::-240e:35b:2316:df01:ffff:ffff:ffff:ffff
 240e:35b:2317:c301::-240e:35b:2317:c301:ffff:ffff:ffff:ffff
