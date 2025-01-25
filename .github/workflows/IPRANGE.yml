@@ -20,7 +20,7 @@ jobs:
          git add IPRANGE.txt
          git add IPRANGE4.txt
          git add IPRANGE6.txt
-         try (git commit -m "Update IPRANGE.txt"} catch {}
+         try {git commit -m "Update IPRANGE.txt"} catch {}
      - name: Push changes
        uses: ad-m/github-push-action@master
        with:
