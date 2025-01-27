@@ -7,6 +7,7 @@
 2001:8004:27b8:1ca0::-2001:8004:27b8:1caf:ffff:ffff:ffff:ffff
 2001:b011:1001:7870::-2001:b011:1001:787f:ffff:ffff:ffff:ffff
 2001:b011:4008:2360::-2001:b011:4008:236f:ffff:ffff:ffff:ffff
+2001:b011:400b:720::-2001:b011:400b:72f:ffff:ffff:ffff:ffff
 2001:b011:7013:fdf0::-2001:b011:7013:fdff:ffff:ffff:ffff:ffff
 2001:b011:fc05:76a0::-2001:b011:fc05:76af:ffff:ffff:ffff:ffff
 2404:bf40:c142::-2404:bf40:c142:f:ffff:ffff:ffff:ffff
