@@ -12,6 +12,7 @@
 2001:b011:4008:2360::-2001:b011:4008:236f:ffff:ffff:ffff:ffff
 2001:b011:400b:720::-2001:b011:400b:72f:ffff:ffff:ffff:ffff
 2001:b011:7013:fdf0::-2001:b011:7013:fdff:ffff:ffff:ffff:ffff
+2002:1e5:c2bc::-2002:1e5:c2bc:f:ffff:ffff:ffff:ffff
 2408:8207:c70:3e00::-2408:8207:c70:3e0f:ffff:ffff:ffff:ffff
 2408:8207:18da:3720::-2408:8207:18da:372f:ffff:ffff:ffff:ffff
 2408:8207:304f:59f0::-2408:8207:304f:59ff:ffff:ffff:ffff:ffff
