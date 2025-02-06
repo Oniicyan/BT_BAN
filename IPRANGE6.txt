@@ -6,6 +6,7 @@
 2001:448a:2071:3270::-2001:448a:2071:327f:ffff:ffff:ffff:ffff
 2001:b011:7800:f380::-2001:b011:7800:f38f:ffff:ffff:ffff:ffff
 2001:b011:800b:77f0::-2001:b011:800b:77ff:ffff:ffff:ffff:ffff
+2403:5811:8e7f::-2403:5811:8e7f:f:ffff:ffff:ffff:ffff
 2403:6200:8917:4410::-2403:6200:8917:441f:ffff:ffff:ffff:ffff
 2408:8207:7850:5bc0::-2408:8207:7850:5bcf:ffff:ffff:ffff:ffff
 2408:8214:2610:7c20::-2408:8214:2610:7c2f:ffff:ffff:ffff:ffff
