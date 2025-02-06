@@ -4,6 +4,7 @@
 ::ffff:185.107.45.15
 ::ffff:185.107.45.40
 2001:448a:2071:3270::-2001:448a:2071:327f:ffff:ffff:ffff:ffff
+2001:b011:6c0a:7cc0::-2001:b011:6c0a:7ccf:ffff:ffff:ffff:ffff
 2001:b011:7800:f380::-2001:b011:7800:f38f:ffff:ffff:ffff:ffff
 2001:b011:800b:77f0::-2001:b011:800b:77ff:ffff:ffff:ffff:ffff
 2403:5811:8e7f::-2403:5811:8e7f:f:ffff:ffff:ffff:ffff
