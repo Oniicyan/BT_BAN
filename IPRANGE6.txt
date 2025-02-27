@@ -71,7 +71,6 @@
 240e:38d:87a1:7500::-240e:38d:87a1:750f:ffff:ffff:ffff:ffff
 240e:390:7c00::-240e:390:7c01:ffff:ffff:ffff:ffff:ffff
 240e:390:7c14:270::-240e:390:7c14:27f:ffff:ffff:ffff:ffff
-240e:390:7c14:280::-240e:390:7c14:28f:ffff:ffff:ffff:ffff
 240e:390:7c64:9470::-240e:390:7c64:947f:ffff:ffff:ffff:ffff
 240e:390:7c64:9580::-240e:390:7c64:958f:ffff:ffff:ffff:ffff
 240e:390:7c64:95f0::-240e:390:7c64:95ff:ffff:ffff:ffff:ffff
