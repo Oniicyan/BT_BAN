@@ -20,7 +20,7 @@ jobs:
          git add IPRANGE.txt
          git add IPRANGE4.txt
          git add IPRANGE6.txt
-         git commit -m "Update IPRANGE.txt" || exit 0
+         git commit -m "Update IPRANGE.txt" || [System.Environment]::Exit(0)
      - name: Push changes
        uses: ad-m/github-push-action@master
        with:
