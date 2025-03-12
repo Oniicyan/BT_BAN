@@ -117,6 +117,7 @@
 2600:1700:694b::-2600:1700:694b:f:ffff:ffff:ffff:ffff
 2603:3024:1d06:5500::-2603:3024:1d06:5500:ffff:ffff:ffff:ffff
 2603:c024:13:200::-2603:c024:13:20f:ffff:ffff:ffff:ffff
+2607:fb90:8f89:7c0::-2607:fb90:8f89:7cf:ffff:ffff:ffff:ffff
 2a01:4f9:5a:2120::-2a01:4f9:5a:212f:ffff:ffff:ffff:ffff
 2a03:4000:35:950::-2a03:4000:35:95f:ffff:ffff:ffff:ffff
 2a0a:4cc0:80:1270::-2a0a:4cc0:80:127f:ffff:ffff:ffff:ffff
