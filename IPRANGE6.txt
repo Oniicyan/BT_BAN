@@ -131,6 +131,5 @@
 2607:fb90:8f89:7c0::-2607:fb90:8f89:7cf:ffff:ffff:ffff:ffff
 2804:d0:20d6:9500::-2804:d0:20d6:950f:ffff:ffff:ffff:ffff
 2a01:4f9:5a:2120::-2a01:4f9:5a:212f:ffff:ffff:ffff:ffff
-2a0a:4cc0:0:30::-2a0a:4cc0:0:3f:ffff:ffff:ffff:ffff
 2a0a:4cc0:1:e0::-2a0a:4cc0:1:ef:ffff:ffff:ffff:ffff
 
