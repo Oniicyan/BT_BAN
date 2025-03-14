@@ -124,5 +124,6 @@
 2804:d0:20d6:9500::-2804:d0:20d6:950f:ffff:ffff:ffff:ffff
 2a01:4f9:5a:2120::-2a01:4f9:5a:212f:ffff:ffff:ffff:ffff
 2a03:4000:35:950::-2a03:4000:35:95f:ffff:ffff:ffff:ffff
+2a0a:4cc0:1:e0::-2a0a:4cc0:1:ef:ffff:ffff:ffff:ffff
 2c0f:f888:a180:2a40::-2c0f:f888:a180:2a4f:ffff:ffff:ffff:ffff
 
