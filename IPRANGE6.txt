@@ -65,7 +65,6 @@
 2409:8a63:e31:f5a0::-2409:8a63:e31:f5af:ffff:ffff:ffff:ffff
 2409:8a6a:6a34:fc0::-2409:8a6a:6a34:fcf:ffff:ffff:ffff:ffff
 2409:8a6c:5717:74c0::-2409:8a6c:5717:74cf:ffff:ffff:ffff:ffff
-240a:42af:5c00:4a0::-240a:42af:5c00:4af:ffff:ffff:ffff:ffff
 240d:1a:f9c:6700::-240d:1a:f9c:670f:ffff:ffff:ffff:ffff
 240e:305:189c:af00::-240e:305:189c:af0f:ffff:ffff:ffff:ffff
 240e:332:11f2:5300::-240e:332:11f2:530f:ffff:ffff:ffff:ffff
