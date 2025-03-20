@@ -5,7 +5,6 @@
 ::ffff:185.107.45.40
 2001:569:51ca:e400::-2001:569:51ca:e40f:ffff:ffff:ffff:ffff
 2001:ce8:177:bf90::-2001:ce8:177:bf9f:ffff:ffff:ffff:ffff
-2001:da8:2005:10::-2001:da8:2005:1f:ffff:ffff:ffff:ffff
 2001:e68:541a:cf90::-2001:e68:541a:cf9f:ffff:ffff:ffff:ffff
 2001:4451:43dd:e100::-2001:4451:43dd:e10f:ffff:ffff:ffff:ffff
 2001:b011:7:1700::-2001:b011:7:170f:ffff:ffff:ffff:ffff
