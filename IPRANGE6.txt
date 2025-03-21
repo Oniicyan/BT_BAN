@@ -112,8 +112,10 @@
 240e:391:e05:ecc0::-240e:391:e05:eccf:ffff:ffff:ffff:ffff
 240e:394:3001:7360::-240e:394:3001:736f:ffff:ffff:ffff:ffff
 240e:394:3045:f2f0::-240e:394:3045:f2ff:ffff:ffff:ffff:ffff
+240e:394:304b:dd50::-240e:394:304b:dd5f:ffff:ffff:ffff:ffff
 240e:394:3065:2190::-240e:394:3065:219f:ffff:ffff:ffff:ffff
 240e:394:3071:b170::-240e:394:3071:b17f:ffff:ffff:ffff:ffff
+240e:394:3073:4480::-240e:394:3073:448f:ffff:ffff:ffff:ffff
 240e:394:3073:8410::-240e:394:3073:841f:ffff:ffff:ffff:ffff
 240e:398:26a1:d3f0::-240e:398:26a1:d3ff:ffff:ffff:ffff:ffff
 240e:398:50bd:9590::-240e:398:50bd:959f:ffff:ffff:ffff:ffff
