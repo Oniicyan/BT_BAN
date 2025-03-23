@@ -65,6 +65,7 @@
 2409:8a28:3e25:3880::-2409:8a28:3e25:388f:ffff:ffff:ffff:ffff
 2409:8a28:54a3:6440::-2409:8a28:54a3:644f:ffff:ffff:ffff:ffff
 2409:8a28:6274:dbe0::-2409:8a28:6274:dbef:ffff:ffff:ffff:ffff
+2409:8a28:a273:e030::-2409:8a28:a273:e03f:ffff:ffff:ffff:ffff
 2409:8a3c:100:9c30::-2409:8a3c:100:9c3f:ffff:ffff:ffff:ffff
 2409:8a44:656:7590::-2409:8a44:656:759f:ffff:ffff:ffff:ffff
 2409:8a4c:e12:7860::-2409:8a4c:e12:786f:ffff:ffff:ffff:ffff
