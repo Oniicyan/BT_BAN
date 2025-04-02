@@ -103,5 +103,4 @@
 2603:c028:8001:2420::-2603:c028:8001:242f:ffff:ffff:ffff:ffff
 2806:290:8814:2200::-2806:290:8814:220f:ffff:ffff:ffff:ffff
 2a01:4f9:5a:2120::-2a01:4f9:5a:212f:ffff:ffff:ffff:ffff
-2a02:a03f:8959:a300::-2a02:a03f:8959:a30f:ffff:ffff:ffff:ffff
 
