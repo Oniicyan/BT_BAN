@@ -11,7 +11,6 @@
 2001:da8:8000:5000::-2001:da8:8000:500f:ffff:ffff:ffff:ffff
 2001:da8:9000:a140::-2001:da8:9000:a14f:ffff:ffff:ffff:ffff
 2001:f90:40e0:6b0::-2001:f90:40e0:6bf:ffff:ffff:ffff:ffff
-2001:b011:300d:7d30::-2001:b011:300d:7d3f:ffff:ffff:ffff:ffff
 2001:b011:4002:330::-2001:b011:4002:33f:ffff:ffff:ffff:ffff
 2001:b011:8019:3240::-2001:b011:8019:324f:ffff:ffff:ffff:ffff
 2001:b011:d805:7d10::-2001:b011:d805:7d1f:ffff:ffff:ffff:ffff
