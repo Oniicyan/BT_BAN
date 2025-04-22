@@ -108,5 +108,4 @@
 2a01:4f9:5a:2120::-2a01:4f9:5a:212f:ffff:ffff:ffff:ffff
 2a01:cb1c:e44:5100::-2a01:cb1c:e44:510f:ffff:ffff:ffff:ffff
 2a03:4000:62:fc0::-2a03:4000:62:fcf:ffff:ffff:ffff:ffff
-2a14:67c0:100::-2a14:67c0:100:f:ffff:ffff:ffff:ffff
 
