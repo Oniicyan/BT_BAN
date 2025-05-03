@@ -12,7 +12,6 @@
 2400:4050:8da1:3d00::-2400:4050:8da1:3d0f:ffff:ffff:ffff:ffff
 2400:4151:8780:9400::-2400:4151:8780:940f:ffff:ffff:ffff:ffff
 2400:8a20:112::-2400:8a20:112:f:ffff:ffff:ffff:ffff
-2400:dd01:103a:1010::-2400:dd01:103a:101f:ffff:ffff:ffff:ffff
 2402:6b00:9e39:3e00::-2402:6b00:9e39:3e0f:ffff:ffff:ffff:ffff
 2402:7500:a28:37c0::-2402:7500:a28:37cf:ffff:ffff:ffff:ffff
 2404:160:800d:50d0::-2404:160:800d:50df:ffff:ffff:ffff:ffff
