@@ -85,6 +85,7 @@
 240b:11:1121:d000::-240b:11:1121:d00f:ffff:ffff:ffff:ffff
 240e:e8:f040:6fa0::-240e:e8:f040:6faf:ffff:ffff:ffff:ffff
 240e:304:8cf9:b200::-240e:304:8cf9:b20f:ffff:ffff:ffff:ffff
+240e:305:1880:3800::-240e:305:1880:380f:ffff:ffff:ffff:ffff
 240e:30b:7d:6300::-240e:30b:7d:630f:ffff:ffff:ffff:ffff
 240e:319:16c:4c10::-240e:319:16c:4c1f:ffff:ffff:ffff:ffff
 240e:335:97:a930::-240e:335:97:a93f:ffff:ffff:ffff:ffff
@@ -122,6 +123,7 @@
 240e:391:9029:daf0::-240e:391:9029:daff:ffff:ffff:ffff:ffff
 240e:3a0:4929:570::-240e:3a0:4929:57f:ffff:ffff:ffff:ffff
 240e:3a1:220:7e80::-240e:3a1:220:7e8f:ffff:ffff:ffff:ffff
+240e:3a1:2cc3:fe80::-240e:3a1:2cc3:fe8f:ffff:ffff:ffff:ffff
 240e:3a1:4ad3:a720::-240e:3a1:4ad3:a72f:ffff:ffff:ffff:ffff
 240e:3a1:5699:e30::-240e:3a1:5699:e3f:ffff:ffff:ffff:ffff
 240e:3a2:1003:df50::-240e:3a2:1003:df5f:ffff:ffff:ffff:ffff
