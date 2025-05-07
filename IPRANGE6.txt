@@ -116,4 +116,5 @@
 2604:3d08:6e7c:3bd0::-2604:3d08:6e7c:3bdf:ffff:ffff:ffff:ffff
 2607:9000:8000:10::-2607:9000:8000:1f:ffff:ffff:ffff:ffff
 2a01:4f9:5a:2120::-2a01:4f9:5a:212f:ffff:ffff:ffff:ffff
+2a0a:4cc0:0:f0::-2a0a:4cc0:0:ff:ffff:ffff:ffff:ffff
 
