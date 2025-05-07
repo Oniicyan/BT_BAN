@@ -14,6 +14,7 @@
 2001:44c8:44c8:4ee0::-2001:44c8:44c8:4eef:ffff:ffff:ffff:ffff
 2001:b011:8:7880::-2001:b011:8:788f:ffff:ffff:ffff:ffff
 2001:b011:400b:cb40::-2001:b011:400b:cb4f:ffff:ffff:ffff:ffff
+2001:b011:5c0a:7d50::-2001:b011:5c0a:7d5f:ffff:ffff:ffff:ffff
 2400:4050:8da1:3d00::-2400:4050:8da1:3d0f:ffff:ffff:ffff:ffff
 2400:4150:5601:4e00::-2400:4150:5601:4e0f:ffff:ffff:ffff:ffff
 2403:6200:8890:6850::-2403:6200:8890:685f:ffff:ffff:ffff:ffff
