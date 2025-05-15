@@ -9,6 +9,7 @@
 2001:b400:e481:9080::-2001:b400:e481:908f:ffff:ffff:ffff:ffff
 2002:afb5:b14a::-2002:afb5:b14a:f:ffff:ffff:ffff:ffff
 2400:4150:5601:4e00::-2400:4150:5601:4e0f:ffff:ffff:ffff:ffff
+2400:4150:84e2:7000::-2400:4150:84e2:700f:ffff:ffff:ffff:ffff
 2402:4e00:c032:2e00::-2402:4e00:c032:2e0f:ffff:ffff:ffff:ffff
 2405:1201:e112:7600::-2405:1201:e112:760f:ffff:ffff:ffff:ffff
 2406:b400:b4:5b00::-2406:b400:b4:5b0f:ffff:ffff:ffff:ffff
