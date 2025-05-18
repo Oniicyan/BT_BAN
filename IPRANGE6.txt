@@ -4,6 +4,7 @@
 ::ffff:185.107.45.15
 ::ffff:185.107.45.40
 2001:da8:1026:2ff0::-2001:da8:1026:2fff:ffff:ffff:ffff:ffff
+2001:b011:a403:2f70::-2001:b011:a403:2f7f:ffff:ffff:ffff:ffff
 2001:b011:e60b:3cc0::-2001:b011:e60b:3ccf:ffff:ffff:ffff:ffff
 2002:afb5:b14a::-2002:afb5:b14a:f:ffff:ffff:ffff:ffff
 2400:4150:84e2:7000::-2400:4150:84e2:700f:ffff:ffff:ffff:ffff
@@ -56,7 +57,6 @@
 240e:36f:9a4:6f30::-240e:36f:9a4:6f3f:ffff:ffff:ffff:ffff
 240e:36f:9a6:8600::-240e:36f:9a6:860f:ffff:ffff:ffff:ffff
 240e:36f:9ae:b410::-240e:36f:9ae:b41f:ffff:ffff:ffff:ffff
-240e:36f:9b7:7760::-240e:36f:9b7:776f:ffff:ffff:ffff:ffff
 240e:36f:9bb:f8c0::-240e:36f:9bb:f8cf:ffff:ffff:ffff:ffff
 240e:36f:9d1:b150::-240e:36f:9d1:b15f:ffff:ffff:ffff:ffff
 240e:36f:9d3:a50::-240e:36f:9d3:a5f:ffff:ffff:ffff:ffff
