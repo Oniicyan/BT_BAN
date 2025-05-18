@@ -91,7 +91,6 @@
 2603:3024:1d06:5500::-2603:3024:1d06:5500:ffff:ffff:ffff:ffff
 2603:c021:c009:550::-2603:c021:c009:55f:ffff:ffff:ffff:ffff
 2603:c026:4500:3100::-2603:c026:4500:310f:ffff:ffff:ffff:ffff
-2806:2f0:7081:c4c0::-2806:2f0:7081:c4cf:ffff:ffff:ffff:ffff
 2a01:4f8:172:d50::-2a01:4f8:172:d5f:ffff:ffff:ffff:ffff
 2a01:4f9:5a:2120::-2a01:4f9:5a:212f:ffff:ffff:ffff:ffff
 2a03:4000:59:c0::-2a03:4000:59:cf:ffff:ffff:ffff:ffff
