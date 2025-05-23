@@ -16,6 +16,7 @@
 2403:7800:b532:8b00::-2403:7800:b532:8b0f:ffff:ffff:ffff:ffff
 2405:6583:d900:5300::-2405:6583:d900:530f:ffff:ffff:ffff:ffff
 2405:8d40:4499:9900::-2405:8d40:4499:990f:ffff:ffff:ffff:ffff
+2407:4d00:4c01:2f0::-2407:4d00:4c01:2ff:ffff:ffff:ffff:ffff
 2408:8207:2635:4e60::-2408:8207:2635:4e6f:ffff:ffff:ffff:ffff
 2408:8207:6097:23b0::-2408:8207:6097:23bf:ffff:ffff:ffff:ffff
 2408:8207:7834:7420::-2408:8207:7834:742f:ffff:ffff:ffff:ffff
