@@ -84,5 +84,4 @@
 2a03:4000:19:2a0::-2a03:4000:19:2af:ffff:ffff:ffff:ffff
 2a03:4000:33:210::-2a03:4000:33:21f:ffff:ffff:ffff:ffff
 2a03:4000:68:70::-2a03:4000:68:7f:ffff:ffff:ffff:ffff
-2c0f:2a80:25c5:6a10::-2c0f:2a80:25c5:6a1f:ffff:ffff:ffff:ffff
 
