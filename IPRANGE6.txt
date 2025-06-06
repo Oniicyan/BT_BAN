@@ -95,6 +95,5 @@
 2603:c020:11:c5a0::-2603:c020:11:c5af:ffff:ffff:ffff:ffff
 2607:9000:a000:10::-2607:9000:a000:1f:ffff:ffff:ffff:ffff
 2806:269:3480:85e0::-2806:269:3480:85ef:ffff:ffff:ffff:ffff
-2a01:4f8:172:d50::-2a01:4f8:172:d5f:ffff:ffff:ffff:ffff
 2a03:4000:19:2a0::-2a03:4000:19:2af:ffff:ffff:ffff:ffff
 
