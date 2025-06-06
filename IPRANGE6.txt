@@ -89,5 +89,4 @@
 2806:269:3480:85e0::-2806:269:3480:85ef:ffff:ffff:ffff:ffff
 2a01:4f8:172:d50::-2a01:4f8:172:d5f:ffff:ffff:ffff:ffff
 2a03:4000:19:2a0::-2a03:4000:19:2af:ffff:ffff:ffff:ffff
-2a09:bac1:7ac0:10::-2a09:bac1:7ac0:1f:ffff:ffff:ffff:ffff
 
