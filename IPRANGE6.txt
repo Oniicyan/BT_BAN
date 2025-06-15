@@ -3,6 +3,7 @@
 ::ffff:185.107.45.9
 ::ffff:185.107.45.15
 ::ffff:185.107.45.40
+2001:b011:2018:cd20::-2001:b011:2018:cd2f:ffff:ffff:ffff:ffff
 2001:b011:fa06:5500::-2001:b011:fa06:550f:ffff:ffff:ffff:ffff
 2400:4150:5320:e100::-2400:4150:5320:e10f:ffff:ffff:ffff:ffff
 2400:a300:19ff:8000::-2400:a300:19ff:800f:ffff:ffff:ffff:ffff
