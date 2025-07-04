@@ -51,7 +51,6 @@
 240b:251:14a1:6700::-240b:251:14a1:670f:ffff:ffff:ffff:ffff
 240e:cf:9000:300::-240e:cf:9000:30f:ffff:ffff:ffff:ffff
 240e:318:b9bd:1e00::-240e:318:b9bd:1e0f:ffff:ffff:ffff:ffff
-240e:335:2e60:df30::-240e:335:2e60:df3f:ffff:ffff:ffff:ffff
 240e:341:3afe:4e00::-240e:341:3afe:4e0f:ffff:ffff:ffff:ffff
 240e:35b:2316:df01::-240e:35b:2316:df01:ffff:ffff:ffff:ffff
 240e:35b:2317:c301::-240e:35b:2317:c301:ffff:ffff:ffff:ffff
