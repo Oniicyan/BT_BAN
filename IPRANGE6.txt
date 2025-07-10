@@ -12,7 +12,6 @@
 2001:b011:d805:1820::-2001:b011:d805:182f:ffff:ffff:ffff:ffff
 2001:b400:e75b:6970::-2001:b400:e75b:697f:ffff:ffff:ffff:ffff
 2400:2653:53a1:d500::-2400:2653:53a1:d50f:ffff:ffff:ffff:ffff
-2400:4050:c5a0:dc00::-2400:4050:c5a0:dc0f:ffff:ffff:ffff:ffff
 2400:4153:4e43:3300::-2400:4153:4e43:330f:ffff:ffff:ffff:ffff
 2400:a300:19ff:8000::-2400:a300:19ff:800f:ffff:ffff:ffff:ffff
 2408:8207:2485:f2e0::-2408:8207:2485:f2ef:ffff:ffff:ffff:ffff
