@@ -74,5 +74,6 @@
 240e:b8e:3524:d00::-240e:b8e:3524:d0f:ffff:ffff:ffff:ffff
 2600:4040:726f:7200::-2600:4040:726f:720f:ffff:ffff:ffff:ffff
 2603:3024:1d06:5500::-2603:3024:1d06:5500:ffff:ffff:ffff:ffff
+2a03:4000:6:86d0::-2a03:4000:6:86df:ffff:ffff:ffff:ffff
 2a14:67c1:a072::-2a14:67c1:a072:f:ffff:ffff:ffff:ffff
 
