@@ -9,7 +9,6 @@
 14.117.223.127
 14.153.169.151
 14.211.255.125
-27.18.198.82
 27.25.74.82
 27.36.29.181
 27.38.218.39
@@ -963,6 +962,7 @@
 2408:8270:2220::-2408:8270:2220:ffff:ffff:ffff:ffff:ffff
 2408:832e:6db:e880::-2408:832e:6db:e88f:ffff:ffff:ffff:ffff
 2408:832e:1a7b:3bd0::-2408:832e:1a7b:3bdf:ffff:ffff:ffff:ffff
+2408:832e:1a7b:3d50::-2408:832e:1a7b:3d5f:ffff:ffff:ffff:ffff
 2409:8738:6600::-2409:8738:6600:f:ffff:ffff:ffff:ffff
 2409:8a18:632:eb50::-2409:8a18:632:eb5f:ffff:ffff:ffff:ffff
 2409:8a1e:90b1:4ba0::-2409:8a1e:90b1:4baf:ffff:ffff:ffff:ffff
