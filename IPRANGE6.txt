@@ -82,4 +82,5 @@
 2a03:4000:6b:d20::-2a03:4000:6b:d2f:ffff:ffff:ffff:ffff
 2a0a:e340:1001:500::-2a0a:e340:1001:50f:ffff:ffff:ffff:ffff
 2a13:2200:0:3520::-2a13:2200:0:352f:ffff:ffff:ffff:ffff
+2a14:67c1:a072::-2a14:67c1:a072:f:ffff:ffff:ffff:ffff
 
