@@ -813,7 +813,6 @@
 198.44.129.94
 202.46.89.158
 203.234.214.201
-208.87.241.129
 209.141.57.61
 210.6.140.198
 210.21.122.109
@@ -993,6 +992,7 @@
 2408:8207:2518:86b0::-2408:8207:2518:86bf:ffff:ffff:ffff:ffff
 2408:8207:6c73:f8a0::-2408:8207:6c73:f8af:ffff:ffff:ffff:ffff
 2408:821b:9b30:ca0::-2408:821b:9b30:caf:ffff:ffff:ffff:ffff
+2408:822e:1a74:3920::-2408:822e:1a74:392f:ffff:ffff:ffff:ffff
 2408:822e:1a74:4000::-2408:822e:1a74:7fff:ffff:ffff:ffff:ffff
 2408:8239:1:c480::-2408:8239:1:c48f:ffff:ffff:ffff:ffff
 2408:823c:1e10:850::-2408:823c:1e10:85f:ffff:ffff:ffff:ffff
@@ -1006,6 +1006,7 @@
 2408:825c:5020::-2408:825c:5020:ffff:ffff:ffff:ffff:ffff
 2408:8270:2220::-2408:8270:2220:ffff:ffff:ffff:ffff:ffff
 2408:832e:1a7b::-2408:832e:1a7b:3fff:ffff:ffff:ffff:ffff
+2408:832e:1a7b:44b0::-2408:832e:1a7b:44bf:ffff:ffff:ffff:ffff
 2408:8352:445:d7f0::-2408:8352:445:d7ff:ffff:ffff:ffff:ffff
 2409:8a00:26d7:5f30::-2409:8a00:26d7:5f3f:ffff:ffff:ffff:ffff
 2409:8a15:5850:c380::-2409:8a15:5850:c38f:ffff:ffff:ffff:ffff
