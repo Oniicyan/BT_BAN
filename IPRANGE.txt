@@ -551,6 +551,7 @@
 119.183.131.42
 119.243.162.200
 120.38.14.153
+120.40.24.166
 120.43.45.0-120.43.45.255
 120.72.33.0-120.72.33.255
 120.84.11.69
@@ -1011,7 +1012,8 @@
 2408:8256:310e:a1e0::-2408:8256:310e:a1ef:ffff:ffff:ffff:ffff
 2408:825c:5020::-2408:825c:5020:ffff:ffff:ffff:ffff:ffff
 2408:8270:2220::-2408:8270:2220:ffff:ffff:ffff:ffff:ffff
-2408:832e:1a7b::-2408:832e:1a7b:7fff:ffff:ffff:ffff:ffff
+2408:832e:1a7b::-2408:832e:1a7b:3fff:ffff:ffff:ffff:ffff
+2408:832e:1a7b:4630::-2408:832e:1a7b:463f:ffff:ffff:ffff:ffff
 2409:8a00:31e0:6120::-2409:8a00:31e0:612f:ffff:ffff:ffff:ffff
 2409:8a1e:21b1:7ba0::-2409:8a1e:21b1:7baf:ffff:ffff:ffff:ffff
 2409:8a1e:6e71:d950::-2409:8a1e:6e71:d95f:ffff:ffff:ffff:ffff
