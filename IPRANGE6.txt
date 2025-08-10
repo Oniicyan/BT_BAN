@@ -90,6 +90,7 @@
 2605:59c8:1103:8010::-2605:59c8:1103:801f:ffff:ffff:ffff:ffff
 2607:9000:3000:30::-2607:9000:3000:3f:ffff:ffff:ffff:ffff
 2804:45e4:a05d:d900::-2804:45e4:a05d:d90f:ffff:ffff:ffff:ffff
+2804:6974:449:7e00::-2804:6974:449:7e0f:ffff:ffff:ffff:ffff
 2a00:1678:1337:7a10::-2a00:1678:1337:7a1f:ffff:ffff:ffff:ffff
 2a02:6ea0:c501:5960::-2a02:6ea0:c501:596f:ffff:ffff:ffff:ffff
 2a02:6ea0:d20c::-2a02:6ea0:d20c:f:ffff:ffff:ffff:ffff
