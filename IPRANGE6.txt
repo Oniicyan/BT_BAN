@@ -79,4 +79,5 @@
 2804:6974:449:7e00::-2804:6974:449:7e0f:ffff:ffff:ffff:ffff
 2806:2f0:5500:ea60::-2806:2f0:5500:ea6f:ffff:ffff:ffff:ffff
 2a02:6ea0:c501:5960::-2a02:6ea0:c501:596f:ffff:ffff:ffff:ffff
+2a02:8388:6c3c:1880::-2a02:8388:6c3c:188f:ffff:ffff:ffff:ffff
 
