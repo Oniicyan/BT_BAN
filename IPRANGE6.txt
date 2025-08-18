@@ -8,7 +8,6 @@
 2001:41d0:a:1c0::-2001:41d0:a:1cf:ffff:ffff:ffff:ffff
 2001:b011:3008:b0c0::-2001:b011:3008:b0cf:ffff:ffff:ffff:ffff
 2001:b011:980a:7d00::-2001:b011:980a:7d0f:ffff:ffff:ffff:ffff
-2001:b011:e602:1280::-2001:b011:e602:128f:ffff:ffff:ffff:ffff
 2400:1a00:b030:f350::-2400:1a00:b030:f35f:ffff:ffff:ffff:ffff
 2400:4050:d601:1700::-2400:4050:d601:170f:ffff:ffff:ffff:ffff
 2400:a300:19ff:8000::-2400:a300:19ff:800f:ffff:ffff:ffff:ffff
