@@ -679,6 +679,7 @@
 146.70.27.218
 146.70.194.122
 146.70.217.68
+148.135.22.83
 148.222.130.160
 150.249.81.212
 153.35.80.130
@@ -1151,7 +1152,6 @@
 240e:389:a5a8:8e00::-240e:389:a5a8:8e0f:ffff:ffff:ffff:ffff
 240e:389:b6bc:9f00::-240e:389:b6bc:9f0f:ffff:ffff:ffff:ffff
 240e:38b:85cc:2900::-240e:38b:85cc:290f:ffff:ffff:ffff:ffff
-240e:38d:88cf:5d00::-240e:38d:88cf:5d0f:ffff:ffff:ffff:ffff
 240e:38d:8ab1::-240e:38d:8ab1:3fff:ffff:ffff:ffff:ffff
 240e:390:9e9:c8c0::-240e:390:9e9:c8cf:ffff:ffff:ffff:ffff
 240e:390:7c00::-240e:390:7c01:ffff:ffff:ffff:ffff:ffff
