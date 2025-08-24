@@ -37,6 +37,7 @@
 2408:822a:4345:4000::-2408:822a:4345:7fff:ffff:ffff:ffff:ffff
 2408:822e:1a74:59a0::-2408:822e:1a74:59af:ffff:ffff:ffff:ffff
 2408:822e:1a74:5a30::-2408:822e:1a74:5a3f:ffff:ffff:ffff:ffff
+2408:8234:913:d430::-2408:8234:913:d43f:ffff:ffff:ffff:ffff
 2408:823c:2010::-2408:823c:2010:3fff:ffff:ffff:ffff:ffff
 2408:8240:c16:15c0::-2408:8240:c16:15cf:ffff:ffff:ffff:ffff
 2408:8244:720::-2408:8244:720:3fff:ffff:ffff:ffff:ffff
