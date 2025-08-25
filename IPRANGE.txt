@@ -844,8 +844,6 @@
 185.213.193.239
 185.220.100.255
 186.188.163.24
-188.165.192.203
-192.99.35.111
 192.253.250.69
 198.44.129.94
 202.39.55.24
@@ -1111,7 +1109,6 @@
 240e:30a:40b:4000::-240e:30a:40b:7fff:ffff:ffff:ffff:ffff
 240e:314:ab2c:4000::-240e:314:ab2c:7fff:ffff:ffff:ffff:ffff
 240e:335:c7::-240e:335:c7:3fff:ffff:ffff:ffff:ffff
-240e:338:6c23:f130::-240e:338:6c23:f13f:ffff:ffff:ffff:ffff
 240e:33d:706::-240e:33d:706:3fff:ffff:ffff:ffff:ffff
 240e:341:b3c5:c000::-240e:341:b3c5:ffff:ffff:ffff:ffff:ffff
 240e:342:5836:8000::-240e:342:5836:bfff:ffff:ffff:ffff:ffff
@@ -1216,5 +1213,6 @@
 2a03:4000:67:870::-2a03:4000:67:87f:ffff:ffff:ffff:ffff
 2a03:4000:6b:230::-2a03:4000:6b:23f:ffff:ffff:ffff:ffff
 2a06:7e00:c38:b200::-2a06:7e00:c38:b20f:ffff:ffff:ffff:ffff
+2a0b:cf45::-2a0b:cf45:0:f:ffff:ffff:ffff:ffff
 2a11:6100::-2a11:6100:0:3fff:ffff:ffff:ffff:ffff
 2a14:67c1:a070::-2a14:67c1:a070:3fff:ffff:ffff:ffff:ffff
