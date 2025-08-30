@@ -3,7 +3,6 @@
 ::ffff:185.107.45.9
 ::ffff:185.107.45.15
 ::ffff:185.107.45.40
-2001:ce8:100:eea0::-2001:ce8:100:eeaf:ffff:ffff:ffff:ffff
 2001:da8:d800:4000::-2001:da8:d800:7fff:ffff:ffff:ffff:ffff
 2001:e68:5407:290::-2001:e68:5407:29f:ffff:ffff:ffff:ffff
 2001:e68:5453::-2001:e68:5453:7fff:ffff:ffff:ffff:ffff
@@ -12,7 +11,6 @@
 2003:f1:d718:4000::-2003:f1:d718:7fff:ffff:ffff:ffff:ffff
 2400:4051:3880:2a00::-2400:4051:3880:2a0f:ffff:ffff:ffff:ffff
 2400:8902::-2400:8902:0:3fff:ffff:ffff:ffff:ffff
-2400:a300:19ff:8000::-2400:a300:19ff:800f:ffff:ffff:ffff:ffff
 2400:dd01:103a::-2400:dd01:103a:3fff:ffff:ffff:ffff:ffff
 2404:7a80:8ce0:9e00::-2404:7a80:8ce0:9e0f:ffff:ffff:ffff:ffff
 2408:8207:2485:f2e0::-2408:8207:2485:f2ef:ffff:ffff:ffff:ffff
@@ -186,8 +184,6 @@
 2a03:4000:6:30e0::-2a03:4000:6:30ef:ffff:ffff:ffff:ffff
 2a03:4000:3b:280::-2a03:4000:3b:28f:ffff:ffff:ffff:ffff
 2a03:4000:3f:570::-2a03:4000:3f:57f:ffff:ffff:ffff:ffff
-2a03:4000:63:b30::-2a03:4000:63:b3f:ffff:ffff:ffff:ffff
-2a03:4000:64:d50::-2a03:4000:64:d5f:ffff:ffff:ffff:ffff
 2a03:4000:6b:230::-2a03:4000:6b:23f:ffff:ffff:ffff:ffff
 2a05:4140:3::-2a05:4140:3:f:ffff:ffff:ffff:ffff
 2a06:7e00:c38:b200::-2a06:7e00:c38:b20f:ffff:ffff:ffff:ffff
