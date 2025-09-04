@@ -233,7 +233,6 @@
 108.173.27.123
 108.173.180.246
 110.8.51.94
-110.66.229.187
 110.67.96.13
 110.80.136.26
 110.82.124.217
@@ -553,7 +552,6 @@
 119.163.189.220
 119.163.203.190
 119.164.73.45
-119.205.14.50
 120.32.40.141
 120.39.61.5
 120.43.45.0-120.43.45.255
@@ -657,6 +655,7 @@
 125.193.149.32
 126.117.180.109
 128.234.108.130
+138.75.202.77
 138.199.39.137
 139.212.94.110
 139.212.200.141
@@ -995,7 +994,6 @@
 2408:8207:18a3:7e30::-2408:8207:18a3:7e3f:ffff:ffff:ffff:ffff
 2408:8207:2485:f2e0::-2408:8207:2485:f2ef:ffff:ffff:ffff:ffff
 2408:8207:2501:4000::-2408:8207:2501:7fff:ffff:ffff:ffff:ffff
-2408:8207:2565:9750::-2408:8207:2565:975f:ffff:ffff:ffff:ffff
 2408:8207:30c0::-2408:8207:30c0:3fff:ffff:ffff:ffff:ffff
 2408:820c:821c:c000::-2408:820c:821c:c00f:ffff:ffff:ffff:ffff
 2408:8210:904b:1dd0::-2408:8210:904b:1ddf:ffff:ffff:ffff:ffff
@@ -1023,9 +1021,7 @@
 2408:8262:6a0:4000::-2408:8262:6a0:7fff:ffff:ffff:ffff:ffff
 2408:8266:401:21e0::-2408:8266:401:21ef:ffff:ffff:ffff:ffff
 2408:8270:2220::-2408:8270:2220:ffff:ffff:ffff:ffff:ffff
-2408:832e:1a7b:2980::-2408:832e:1a7b:298f:ffff:ffff:ffff:ffff
-2408:832e:1a7b:2f40::-2408:832e:1a7b:2f4f:ffff:ffff:ffff:ffff
-2408:832e:1a7b:4000::-2408:832e:1a7b:7fff:ffff:ffff:ffff:ffff
+2408:832e:1a7b::-2408:832e:1a7b:7fff:ffff:ffff:ffff:ffff
 2408:8352:1023:8000::-2408:8352:1023:bfff:ffff:ffff:ffff:ffff
 2408:8459:8861:c000::-2408:8459:8861:ffff:ffff:ffff:ffff:ffff
 2408:865c:5c40::-2408:865c:5c40:f:ffff:ffff:ffff:ffff
@@ -1044,6 +1040,7 @@
 2409:8a1e:a1f1:c000::-2409:8a1e:a1f1:ffff:ffff:ffff:ffff:ffff
 2409:8a20:2264:2cf0::-2409:8a20:2264:2cff:ffff:ffff:ffff:ffff
 2409:8a20:a210:8000::-2409:8a20:a210:bfff:ffff:ffff:ffff:ffff
+2409:8a28:2897:8990::-2409:8a28:2897:899f:ffff:ffff:ffff:ffff
 2409:8a34:3e14:4000::-2409:8a34:3e14:7fff:ffff:ffff:ffff:ffff
 2409:8a38:a611:4000::-2409:8a38:a611:7fff:ffff:ffff:ffff:ffff
 2409:8a44:31d9::-2409:8a44:31d9:3fff:ffff:ffff:ffff:ffff
@@ -1057,6 +1054,7 @@
 2409:8a55:5e67::-2409:8a55:5e67:3fff:ffff:ffff:ffff:ffff
 2409:8a55:6484:c000::-2409:8a55:6484:ffff:ffff:ffff:ffff:ffff
 2409:8a55:7285:1980::-2409:8a55:7285:198f:ffff:ffff:ffff:ffff
+2409:8a55:d4e0:9ee0::-2409:8a55:d4e0:9eef:ffff:ffff:ffff:ffff
 2409:8a55:dec5:8000::-2409:8a55:dec5:bfff:ffff:ffff:ffff:ffff
 2409:8a5c:6a1c::-2409:8a5c:6a1c:3fff:ffff:ffff:ffff:ffff
 2409:8a62:165:6f10::-2409:8a62:165:6f1f:ffff:ffff:ffff:ffff
