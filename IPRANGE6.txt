@@ -183,7 +183,6 @@
 2a02:8440:9113:c000::-2a02:8440:9113:ffff:ffff:ffff:ffff:ffff
 2a03:1b20:4:c000::-2a03:1b20:4:ffff:ffff:ffff:ffff:ffff
 2a03:4000:3b:280::-2a03:4000:3b:28f:ffff:ffff:ffff:ffff
-2a03:4000:5f:430::-2a03:4000:5f:43f:ffff:ffff:ffff:ffff
 2a03:4000:63:760::-2a03:4000:63:76f:ffff:ffff:ffff:ffff
 2a0c:f040:0:2790::-2a0c:f040:0:279f:ffff:ffff:ffff:ffff
 2a11:6100::-2a11:6100:0:3fff:ffff:ffff:ffff:ffff
