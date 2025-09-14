@@ -174,7 +174,6 @@
 60.41.128.25
 60.162.168.0-60.162.171.255
 60.168.253.221
-60.172.155.151
 60.178.231.76
 60.183.79.23
 60.188.92.0-60.188.92.255
@@ -429,6 +428,7 @@
 114.239.90.16
 114.239.91.226
 114.239.91.228
+114.244.72.105
 114.248.182.179
 115.21.149.2
 115.171.60.207
@@ -629,6 +629,7 @@
 125.110.89.0-125.110.89.255
 125.118.250.66
 125.193.149.32
+125.209.144.78
 125.253.110.56
 138.75.202.77
 139.99.133.209
@@ -1053,6 +1054,8 @@
 240e:379:1d3c::-240e:379:1d3c:3fff:ffff:ffff:ffff:ffff
 240e:37a:88c:d600::-240e:37a:88c:d60f:ffff:ffff:ffff:ffff
 240e:37a:88d:4600::-240e:37a:88d:460f:ffff:ffff:ffff:ffff
+240e:37a:88d:7900::-240e:37a:88d:790f:ffff:ffff:ffff:ffff
+240e:37a:88d:8000::-240e:37a:88d:bfff:ffff:ffff:ffff:ffff
 240e:37b:283:c000::-240e:37b:283:ffff:ffff:ffff:ffff:ffff
 240e:37b:291:c000::-240e:37b:291:ffff:ffff:ffff:ffff:ffff
 240e:37b:2c8:4000::-240e:37b:2c8:7fff:ffff:ffff:ffff:ffff
@@ -1102,6 +1105,7 @@
 240e:3bb:639:8000::-240e:3bb:639:ffff:ffff:ffff:ffff:ffff
 240e:3bb:649:8000::-240e:3bb:649:ffff:ffff:ffff:ffff:ffff
 240e:3bb:aea:560::-240e:3bb:aea:56f:ffff:ffff:ffff:ffff
+240e:3bb:3022:3ef0::-240e:3bb:3022:3eff:ffff:ffff:ffff:ffff
 240e:3bc:31:c000::-240e:3bc:31:ffff:ffff:ffff:ffff:ffff
 240e:660:150c::-240e:660:150c:ffff:ffff:ffff:ffff:ffff
 240e:978:300::-240e:978:3ff:ffff:ffff:ffff:ffff:ffff
