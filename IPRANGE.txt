@@ -105,6 +105,7 @@
 39.188.217.48
 39.189.37.187
 39.189.38.0-39.189.38.255
+39.190.108.42
 42.48.17.27
 42.48.17.62
 42.48.87.161
@@ -1067,6 +1068,7 @@
 240e:36d:312:bd00::-240e:36d:312:bd0f:ffff:ffff:ffff:ffff
 240e:36d:312:c600::-240e:36d:312:c60f:ffff:ffff:ffff:ffff
 240e:36d:365:c000::-240e:36d:365:ffff:ffff:ffff:ffff:ffff
+240e:36d:b07:8c50::-240e:36d:b07:8c5f:ffff:ffff:ffff:ffff
 240e:379:1d3c::-240e:379:1d3c:3fff:ffff:ffff:ffff:ffff
 240e:37a:88c:d600::-240e:37a:88c:d60f:ffff:ffff:ffff:ffff
 240e:37a:88d:4600::-240e:37a:88d:460f:ffff:ffff:ffff:ffff
