@@ -686,6 +686,7 @@
 180.116.206.0-180.116.206.255
 180.125.39.176
 180.142.68.162
+180.142.69.174
 180.169.125.49
 180.199.92.15
 182.132.112.20
@@ -966,7 +967,6 @@
 2001:b011:8000:7b50::-2001:b011:8000:7b5f:ffff:ffff:ffff:ffff
 2001:b011:e00d:de90::-2001:b011:e00d:de9f:ffff:ffff:ffff:ffff
 2003:f1:d718:4000::-2003:f1:d718:7fff:ffff:ffff:ffff:ffff
-2400:4051:1901:1100::-2400:4051:1901:110f:ffff:ffff:ffff:ffff
 2400:8902::-2400:8902:0:3fff:ffff:ffff:ffff:ffff
 2400:dd01:103a::-2400:dd01:103a:3fff:ffff:ffff:ffff:ffff
 2401:b60:5:2a0::-2401:b60:5:2af:ffff:ffff:ffff:ffff
@@ -1054,7 +1054,6 @@
 240e:35a:1039:4000::-240e:35a:1039:7fff:ffff:ffff:ffff:ffff
 240e:35b:2316:df01::-240e:35b:2316:df01:ffff:ffff:ffff:ffff
 240e:35b:2317:c301::-240e:35b:2317:c301:ffff:ffff:ffff:ffff
-240e:360:600:dc10::-240e:360:600:dc1f:ffff:ffff:ffff:ffff
 240e:360:2313:f700::-240e:360:2313:f70f:ffff:ffff:ffff:ffff
 240e:361:4622:c000::-240e:361:4622:ffff:ffff:ffff:ffff:ffff
 240e:361:4647:4000::-240e:361:4647:7fff:ffff:ffff:ffff:ffff
