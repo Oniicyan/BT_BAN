@@ -222,6 +222,7 @@
 95.211.174.152
 98.201.138.7
 99.123.10.133
+101.64.46.240
 101.69.63.0-101.69.63.255
 101.69.214.0-101.69.214.255
 101.70.158.0-101.70.158.255
@@ -1083,7 +1084,6 @@
 240e:37a:88a:2c00::-240e:37a:88a:2c0f:ffff:ffff:ffff:ffff
 240e:37a:88a:d200::-240e:37a:88a:d20f:ffff:ffff:ffff:ffff
 240e:37a:88b:bf00::-240e:37a:88b:bf0f:ffff:ffff:ffff:ffff
-240e:37a:8b9:9f00::-240e:37a:8b9:9f0f:ffff:ffff:ffff:ffff
 240e:37a:8bb:a00::-240e:37a:8bb:a0f:ffff:ffff:ffff:ffff
 240e:37b:283:c000::-240e:37b:283:ffff:ffff:ffff:ffff:ffff
 240e:37b:291:c000::-240e:37b:291:ffff:ffff:ffff:ffff:ffff
