@@ -1064,6 +1064,7 @@
 240e:36d:318::-240e:36d:318:3fff:ffff:ffff:ffff:ffff
 240e:36d:318:4b00::-240e:36d:318:4b0f:ffff:ffff:ffff:ffff
 240e:36d:319:d900::-240e:36d:319:d90f:ffff:ffff:ffff:ffff
+240e:36d:319:da00::-240e:36d:319:da0f:ffff:ffff:ffff:ffff
 240e:36d:365:c000::-240e:36d:365:ffff:ffff:ffff:ffff:ffff
 240e:36d:b07:8c50::-240e:36d:b07:8c5f:ffff:ffff:ffff:ffff
 240e:36d:b07:a0a0::-240e:36d:b07:a0af:ffff:ffff:ffff:ffff
