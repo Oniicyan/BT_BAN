@@ -164,7 +164,6 @@
 240e:3b6:d051:4000::-240e:3b6:d051:7fff:ffff:ffff:ffff:ffff
 240e:3b7:403:4000::-240e:3b7:403:7fff:ffff:ffff:ffff:ffff
 240e:3b7:3272:8000::-240e:3b7:3272:bfff:ffff:ffff:ffff:ffff
-240e:3ba:3039:f340::-240e:3ba:3039:f34f:ffff:ffff:ffff:ffff
 240e:3bb:639:8000::-240e:3bb:639:ffff:ffff:ffff:ffff:ffff
 240e:3bb:649:8000::-240e:3bb:649:ffff:ffff:ffff:ffff:ffff
 240e:3bb:64f:31f0::-240e:3bb:64f:31ff:ffff:ffff:ffff:ffff
