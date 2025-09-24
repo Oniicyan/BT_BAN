@@ -180,6 +180,7 @@
 2a03:1b20:4:c000::-2a03:1b20:4:ffff:ffff:ffff:ffff:ffff
 2a03:4000:63:760::-2a03:4000:63:76f:ffff:ffff:ffff:ffff
 2a07:d880:2::-2a07:d880:2:f:ffff:ffff:ffff:ffff
+2a0a:ef40:182e:2800::-2a0a:ef40:182e:280f:ffff:ffff:ffff:ffff
 2a0c:f040:0:2790::-2a0c:f040:0:279f:ffff:ffff:ffff:ffff
 2a0f:9400:7e11:2830::-2a0f:9400:7e11:283f:ffff:ffff:ffff:ffff
 2a11:6100::-2a11:6100:0:3fff:ffff:ffff:ffff:ffff
