@@ -78,6 +78,7 @@
 2409:8a7c:1233:c000::-2409:8a7c:1233:ffff:ffff:ffff:ffff:ffff
 2409:8a7c:1235:4000::-2409:8a7c:1235:7fff:ffff:ffff:ffff:ffff
 240a:42f4:400:4000::-240a:42f4:400:7fff:ffff:ffff:ffff:ffff
+240b:11:ee41:9400::-240b:11:ee41:940f:ffff:ffff:ffff:ffff
 240b:11:ff02:700::-240b:11:ff02:70f:ffff:ffff:ffff:ffff
 240b:13:9100:c000::-240b:13:9100:ffff:ffff:ffff:ffff:ffff
 240d:f:3f4:c000::-240d:f:3f4:ffff:ffff:ffff:ffff:ffff
