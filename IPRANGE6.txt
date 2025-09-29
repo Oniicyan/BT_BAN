@@ -11,6 +11,7 @@
 2001:41d0:254:900::-2001:41d0:254:90f:ffff:ffff:ffff:ffff
 2001:41d0:1008:2970::-2001:41d0:1008:297f:ffff:ffff:ffff:ffff
 2003:f1:d718:4000::-2003:f1:d718:7fff:ffff:ffff:ffff:ffff
+2400:4050:ae22:6200::-2400:4050:ae22:620f:ffff:ffff:ffff:ffff
 2400:8902::-2400:8902:0:3fff:ffff:ffff:ffff:ffff
 2400:dd01:103a::-2400:dd01:103a:3fff:ffff:ffff:ffff:ffff
 2402:1980:92a:1090::-2402:1980:92a:109f:ffff:ffff:ffff:ffff
