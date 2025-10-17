@@ -191,6 +191,7 @@
 2a03:1b20:4:c000::-2a03:1b20:4:ffff:ffff:ffff:ffff:ffff
 2a03:4000:1b:3a0::-2a03:4000:1b:3af:ffff:ffff:ffff:ffff
 2a0a:4cc0:2000:cb40::-2a0a:4cc0:2000:cb4f:ffff:ffff:ffff:ffff
+2a0e:dc0:2:7c60::-2a0e:dc0:2:7c6f:ffff:ffff:ffff:ffff
 2a11:6100::-2a11:6100:0:3fff:ffff:ffff:ffff:ffff
 2a14:67c1:a070::-2a14:67c1:a070:3fff:ffff:ffff:ffff:ffff
 
