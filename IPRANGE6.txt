@@ -14,6 +14,7 @@
 2400:8902::-2400:8902:0:3fff:ffff:ffff:ffff:ffff
 2400:dd01:103a::-2400:dd01:103a:3fff:ffff:ffff:ffff:ffff
 2404:4400:5445:55f0::-2404:4400:5445:55ff:ffff:ffff:ffff:ffff
+2406:5900:3:de0::-2406:5900:3:def:ffff:ffff:ffff:ffff
 2408:8207:1833:1890::-2408:8207:1833:189f:ffff:ffff:ffff:ffff
 2408:8207:2501:4000::-2408:8207:2501:7fff:ffff:ffff:ffff:ffff
 2408:8207:30c0::-2408:8207:30c0:3fff:ffff:ffff:ffff:ffff
