@@ -134,7 +134,6 @@
 49.87.235.3
 49.89.148.49
 49.89.148.62
-54.178.169.250
 58.4.11.144
 58.19.7.195
 58.19.7.203
@@ -1000,6 +999,7 @@
 2408:8352:1023:8000::-2408:8352:1023:bfff:ffff:ffff:ffff:ffff
 2408:8421:c30:ecd0::-2408:8421:c30:ecdf:ffff:ffff:ffff:ffff
 2408:8459:8861:c000::-2408:8459:8861:ffff:ffff:ffff:ffff:ffff
+2408:865c:5c40::-2408:865c:5c40:f:ffff:ffff:ffff:ffff
 2409:40e3:17b:8000::-2409:40e3:17b:bfff:ffff:ffff:ffff:ffff
 2409:8a00:18ee::-2409:8a00:18ee:3fff:ffff:ffff:ffff:ffff
 2409:8a00:1ad4:5b20::-2409:8a00:1ad4:5b2f:ffff:ffff:ffff:ffff
