@@ -149,7 +149,8 @@
 58.82.218.233
 58.143.6.133
 58.194.169.67
-58.216.29.0-58.216.29.255
+58.216.29.81
+58.216.29.87
 58.216.32.0-58.216.33.255
 58.216.63.0-58.216.63.255
 58.216.104.0-58.216.104.255
@@ -1061,9 +1062,9 @@
 240e:361:4654:4000::-240e:361:4654:7fff:ffff:ffff:ffff:ffff
 240e:362:7a:f700::-240e:362:7a:f70f:ffff:ffff:ffff:ffff
 240e:36d:365:c000::-240e:36d:365:ffff:ffff:ffff:ffff:ffff
-240e:36d:b07:8000::-240e:36d:b07:bfff:ffff:ffff:ffff:ffff
+240e:36d:b07:8cd0::-240e:36d:b07:8cdf:ffff:ffff:ffff:ffff
+240e:36d:b07:a110::-240e:36d:b07:a11f:ffff:ffff:ffff:ffff
 240e:36d:b0a:98d0::-240e:36d:b0a:98df:ffff:ffff:ffff:ffff
-240e:36d:b0a:9960::-240e:36d:b0a:996f:ffff:ffff:ffff:ffff
 240e:36d:1202:d070::-240e:36d:1202:d07f:ffff:ffff:ffff:ffff
 240e:379:1d3c::-240e:379:1d3c:3fff:ffff:ffff:ffff:ffff
 240e:37b:283:c000::-240e:37b:283:ffff:ffff:ffff:ffff:ffff
