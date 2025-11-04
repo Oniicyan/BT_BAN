@@ -10,7 +10,6 @@
 2001:b011:11:d230::-2001:b011:11:d23f:ffff:ffff:ffff:ffff
 2001:b011:1001:7410::-2001:b011:1001:741f:ffff:ffff:ffff:ffff
 2001:b011:200a:b8c0::-2001:b011:200a:b8cf:ffff:ffff:ffff:ffff
-2001:b011:4008:3320::-2001:b011:4008:332f:ffff:ffff:ffff:ffff
 2001:b011:7009:5350::-2001:b011:7009:535f:ffff:ffff:ffff:ffff
 2003:f1:d718:4000::-2003:f1:d718:7fff:ffff:ffff:ffff:ffff
 2400:8902::-2400:8902:0:3fff:ffff:ffff:ffff:ffff
