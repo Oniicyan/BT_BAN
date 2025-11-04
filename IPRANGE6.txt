@@ -163,6 +163,7 @@
 2601:5c2::-2601:5c2:0:3fff:ffff:ffff:ffff:ffff
 2603:3024:1d06:5500::-2603:3024:1d06:5500:ffff:ffff:ffff:ffff
 2605:6400:20::-2605:6400:20:3fff:ffff:ffff:ffff:ffff
+2605:a601:a732:1c00::-2605:a601:a732:1c0f:ffff:ffff:ffff:ffff
 2607:f130::-2607:f130:0:3fff:ffff:ffff:ffff:ffff
 2607:f2d8:4010::-2607:f2d8:4010:3fff:ffff:ffff:ffff:ffff
 2a00:7c80:0:250::-2a00:7c80:0:25f:ffff:ffff:ffff:ffff
