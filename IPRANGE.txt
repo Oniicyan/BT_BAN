@@ -657,7 +657,6 @@
 154.37.213.54
 154.47.16.43
 157.0.207.10
-158.51.110.34
 160.237.145.105
 163.125.200.66
 169.150.243.3
@@ -1134,7 +1133,6 @@
 240f:6f:f9f8::-240f:6f:f9f8:3fff:ffff:ffff:ffff:ffff
 2601:240:cf01:e750::-2601:240:cf01:e75f:ffff:ffff:ffff:ffff
 2601:5c2::-2601:5c2:0:3fff:ffff:ffff:ffff:ffff
-2602:fd6f:80::-2602:fd6f:80:f:ffff:ffff:ffff:ffff
 2603:3024:1d06:5500::-2603:3024:1d06:5500:ffff:ffff:ffff:ffff
 2605:6400:20::-2605:6400:20:3fff:ffff:ffff:ffff:ffff
 2606:c700:1:40::-2606:c700:1:4f:ffff:ffff:ffff:ffff
