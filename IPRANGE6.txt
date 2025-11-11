@@ -195,6 +195,7 @@
 2a02:2788:1206:26e0::-2a02:2788:1206:26ef:ffff:ffff:ffff:ffff
 2a02:8440:9113:c000::-2a02:8440:9113:ffff:ffff:ffff:ffff:ffff
 2a03:1b20:4:c000::-2a03:1b20:4:ffff:ffff:ffff:ffff:ffff
+2a03:4000:6:bed0::-2a03:4000:6:bedf:ffff:ffff:ffff:ffff
 2a0b:cf45::-2a0b:cf45:0:f:ffff:ffff:ffff:ffff
 2a11:6100::-2a11:6100:0:3fff:ffff:ffff:ffff:ffff
 2a14:67c1:a070::-2a14:67c1:a070:3fff:ffff:ffff:ffff:ffff
