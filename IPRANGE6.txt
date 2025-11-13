@@ -7,7 +7,6 @@
 2001:da8:d800:4000::-2001:da8:d800:7fff:ffff:ffff:ffff:ffff
 2001:e68:5453::-2001:e68:5453:7fff:ffff:ffff:ffff:ffff
 2001:f71:b9c0:4810::-2001:f71:b9c0:481f:ffff:ffff:ffff:ffff
-2001:464c:d6fb::-2001:464c:d6fb:f:ffff:ffff:ffff:ffff
 2001:b011:e60a:5f60::-2001:b011:e60a:5f6f:ffff:ffff:ffff:ffff
 2003:f1:d718:4000::-2003:f1:d718:7fff:ffff:ffff:ffff:ffff
 2400:4050:ae22:6200::-2400:4050:ae22:620f:ffff:ffff:ffff:ffff
@@ -105,7 +104,6 @@
 240e:36c:b000:5300::-240e:36c:b000:530f:ffff:ffff:ffff:ffff
 240e:36d:365:c000::-240e:36d:365:ffff:ffff:ffff:ffff:ffff
 240e:36d:1201:6c30::-240e:36d:1201:6c3f:ffff:ffff:ffff:ffff
-240e:36d:1201:8bb0::-240e:36d:1201:8bbf:ffff:ffff:ffff:ffff
 240e:379:1d3c::-240e:379:1d3c:3fff:ffff:ffff:ffff:ffff
 240e:37b:283:c000::-240e:37b:283:ffff:ffff:ffff:ffff:ffff
 240e:37b:291:c000::-240e:37b:291:ffff:ffff:ffff:ffff:ffff
