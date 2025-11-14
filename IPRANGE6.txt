@@ -6,7 +6,7 @@
 2001:da8:201:1200::-2001:da8:201:120f:ffff:ffff:ffff:ffff
 2001:da8:d800:4000::-2001:da8:d800:7fff:ffff:ffff:ffff:ffff
 2001:e68:5453::-2001:e68:5453:7fff:ffff:ffff:ffff:ffff
-2001:f71:b9c0:4810::-2001:f71:b9c0:481f:ffff:ffff:ffff:ffff
+2001:b011:c00c:e530::-2001:b011:c00c:e53f:ffff:ffff:ffff:ffff
 2001:b011:e60a:5f60::-2001:b011:e60a:5f6f:ffff:ffff:ffff:ffff
 2003:f1:d718:4000::-2003:f1:d718:7fff:ffff:ffff:ffff:ffff
 2400:4050:ae22:6200::-2400:4050:ae22:620f:ffff:ffff:ffff:ffff
