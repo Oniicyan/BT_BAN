@@ -145,6 +145,7 @@
 58.20.44.171
 58.20.73.5
 58.20.77.206
+58.20.102.59
 58.23.103.42
 58.23.193.156
 58.57.138.92
@@ -233,7 +234,6 @@
 89.106.34.97
 89.117.185.98
 92.162.177.70
-93.214.37.82
 94.16.109.72
 94.75.213.73
 94.140.5.0-94.140.5.255
@@ -378,6 +378,7 @@
 112.45.242.16
 112.46.142.222
 112.48.44.51
+112.48.92.83
 112.49.252.30
 112.53.132.202
 112.53.133.154
@@ -825,6 +826,7 @@
 185.183.32.101
 185.183.32.162
 185.183.34.95
+185.183.34.96
 185.183.35.248
 185.209.198.132
 185.209.199.73
@@ -1019,6 +1021,7 @@
 2408:8214:541b:c000::-2408:8214:541b:ffff:ffff:ffff:ffff:ffff
 2408:8214:5b39:18e0::-2408:8214:5b39:18ef:ffff:ffff:ffff:ffff
 2408:821a:3238:8000::-2408:821a:3238:bfff:ffff:ffff:ffff:ffff
+2408:821a:a11f:35d0::-2408:821a:a11f:35df:ffff:ffff:ffff:ffff
 2408:821b:5611::-2408:821b:5611:3fff:ffff:ffff:ffff:ffff
 2408:8226:d715:be40::-2408:8226:d715:be4f:ffff:ffff:ffff:ffff
 2408:822a:4345:4000::-2408:822a:4345:7fff:ffff:ffff:ffff:ffff
@@ -1096,7 +1099,6 @@
 240e:35a:1039:4000::-240e:35a:1039:7fff:ffff:ffff:ffff:ffff
 240e:35b:2316:df01::-240e:35b:2316:df01:ffff:ffff:ffff:ffff
 240e:35b:2317:c301::-240e:35b:2317:c301:ffff:ffff:ffff:ffff
-240e:35f:b4d:f900::-240e:35f:b4d:f90f:ffff:ffff:ffff:ffff
 240e:361:4622:c000::-240e:361:4622:ffff:ffff:ffff:ffff:ffff
 240e:361:4647:4000::-240e:361:4647:7fff:ffff:ffff:ffff:ffff
 240e:361:4648::-240e:361:4648:3fff:ffff:ffff:ffff:ffff
@@ -1154,7 +1156,6 @@
 240e:3b6:c7e:8000::-240e:3b6:c7e:bfff:ffff:ffff:ffff:ffff
 240e:3b6:2c80:d9c0::-240e:3b6:2c80:d9cf:ffff:ffff:ffff:ffff
 240e:3b6:d051:4000::-240e:3b6:d051:7fff:ffff:ffff:ffff:ffff
-240e:3b6:d090:150::-240e:3b6:d090:15f:ffff:ffff:ffff:ffff
 240e:3b7:403:4000::-240e:3b7:403:7fff:ffff:ffff:ffff:ffff
 240e:3b7:3272:8000::-240e:3b7:3272:bfff:ffff:ffff:ffff:ffff
 240e:3b7:4e4c:aba0::-240e:3b7:4e4c:abaf:ffff:ffff:ffff:ffff
@@ -1172,6 +1173,7 @@
 240e:b8f:823:ae00::-240e:b8f:823:ae0f:ffff:ffff:ffff:ffff
 240e:b8f:82f:8500::-240e:b8f:82f:850f:ffff:ffff:ffff:ffff
 240f:6f:f9f8::-240f:6f:f9f8:3fff:ffff:ffff:ffff:ffff
+2600:1700:5880:1470::-2600:1700:5880:147f:ffff:ffff:ffff:ffff
 2601:5c2::-2601:5c2:0:3fff:ffff:ffff:ffff:ffff
 2601:646:8684:5e0::-2601:646:8684:5ef:ffff:ffff:ffff:ffff
 2603:3024:1d06:5500::-2603:3024:1d06:5500:ffff:ffff:ffff:ffff
