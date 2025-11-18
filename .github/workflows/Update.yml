@@ -18,8 +18,11 @@ jobs:
          git commit -m "Update IPLIST.txt" || exit 0
          git add IPLIST.zip
          git commit -m "Update IPLIST Archive"
-     - name: Push changes
-       uses: ad-m/github-push-action@master
-       with:
-         github_token: ${{ secrets.GITHUB_TOKEN }}
+         git push origin main
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#    - name: Push changes
+#      uses: ad-m/github-push-action@master
+#      with:
+#        github_token: ${{ secrets.GITHUB_TOKEN }}
 #        branch: ${{ github.ref }}
