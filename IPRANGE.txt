@@ -907,6 +907,7 @@
 222.161.15.157
 222.162.78.183
 222.162.99.27
+222.169.19.106
 222.172.178.19
 222.185.229.0-222.185.229.255
 222.188.43.34
@@ -1123,7 +1124,6 @@
 240e:38d:8ab1::-240e:38d:8ab1:3fff:ffff:ffff:ffff:ffff
 240e:390:7c00::-240e:390:7c01:ffff:ffff:ffff:ffff:ffff
 240e:390:7d00::-240e:390:7d01:ffff:ffff:ffff:ffff:ffff
-240e:398:4c7:4450::-240e:398:4c7:445f:ffff:ffff:ffff:ffff
 240e:398:4c9:4000::-240e:398:4c9:7fff:ffff:ffff:ffff:ffff
 240e:398:1da0:8d50::-240e:398:1da0:8d5f:ffff:ffff:ffff:ffff
 240e:39a:371::-240e:39a:371:3fff:ffff:ffff:ffff:ffff
