@@ -2,7 +2,6 @@
 1.81.142.205
 1.83.127.93
 1.87.253.136
-1.169.72.187
 3.228.45.243
 14.101.88.65
 14.117.223.127
@@ -1166,7 +1165,6 @@
 2a02:587:9803:4000::-2a02:587:9803:7fff:ffff:ffff:ffff:ffff
 2a02:8440:9113:c000::-2a02:8440:9113:ffff:ffff:ffff:ffff:ffff
 2a03:1b20:4:c000::-2a03:1b20:4:ffff:ffff:ffff:ffff:ffff
-2a03:4000:6:d900::-2a03:4000:6:d90f:ffff:ffff:ffff:ffff
 2a03:4000:69:a0::-2a03:4000:69:af:ffff:ffff:ffff:ffff
 2a11:6100::-2a11:6100:0:3fff:ffff:ffff:ffff:ffff
 2a14:67c1:a070::-2a14:67c1:a070:3fff:ffff:ffff:ffff:ffff
