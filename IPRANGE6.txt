@@ -9,7 +9,6 @@
 2001:da8:d800:4000::-2001:da8:d800:7fff:ffff:ffff:ffff:ffff
 2001:e68:5453::-2001:e68:5453:7fff:ffff:ffff:ffff:ffff
 2001:8003:4827:c100::-2001:8003:4827:c10f:ffff:ffff:ffff:ffff
-2001:b011:800b:6a0::-2001:b011:800b:6af:ffff:ffff:ffff:ffff
 2001:b011:c006:1de0::-2001:b011:c006:1def:ffff:ffff:ffff:ffff
 2001:b011:c006:97a0::-2001:b011:c006:97af:ffff:ffff:ffff:ffff
 2003:f1:d718:4000::-2003:f1:d718:7fff:ffff:ffff:ffff:ffff
