@@ -3,7 +3,6 @@
 ::ffff:185.107.45.9
 ::ffff:185.107.45.15
 ::ffff:185.107.45.40
-2001:318:6102:1bd0::-2001:318:6102:1bdf:ffff:ffff:ffff:ffff
 2001:da8:201:1200::-2001:da8:201:120f:ffff:ffff:ffff:ffff
 2001:da8:8002:31f0::-2001:da8:8002:31ff:ffff:ffff:ffff:ffff
 2001:da8:d800:4000::-2001:da8:d800:7fff:ffff:ffff:ffff:ffff
@@ -34,6 +33,7 @@
 2408:8214:541b:c000::-2408:8214:541b:ffff:ffff:ffff:ffff:ffff
 2408:8215:1230:60f0::-2408:8215:1230:60ff:ffff:ffff:ffff:ffff
 2408:8215:4e1c:b30::-2408:8215:4e1c:b3f:ffff:ffff:ffff:ffff
+2408:821a:431:e7a0::-2408:821a:431:e7af:ffff:ffff:ffff:ffff
 2408:821a:3238:8000::-2408:821a:3238:bfff:ffff:ffff:ffff:ffff
 2408:821b:5611::-2408:821b:5611:3fff:ffff:ffff:ffff:ffff
 2408:822a:4345:4000::-2408:822a:4345:7fff:ffff:ffff:ffff:ffff
