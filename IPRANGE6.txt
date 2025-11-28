@@ -14,7 +14,6 @@
 2003:f1:d718:4000::-2003:f1:d718:7fff:ffff:ffff:ffff:ffff
 2400:8902::-2400:8902:0:3fff:ffff:ffff:ffff:ffff
 2400:dd01:103a::-2400:dd01:103a:3fff:ffff:ffff:ffff:ffff
-2403:6200:88a3:260::-2403:6200:88a3:26f:ffff:ffff:ffff:ffff
 2405:1200:c112:8600::-2405:1200:c112:860f:ffff:ffff:ffff:ffff
 2405:1200:c401:300::-2405:1200:c401:30f:ffff:ffff:ffff:ffff
 2406:5900:1fff:5560::-2406:5900:1fff:556f:ffff:ffff:ffff:ffff
