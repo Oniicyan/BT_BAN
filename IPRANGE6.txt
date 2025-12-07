@@ -174,5 +174,6 @@
 2a03:1b20:4:c000::-2a03:1b20:4:ffff:ffff:ffff:ffff:ffff
 2a03:4000:a:a0::-2a03:4000:a:af:ffff:ffff:ffff:ffff
 2a11:6100::-2a11:6100:0:3fff:ffff:ffff:ffff:ffff
+2a12:de40:43::-2a12:de40:43:f:ffff:ffff:ffff:ffff
 2a14:67c1:a070::-2a14:67c1:a070:3fff:ffff:ffff:ffff:ffff
 
