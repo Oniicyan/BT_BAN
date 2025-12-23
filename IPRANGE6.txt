@@ -56,7 +56,6 @@
 240e:3bb:ada:610:e248:d8ff:fe20:e978
 240e:3bb:32b9:ac10::1
 240e:660:150c::-240e:660:150c:ffff:ffff:ffff:ffff:ffff
-240e:87c:468:ebf:6ef4:6b45:6f0f:cb6c
 240e:978:300::-240e:978:3ff:ffff:ffff:ffff:ffff:ffff
 240e:978:f00::-240e:978:fff:ffff:ffff:ffff:ffff:ffff
 240e:978:1503::-240e:978:1503:3fff:ffff:ffff:ffff:ffff
