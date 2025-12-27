@@ -31,6 +31,7 @@
 2409:8a62:3d0:ab20:d931:800:e51:8372
 2409:8a62:3d2:c000::-2409:8a62:3d2:ffff:ffff:ffff:ffff:ffff
 240e:e9:b00c:100::-240e:e9:b00c:10f:ffff:ffff:ffff:ffff
+240e:34c:1712:8db0:5585:b0bd:7a89:f2e7
 240e:35b:2316:df01::-240e:35b:2316:df01:ffff:ffff:ffff:ffff
 240e:35b:2317:c301::-240e:35b:2317:c301:ffff:ffff:ffff:ffff
 240e:37a:4337:4f00:8659:5dff:fe12:f695
