@@ -26,7 +26,6 @@
 2409:8a55:3032:ab33:7821:1a1d:ecfe:8d0d
 2409:8a55:8413:5cd0:7819:6fd3:791b:a7f1
 2409:8a62:3d0:f9c0:c9e0:874f:5f55:5e6b
-2409:8a62:3d2:c930:9d26:ac5d:7130:9979
 240e:e9:b00c:100::-240e:e9:b00c:10f:ffff:ffff:ffff:ffff
 240e:35b:2316:df01::-240e:35b:2316:df01:ffff:ffff:ffff:ffff
 240e:35b:2317:c301::-240e:35b:2317:c301:ffff:ffff:ffff:ffff
