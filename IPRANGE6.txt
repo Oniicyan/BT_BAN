@@ -51,7 +51,6 @@
 240e:978:1508::-240e:978:1508:ffff:ffff:ffff:ffff:ffff
 240e:979:9500::-240e:979:95ff:ffff:ffff:ffff:ffff:ffff
 2603:3024:1d06:5500::-2603:3024:1d06:5500:ffff:ffff:ffff:ffff
-2a01:260:1027:3::cef2
 2a03:4000:33:21b:441f:aaff:fef4:494c
 2a0a:4cc0:c1:546f:18d6:40ff:fef4:3db9
 
