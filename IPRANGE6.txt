@@ -5,14 +5,12 @@
 ::ffff:185.107.45.40
 2001:41d0:1008:297f::1
 2402:800:6318:3011:3583:181d:d6ba:a931
-2408:8215:5b3a:1060:49fe:ffc3:693f:95e3
 2408:823c:e10:250:265e:beff:fe69:e73f
 2408:825c:5020::-2408:825c:5020:ffff:ffff:ffff:ffff:ffff
 2408:8270:2220::-2408:8270:2220:ffff:ffff:ffff:ffff:ffff
 2408:865c:5c40::2
 2409:8738:6600:a::22
 240e:e9:b00c:100::-240e:e9:b00c:10f:ffff:ffff:ffff:ffff
-240e:333:1e2e:bc00:2697:edff:fe2e:dbc3
 240e:35b:2316:df01::-240e:35b:2316:df01:ffff:ffff:ffff:ffff
 240e:35b:2317:c301::-240e:35b:2317:c301:ffff:ffff:ffff:ffff
 240e:362:1206:af00:6add:b7ff:fe3e:2a18
