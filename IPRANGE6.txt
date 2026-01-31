@@ -15,8 +15,6 @@
 240b:253:7861:9000:85dc:1570:3da1:bd80
 240b:253:7861:9000:98cc:615c:efe5:8dbf
 240e:e9:b00c:100::-240e:e9:b00c:10f:ffff:ffff:ffff:ffff
-240e:30a:13f:989f:6cf9:d9b9:38b0:1727
-240e:30a:13f:989f:b187:4d2e:8362:81ba
 240e:35b:2316:df01::-240e:35b:2316:df01:ffff:ffff:ffff:ffff
 240e:35b:2317:c301::-240e:35b:2317:c301:ffff:ffff:ffff:ffff
 240e:362:1206:af00:6add:b7ff:fe3e:2a18
