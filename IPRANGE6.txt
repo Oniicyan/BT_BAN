@@ -12,7 +12,6 @@
 2409:8a62:3d0:f900::
 240e:e9:b00c::-240e:e9:b00c:ffff:ffff:ffff:ffff:ffff
 240e:314:78a8:6500:7898:2549:9270:c45a
-240e:338:442:2f71:3075:ba70:fb1d:3afa
 240e:34c:23d:d940:a8a4:f31b:412:86b4
 240e:35b:2316:df01::-240e:35b:2316:df01:ffff:ffff:ffff:ffff
 240e:35b:2317:c301::-240e:35b:2317:c301:ffff:ffff:ffff:ffff
