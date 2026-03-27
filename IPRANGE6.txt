@@ -4,6 +4,7 @@
 2408:8249:1e2d:300::
 2408:825c:5020::-2408:825c:5020:ffff:ffff:ffff:ffff:ffff
 2408:8270:2220::-2408:8270:2220:ffff:ffff:ffff:ffff:ffff
+2408:8459:5080:e100::-2408:8459:5080:e1ff:ffff:ffff:ffff:ffff
 2408:865c:5c40::
 2409:8a62:3d0:f900::
 240e:e9:b00c::-240e:e9:b00c:ffff:ffff:ffff:ffff:ffff
