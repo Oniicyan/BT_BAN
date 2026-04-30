@@ -14,7 +14,6 @@
 2409:8a62:3d0:f900::-2409:8a62:3d0:f9ff:ffff:ffff:ffff:ffff
 240b:250:7821:e200::-240b:250:7821:e2ff:ffff:ffff:ffff:ffff
 240e:e9:b00c::-240e:e9:b00c:ffff:ffff:ffff:ffff:ffff
-240e:310:a97:c000::-240e:310:a97:cfff:ffff:ffff:ffff:ffff
 240e:335:97:2800::-240e:335:97:28ff:ffff:ffff:ffff:ffff
 240e:35b:2316:df01::-240e:35b:2316:df01:ffff:ffff:ffff:ffff
 240e:35b:2317:c301::-240e:35b:2317:c301:ffff:ffff:ffff:ffff
@@ -44,6 +43,7 @@
 240e:978::-240e:97b:ffff:ffff:ffff:ffff:ffff:ffff
 2602:fed2:7184::-2602:fed2:7184:ff:ffff:ffff:ffff:ffff
 2603:3024:1d06:5500::-2603:3024:1d06:5500:ffff:ffff:ffff:ffff
+2607:adc0:5::-2607:adc0:5:ff:ffff:ffff:ffff:ffff
 2a00:1678:2470::-2a00:1678:2470:ff:ffff:ffff:ffff:ffff
 2a00:7c80:0:200::-2a00:7c80:0:2ff:ffff:ffff:ffff:ffff
 2a03:4000:6:be00::-2a03:4000:6:beff:ffff:ffff:ffff:ffff
