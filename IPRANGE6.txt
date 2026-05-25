@@ -47,6 +47,4 @@
 2602:fed2:7184::-2602:fed2:7184:ff:ffff:ffff:ffff:ffff
 2603:3024:1d06:5500::-2603:3024:1d06:5500:ffff:ffff:ffff:ffff
 2a00:7c80:0:200::-2a00:7c80:0:2ff:ffff:ffff:ffff:ffff
-2a01:cb1c:14af:300::-2a01:cb1c:14af:3ff:ffff:ffff:ffff:ffff
-2a0a:4cc0:2000:8700::-2a0a:4cc0:2000:87ff:ffff:ffff:ffff:ffff
 
