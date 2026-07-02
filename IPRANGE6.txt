@@ -60,5 +60,4 @@
 2a02:6ea0:fa12::-2a02:6ea0:fa12:ff:ffff:ffff:ffff:ffff
 2a03:4000:3f:c00::-2a03:4000:3f:fff:ffff:ffff:ffff:ffff
 fc14:2::-fc14:2:0:ff:ffff:ffff:ffff:ffff
-fdbc:f9dc:67ad::-fdbc:f9dc:67ad:ff:ffff:ffff:ffff:ffff
 
