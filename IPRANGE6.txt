@@ -1,6 +1,5 @@
 
 2001:250:3c08:4500::-2001:250:3c08:45ff:ffff:ffff:ffff:ffff
-2001:268:d209:a700::-2001:268:d209:a7ff:ffff:ffff:ffff:ffff
 2001:da8:1026:2f00::-2001:da8:1026:2fff:ffff:ffff:ffff:ffff
 2001:da8:d800:300::-2001:da8:d800:3ff:ffff:ffff:ffff:ffff
 2400:4052:13c1:9900::-2400:4052:13c1:99ff:ffff:ffff:ffff:ffff
