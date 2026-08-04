@@ -5,6 +5,7 @@
 2001:da8:d800:300::-2001:da8:d800:3ff:ffff:ffff:ffff:ffff
 2400:4052:13c1:9900::-2400:4052:13c1:99ff:ffff:ffff:ffff:ffff
 2400:4164:1e06:6a00::-2400:4164:1e06:6aff:ffff:ffff:ffff:ffff
+2401:e180:88f4:1f00::-2401:e180:88f4:1fff:ffff:ffff:ffff:ffff
 2405:6584:55e0:6700::-2405:6584:55e0:67ff:ffff:ffff:ffff:ffff
 2408:820c:5b38:d700::-2408:820c:5b38:d7ff:ffff:ffff:ffff:ffff
 2408:822e:8e81:9400::-2408:822e:8e81:94ff:ffff:ffff:ffff:ffff
