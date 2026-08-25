@@ -4,7 +4,6 @@
 2001:da8:1026:2f00::-2001:da8:1026:2fff:ffff:ffff:ffff:ffff
 2001:da8:2d00:2000::-2001:da8:2d00:21ff:ffff:ffff:ffff:ffff
 2001:da8:d800:300::-2001:da8:d800:3ff:ffff:ffff:ffff:ffff
-2001:b011:800e:5000::-2001:b011:800e:5fff:ffff:ffff:ffff:ffff
 2400:4052:13c1:9900::-2400:4052:13c1:99ff:ffff:ffff:ffff:ffff
 2400:4164:1e06:6a00::-2400:4164:1e06:6aff:ffff:ffff:ffff:ffff
 2402:f000:4:1000::-2402:f000:4:10ff:ffff:ffff:ffff:ffff
@@ -36,6 +35,7 @@
 240e:365:61d:1800::-240e:365:61d:18ff:ffff:ffff:ffff:ffff
 240e:370:49e2:e600::-240e:370:49e2:e6ff:ffff:ffff:ffff:ffff
 240e:38b:8b3e:d500::-240e:38b:8b3e:d5ff:ffff:ffff:ffff:ffff
+240e:390:9443:a800::-240e:390:9443:a8ff:ffff:ffff:ffff:ffff
 240e:3a1:9634:d600::-240e:3a1:9634:d6ff:ffff:ffff:ffff:ffff
 240e:3a3:4990:5400::-240e:3a3:4990:54ff:ffff:ffff:ffff:ffff
 240e:3a4:4cb7:cb00::-240e:3a4:4cb7:cbff:ffff:ffff:ffff:ffff
