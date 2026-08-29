@@ -63,7 +63,6 @@
 240e:978::-240e:97b:ffff:ffff:ffff:ffff:ffff:ffff
 240e:b8f:8f4e:4000::-240e:b8f:8f4e:40ff:ffff:ffff:ffff:ffff
 2602:fed2:7184::-2602:fed2:7184:ff:ffff:ffff:ffff:ffff
-2603:c020:c00a:9200::-2603:c020:c00a:92ff:ffff:ffff:ffff:ffff
 2607:9000:800::-2607:9000:800:ff:ffff:ffff:ffff:ffff
 2607:ff68:9::-2607:ff68:9:ff:ffff:ffff:ffff:ffff
 2a00:1678:2470::-2a00:1678:2470:ff:ffff:ffff:ffff:ffff
