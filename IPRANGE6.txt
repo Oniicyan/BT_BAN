@@ -68,5 +68,6 @@
 2a02:6ea0:fa12::-2a02:6ea0:fa12:ff:ffff:ffff:ffff:ffff
 2a02:aa12:b105:7900::-2a02:aa12:b105:79ff:ffff:ffff:ffff:ffff
 2a03:4000:3f:c00::-2a03:4000:3f:fff:ffff:ffff:ffff:ffff
+2a0a:4cc0:2000:7d00::-2a0a:4cc0:2000:7dff:ffff:ffff:ffff:ffff
 fdbc:f9dc:67ad::-fdbc:f9dc:67ad:ff:ffff:ffff:ffff:ffff
 
