@@ -17,6 +17,7 @@
 2001:da8:1025::-2001:da8:1025:ffff:ffff:ffff:ffff:ffff
 2001:da8:1034::-2001:da8:1034:ffff:ffff:ffff:ffff:ffff
 2001:da8:1041::-2001:da8:1041:ffff:ffff:ffff:ffff:ffff
+2001:da8:9000:a800::-2001:da8:9000:a8ff:ffff:ffff:ffff:ffff
 2401:7580::-2401:7580:ffff:ffff:ffff:ffff:ffff:ffff
 2401:7b80::-2401:7b80:ffff:ffff:ffff:ffff:ffff:ffff
 2403:4280:1::-2403:4280:1:ffff:ffff:ffff:ffff:ffff
@@ -39,6 +40,7 @@
 2408:823d:1c00::-2408:823d:1fff:ffff:ffff:ffff:ffff:ffff
 2408:823d:2000::-2408:823d:23ff:ffff:ffff:ffff:ffff:ffff
 2408:823d:2400::-2408:823d:25ff:ffff:ffff:ffff:ffff:ffff
+2408:8240:821:d700::-2408:8240:821:d7ff:ffff:ffff:ffff:ffff
 2408:8256:1080:3f00::-2408:8256:1080:3fff:ffff:ffff:ffff:ffff
 2408:8270:40:6b00::-2408:8270:40:6bff:ffff:ffff:ffff:ffff
 2408:8360:a000::-2408:8360:bfff:ffff:ffff:ffff:ffff:ffff
@@ -135,12 +137,10 @@
 240e:eb:9000::-240e:eb:97ff:ffff:ffff:ffff:ffff:ffff
 240e:ec:4000::-240e:ec:5fff:ffff:ffff:ffff:ffff:ffff
 240e:ed:5000::-240e:ed:57ff:ffff:ffff:ffff:ffff:ffff
-240e:f7:c000:300::-240e:f7:c000:3ff:ffff:ffff:ffff:ffff
 240e:314:a000::-240e:314:bfff:ffff:ffff:ffff:ffff:ffff
 240e:314:c000::-240e:314:c7ff:ffff:ffff:ffff:ffff:ffff
 240e:315:a000::-240e:315:bfff:ffff:ffff:ffff:ffff:ffff
 240e:315:c000::-240e:315:c7ff:ffff:ffff:ffff:ffff:ffff
-240e:390:57e:7b00::-240e:390:57e:7bff:ffff:ffff:ffff:ffff
 240e:3a0:1600::-240e:3a0:17ff:ffff:ffff:ffff:ffff:ffff
 240e:3a0:1800::-240e:3a0:19ff:ffff:ffff:ffff:ffff:ffff
 240e:3a0:1c00::-240e:3a0:1fff:ffff:ffff:ffff:ffff:ffff
@@ -161,8 +161,8 @@
 240e:3a3:1c00::-240e:3a3:1fff:ffff:ffff:ffff:ffff:ffff
 240e:3a3:2000::-240e:3a3:23ff:ffff:ffff:ffff:ffff:ffff
 240e:3a3:2400::-240e:3a3:25ff:ffff:ffff:ffff:ffff:ffff
+240e:3a3:499e:7700::-240e:3a3:499e:77ff:ffff:ffff:ffff:ffff
 240e:3a6:e16:ec00::-240e:3a6:e16:ecff:ffff:ffff:ffff:ffff
-240e:3a6:5677:8500::-240e:3a6:5677:85ff:ffff:ffff:ffff:ffff
 240e:414:a000::-240e:414:bfff:ffff:ffff:ffff:ffff:ffff
 240e:414:c000::-240e:414:c7ff:ffff:ffff:ffff:ffff:ffff
 240e:478:1600::-240e:478:17ff:ffff:ffff:ffff:ffff:ffff
