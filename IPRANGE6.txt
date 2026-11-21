@@ -184,6 +184,4 @@
 240e:6a0:100::-240e:6a0:1ff:ffff:ffff:ffff:ffff:ffff
 240e:914:1002:4000::-240e:914:1002:4fff:ffff:ffff:ffff:ffff
 240e:978::-240e:97b:ffff:ffff:ffff:ffff:ffff:ffff
-240e:b8f:a3b:3800::-240e:b8f:a3b:38ff:ffff:ffff:ffff:ffff
-240e:b8f:f09:d000::-240e:b8f:f09:dfff:ffff:ffff:ffff:ffff
 
